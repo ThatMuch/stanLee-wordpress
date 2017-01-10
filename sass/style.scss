@@ -23,6 +23,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
+# Frameworks
 # Normalize
 # Typography
 # Elements
@@ -44,6 +45,15 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 --------------------------------------------------------------*/
 @import "variables-site/variables-site";
 @import "mixins/mixins-master";
+
+/*--------------------------------------------------------------
+# Frameworks
+- To activate Bulma, uncomment the line "@import "bulma/bulma"" 
+and comment the line "@import "bootsrap/bootstrap"".
+- To prevent conflict, comment the line "" in function.php
+--------------------------------------------------------------*/
+@import "bootsrap/bootstrap"
+//@import "bulma/bulma"
 
 /*--------------------------------------------------------------
 # Normalize
