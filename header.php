@@ -1,49 +1,56 @@
-<?php
+<?
 /**
- * The header for our theme.
- *
- * This is the template that displays all of the <head> section and everything up until <div id="content">
- *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package medusa
+ * @author      Flurin Dürst
+ * @version     1.7.0
+ * @since       WPSeed 0.1
  */
+?>
+<!DOCTYPE html>
+<html <? language_attributes(); ?>>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1, initial-scale=1">
+    <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+    <? WPSeed_gtm('head') ?>
+    <!--=== OPEN-GRAPH TAGS ===-->
+    <? WPSeed_ogtags() ?>
+    <!--=== PRELOAD FONTS ===-->
+    <? WPSeed_preload_fonts() ?>
+    <!--=== WP HEAD ===-->
+    <? wp_head(); ?>
+  </head>
 
-?><!DOCTYPE html>
-<html <?php language_attributes(); ?>>
-<head>
-<meta charset="<?php bloginfo( 'charset' ); ?>">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="profile" href="http://gmpg.org/xfn/11">
+  <body>
+    <? WPSeed_gtm('body') ?>
 
-<?php wp_head(); ?>
-</head>
+    <header>
 
-<body <?php body_class(); ?>>
-<div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'medusa' ); ?></a>
+      <nav>
 
-	<header id="masthead" class="site-header" role="banner">
-		<div class="site-branding">
-			<?php
-			if ( is_front_page() && is_home() ) : ?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			<?php else : ?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-			<?php
-			endif;
+        <a href="<?= get_bloginfo('url'); ?>">
+          <div class="logo"></div>
+        </a>
 
-			$description = get_bloginfo( 'description', 'display' );
-			if ( $description || is_customize_preview() ) : ?>
-				<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
-			<?php
-			endif; ?>
-		</div><!-- .site-branding -->
+        <!-- DESKTOP NAV -->
+          <?
+            // make sure there's a menu placed at 'mainmenu' or a div will be created by WP
+            wp_nav_menu([
+              'menu_class'=> 'hidden_mobile',
+              'menu_id' => 'menu_main',
+              'container'=> false,
+              'depth' => 1,
+              'theme_location' => 'mainmenu'
+            ]);
+          ?>
+        <!-- </nav> -->
 
-		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'medusa' ); ?></button>
-			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
-		</nav><!-- #site-navigation -->
-	</header><!-- #masthead -->
+        <!-- MOBILE NAV (BURGER) -->
+        <button class="hamburger--squeeze" id="hamburger" type="button">
+          <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+          </span>
+        </button>
 
-	<div id="content" class="site-content">
+      </div>
+
+    </header>
