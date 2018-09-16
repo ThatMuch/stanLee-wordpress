@@ -2,9 +2,9 @@
 /**
  * The template for displaying 404 pages (not found)
  *
- * @author      Flurin Dürst
- * @version     1.2
- * @since       WPSeed 0.1
+ * @author      ThatMuch
+ * @version     0.1.0
+ * @since       Stanlee 0.1.0.0
  */
 ?>
 

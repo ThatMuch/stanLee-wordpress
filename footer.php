@@ -1,11 +1,13 @@
 <?
 /**
- * @author      Flurin Dürst
- * @version     1.8
- * @since       WPSeed 0.1
+ * @author      ThatMuch
+ * @version     0.1.0
+ * @since       Stanlee 0.1.0
  */
 ?>
-
+			</div><!-- .row -->
+		</div><!-- .container -->
+	</div><!-- #content -->
     <footer class="footer">
       <div class="inner">Lorem Ipsum dolor sit amet</div>
     </footer>

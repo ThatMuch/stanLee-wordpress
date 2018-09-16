@@ -4,9 +4,9 @@
  * This is a (very basic) default ACF-Block using the "Flexible Element" field-type
  * it is included through 'functions-blocks.php' which is triggered by 'temp-blocks.php'.
  *
- * @author      Flurin Dürst
- * @version     1.0.2
- * @since       WPSeed 2.0
+ * @author      ThatMuch
+ * @version     0.1.0
+ * @since       Stanlee 0.1.0
  *
  */
  ?>

@@ -2,9 +2,9 @@
 /**
  * Template for Sites with Sub-Sites.
  *
- * @author      Flurin Dürst
- * @version     1.5.1
- * @since       WPSeed 0.2
+ * @author      ThatMuch
+ * @version     0.1.0
+ * @since       Stanlee 0.2
  *
  */
 ?>

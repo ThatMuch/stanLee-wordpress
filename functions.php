@@ -5,9 +5,9 @@
  * • WP-Support & WP-Setup
  * • general functions like replacements, translations
  *
- * @author      Flurin Dürst
- * @version     2.0
- * @since       WPSeed 0.1
+ * @author      ThatMuch
+ * @version     0.1.0
+ * @since       Stanlee 0.1.0
  *
  */
 

@@ -17,7 +17,7 @@
   * change default nav to WPmenu
   * small bugfixes
 * FUNCTIONS/TEMPLATES
-  * rename elements (ACF Flexible Elements) to blocks (=> WPSeed_blocks)
+  * rename elements (ACF Flexible Elements) to blocks (=> Stanlee_blocks)
   * revise all functions and presets
   * remove custom maintenance function, (Customizable Maintenance-Template will be available within an upcoming major release)
   * hide `.teaser` if there's no post-thumbnail
@@ -143,11 +143,11 @@
 * coding guideline update: csscomb, convert tabs to spaces (based on codeguide.co)
 * add the most important attributes to hamburger at nav.scss
 * added marker.click preset to googlemaps template
-* renaming versioning to WPSeed
+* renaming versioning to Stanlee
 * cleanup
 
-## 0.7.0 | 18.05.2016 | WPSeed
-* **renamed to WPSeed**
+## 0.7.0 | 18.05.2016 | Stanlee
+* **renamed to Stanlee**
 * admin bar is now only shown on hover
 * added font-size variable for default font-size on all elements
 * added basic table styling and sanitizing

@@ -2,11 +2,10 @@
 /**
  * Template for ACF flexible elements
  *
- * @author      Flurin Dürst
- * @version     1.2
- * @since       WPSeed 0.10.0
+ * @author      ThatMuch
+ * @version     0.1.0
+ * @since       Stanlee 0.1.0
  *
- * was 'temp-elements' until 1.2
  *
  */
 ?>
@@ -18,7 +17,7 @@
 
   <? if (have_posts()): while (have_posts()): the_post() ?>
 
-    <? WPSeed_blocks() ?>
+    <? Stanlee_blocks() ?>
 
   <? endwhile; endif ?>
 

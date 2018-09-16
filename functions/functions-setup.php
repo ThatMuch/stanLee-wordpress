@@ -3,11 +3,10 @@
  * The starting point for setting up a new theme.
  * Go through this file to setup your preferences
  *
- * @author      Flurin Dürst
- * @version     2.0.1
- * @since       WPSeed 0.1.6
+ * @author      ThatMuch
+ * @version     0.1.0
+ * @since       Stanlee 0.1.0
  *
- * was part of 'functions-wpsetup.php' before 2.0.0
  *
  */
 
@@ -20,6 +19,7 @@ Table of Contents:
   3.0 GOOGLE TAG MANAGER
   4.0 OPEN TAG IMAGE
   5.0 SETUP WP-MENUS
+  6.0 SETUP SIDEBARS
 =======================================================*/
 
 
@@ -40,14 +40,14 @@ setlocale(LC_ALL, 'de_CH.UTF-8');
 
 /* TYPEKIT
 /––––––––––––––––––––––––*/
-// enqueue Typekit font-kits => WPSeed_enqueue()
+// enqueue Typekit font-kits => Stanlee_enqueue()
 // add your Typekit Kit-ID or leave empty to not enqueue any kit
 $typekit_id = '';
 
 
 /* SELF-HOSTED
 /––––––––––––––––––––––––*/
-// preload self-hosted fonts => WPSeed_preload_fonts()
+// preload self-hosted fonts => Stanlee_preload_fonts()
 // define font-names and font-formats for all fonts that need preloading (usally the same as in assets/styles/fonts.scss)
 $font_names = ['asap-v7-latin-regular','asap-v7-latin-500','asap-v7-latin-700'];
 $font_formats = ['woff','woff2'];
@@ -57,7 +57,7 @@ $font_formats = ['woff','woff2'];
 /*==================================================================================
   3.0 GOOGLE TAG MANAGER
 ==================================================================================*/
-// embed the GTM-scripts into head and body => WPSeed_gtm()
+// embed the GTM-scripts into head and body => Stanlee_gtm()
 // add your GTM_id (for example 'GTM-ABC1234') or leave empty to not enqueue any GTM-script
 $GTM_id = '';
 
@@ -66,11 +66,11 @@ $GTM_id = '';
 /*==================================================================================
   4.0 OPEN TAG IMAGE
 ==================================================================================*/
-// open graph tags are returned by default => WPSeed_ogtags()
+// open graph tags are returned by default => Stanlee_ogtags()
 // add your og-image credentials here or leave ['active', false] to not emped an og-image
 $ogimg = [
   ['active', false],
-  ['path', '/dist/images/ogimg.jpg'],
+  ['path', '/images/ogimg.jpg'],
   ['height', '300'],
   ['width', '400'],
   ['alt', 'true']
@@ -84,14 +84,54 @@ $ogimg = [
 // loads wordpress-menus, add your custom menus here or remove if not needed
 // by default, only 'mainmenu' is shown
 // => https://codex.wordpress.org/Function_Reference/register_nav_menus
-function wpseed_register_theme_menus() {
+function stanlee_register_theme_menus() {
   register_nav_menus([
     'mainmenu' => __('Mainmenu'),
     'submenu' => __('Submenu')
   ]);
 }
-add_action( 'init', 'wpseed_register_theme_menus');
+add_action( 'init', 'stanlee_register_theme_menus');
 
 
-
+function stanlee_widgets_init() {
+  register_sidebar( array(
+      'name'          => esc_html__( 'Sidebar', 'stanlee' ),
+      'id'            => 'sidebar-1',
+      'description'   => esc_html__( 'Add widgets here.', 'stanlee' ),
+      'before_widget' => '<section id="%1$s" class="widget %2$s">',
+      'after_widget'  => '</section>',
+      'before_title'  => '<h3 class="widget-title">',
+      'after_title'   => '</h3>',
+  ) );
+  register_sidebar( array(
+      'name'          => esc_html__( 'Footer 1', 'stanlee' ),
+      'id'            => 'footer-1',
+      'description'   => esc_html__( 'Add widgets here.', 'stanlee' ),
+      'before_widget' => '<section id="%1$s" class="widget %2$s">',
+      'after_widget'  => '</section>',
+      'before_title'  => '<h3 class="widget-title">',
+      'after_title'   => '</h3>',
+  ) );
+  register_sidebar( array(
+      'name'          => esc_html__( 'Footer 2', 'stanlee' ),
+      'id'            => 'footer-2',
+      'description'   => esc_html__( 'Add widgets here.', 'stanlee' ),
+      'before_widget' => '<section id="%1$s" class="widget %2$s">',
+      'after_widget'  => '</section>',
+      'before_title'  => '<h3 class="widget-title">',
+      'after_title'   => '</h3>',
+  ) );
+  register_sidebar( array(
+      'name'          => esc_html__( 'Footer 3', 'stanlee' ),
+      'id'            => 'footer-3',
+      'description'   => esc_html__( 'Add widgets here.', 'stanlee' ),
+      'before_widget' => '<section id="%1$s" class="widget %2$s">',
+      'after_widget'  => '</section>',
+      'before_title'  => '<h3 class="widget-title">',
+      'after_title'   => '</h3>',
+  ) );
+}
+add_action( 'widgets_init', 'stanlee_widgets_init' );
 ?>
+
+

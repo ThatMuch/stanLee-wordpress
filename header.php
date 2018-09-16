@@ -1,8 +1,8 @@
 <?
 /**
- * @author      Flurin Dürst
- * @version     1.7.0
- * @since       WPSeed 0.1
+ * @author      ThatMuch
+ * @version     0.1.0
+ * @since       Stanlee 0.1.0
  */
 ?>
 <!DOCTYPE html>
@@ -11,17 +11,17 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1, initial-scale=1">
     <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-    <? WPSeed_gtm('head') ?>
+    <? Stanlee_gtm('head') ?>
     <!--=== OPEN-GRAPH TAGS ===-->
-    <? WPSeed_ogtags() ?>
+    <? Stanlee_ogtags() ?>
     <!--=== PRELOAD FONTS ===-->
-    <? WPSeed_preload_fonts() ?>
+    <? Stanlee_preload_fonts() ?>
     <!--=== WP HEAD ===-->
     <? wp_head(); ?>
   </head>
 
   <body>
-    <? WPSeed_gtm('body') ?>
+    <? Stanlee_gtm('body') ?>
 
     <header>
 
@@ -54,3 +54,6 @@
       </div>
 
     </header>
+    <div id="content" class="site-content">
+		<div class="container">
+			<div class="row">

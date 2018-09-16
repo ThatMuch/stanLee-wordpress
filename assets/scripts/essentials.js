@@ -1,9 +1,9 @@
 /*!
  * Essential javascript functions/variables
  *
- * @author      Flurin Dürst
- * @version     1.0.2
- * @since       WPSeed 0.11.0
+ * @author      ThatMuch
+ * @version     0.1.0
+ * @since       Stanlee 0.1.0.0
  *
  */
 

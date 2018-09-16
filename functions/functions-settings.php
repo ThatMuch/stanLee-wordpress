@@ -2,11 +2,10 @@
 /**
  * Theme-settings and general functions that normally don't need much editing
  *
- * @author      Flurin Dürst
- * @version     2.0.0
- * @since       WPSeed 0.1.6
+ * @author      ThatMuch
+ * @version     0.1.0
+ * @since       Stanlee 0.1.0
  *
- * was part of 'functions-wpsetup.php' before 2.0.0
  *
  */
 
@@ -29,6 +28,7 @@
     2.8 hide core-updates for non-admins
     2.9 disable backend-theme-editor
     2.10 load textdomain (based on locale)
+    2.11 manage excerpt length
 ==================================================================================*/
 
 
@@ -42,28 +42,41 @@
 /––––––––––––––––---––––––––*/
 // enqueues  sctipts and styles (optional typekit embed)
 // » https://developer.wordpress.org/reference/functions/wp_enqueue_script/
-function WPSeed_enqueue() {
+function Stanlee_enqueue() {
+  // load bootstrap css
+	wp_enqueue_style( 'wp-bootstrap-starter-bootstrap-css', get_template_directory_uri() . '/inc/assets/css/bootstrap.min.css' );
+  // fontawesome cdn
+  wp_enqueue_style( 'wp-bootstrap-pro-fontawesome-cdn', 'https://use.fontawesome.com/releases/v5.1.0/css/all.css' );
   // jQuery (from wp core)
   wp_deregister_script( 'jquery' );
   wp_register_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js', false, '3.3.1');
   wp_enqueue_script( 'jquery' );
   // scripts
-  wp_register_script('wpseed/scripts', get_template_directory_uri() . '/dist/script.min.js', false, array( 'jquery' ), true);
-  wp_enqueue_script('wpseed/scripts');
+  wp_register_script('stanlee/scripts', get_template_directory_uri() . '/script.min.js', false, array( 'jquery' ), true);
+  wp_enqueue_script('stanlee/scripts');
   // styles
-  wp_enqueue_style('wpseed/styles', get_template_directory_uri() . wpseed_get_cachebusted_css(), false, null);
+  wp_enqueue_style('stanlee/styles', get_template_directory_uri() . stanlee_get_cachebusted_css(), false, null);
   // Typekit
   global $typekit_id;
   if ($typekit_id) :
     wp_enqueue_style('typekit/styles', 'https://use.typekit.net/'.$typekit_id.'.css', false, null);
   endif;
+    // Internet Explorer HTML5 support
+    wp_enqueue_script( 'html5hiv',get_template_directory_uri().'/inc/assets/js/html5.js', array(), '3.7.0', false );
+    wp_script_add_data( 'html5hiv', 'conditional', 'lt IE 9' );
+
+  	// load bootstrap js
+    wp_enqueue_script('wp-bootstrap-starter-popper', get_template_directory_uri() . '/inc/assets/js/popper.min.js', array(), '', true );
+	  wp_enqueue_script('wp-bootstrap-starter-bootstrapjs', get_template_directory_uri() . '/inc/assets/js/bootstrap.min.js', array(), '', true );
+    wp_enqueue_script('wp-bootstrap-starter-themejs', get_template_directory_uri() . '/inc/assets/js/theme-script.min.js', array(), '', true );
+	  wp_enqueue_script( 'wp-bootstrap-starter-skip-link-focus-fix', get_template_directory_uri() . '/inc/assets/js/skip-link-focus-fix.min.js', array(), '20151215', true );
 }
-add_action('wp_enqueue_scripts', 'WPSeed_enqueue');
+add_action('wp_enqueue_scripts', 'Stanlee_enqueue');
 
 
 /* 1.2 THEME SUPPORT
 /––––––––––––––––––––––––*/
-function wpseed_theme_support()  {
+function stanlee_theme_support()  {
 
   // Enable plugins to manage the document title
   // => http://codex.wordpress.org/Function_Reference/add_theme_support#Title_Tag
@@ -84,7 +97,7 @@ function wpseed_theme_support()  {
   add_theme_support('post-thumbnails');
 
 }
-add_action( 'after_setup_theme', 'wpseed_theme_support');
+add_action( 'after_setup_theme', 'stanlee_theme_support');
 
 
 /*==================================================================================
@@ -96,7 +109,7 @@ add_action( 'after_setup_theme', 'wpseed_theme_support');
 /––––––––––––––––––––––––*/
 // remove unused stuff from wp_head()
 
-function wpseed_wphead_cleanup () {
+function stanlee_wphead_cleanup () {
   // remove the generator meta tag
   remove_action('wp_head', 'wp_generator');
   // remove wlwmanifest link
@@ -122,14 +135,14 @@ function wpseed_wphead_cleanup () {
   remove_action( 'wp_head', 'wp_oembed_add_discovery_links', 10);
   remove_action('wp_head', 'wp_oembed_add_host_js');
 }
-add_action('after_setup_theme', 'wpseed_wphead_cleanup');
+add_action('after_setup_theme', 'stanlee_wphead_cleanup');
 
 
 /* 2.2 LOAG OG-TAGS
 /––––––––––––––––––––––––*/
 // loads open graph tags » http://ogp.me/
-// use 'WPSeed_load_ogtags(true)' to also display the og:image tag
-function WPSeed_ogtags() {
+// use 'Stanlee_load_ogtags(true)' to also display the og:image tag
+function Stanlee_ogtags() {
   echo '
   <meta property="og:title" content="'.get_bloginfo('name').' - '.get_the_title().'">
   <meta property="og:type" content="website">
@@ -152,12 +165,12 @@ function WPSeed_ogtags() {
 /––––––––––––––––––––––––*/
 // preloads fonts that are hosted locally into the page header
 // add your desired fonts and font-types into $font_names and $font_formats
-function WPSeed_preload_fonts() {
+function Stanlee_preload_fonts() {
   // font_names and font_formats are defined in 'functions-setup.php'
   global $font_names;
   global $font_formats;
   // define font folder
-  $font_folder = '/dist/fonts/';
+  $font_folder = '/assets/fonts/';
   // loop through fonts
   foreach($font_names as $font_name) {
     // loop through font-formats
@@ -174,14 +187,14 @@ function WPSeed_preload_fonts() {
 /––––––––––––––––––––––––––––––*/
 // get the url to the busted css-file, or the default css-file if working locally (on the TLD `.vm`)
 // the busted css file is generated by `gulp cachebust` and is located through dist/rev-manifest.json
-function wpseed_get_cachebusted_css() {
+function stanlee_get_cachebusted_css() {
   $current_tld = substr(strrchr(get_bloginfo('url'),"."),1);
   if ($current_tld == 'vm') :
-    $css_src = '/dist/style.min.css';
+    $css_src = '/style.min.css';
   else :
-    $css_manifest_url = get_template_directory_uri() . '/dist/rev-manifest.json';
+    $css_manifest_url = get_template_directory_uri() . '/rev-manifest.json';
     $css_manifest_content = json_decode(file_get_contents($css_manifest_url), true);
-    $css_src = '/dist/'.$css_manifest_content['style.min.css'];
+    $css_src = '/'.$css_manifest_content['style.min.css'];
   endif;
   return $css_src;
 }
@@ -229,6 +242,32 @@ add_action('_admin_menu', 'remove_editor_menu', 1);
 
 /* 2.10 LOAD TEXTDOMAIN (BASED ON LOCALE)
 /––––––––––––––––––––––––––––––––––––––*/
-load_theme_textdomain('WPSeed', get_template_directory() . '/languages');
+load_theme_textdomain('Stanlee', get_template_directory() . '/languages');
 
+/* 2.11 MANAGE EXCERPT LENGTH
+/––––––––––––––––––––––––––––––––––––––*/
+function wp_trim_all_excerpt($text)
+{
+    global $post;
+    if ('' == $text ) {
+        $text = get_the_content('');
+        $text = apply_filters('the_content', $text);
+        $text = str_replace(']]>', ']]>', $text);
+    }
+    $text = strip_shortcodes($text);
+    $text = strip_tags($text);
+    $excerpt_length = apply_filters('excerpt_length', 30);
+    $excerpt_more = apply_filters('excerpt_more', ' ' . '<a class="read-more" href="' . get_permalink($post->ID) . '">' . 'More' . '</a>');
+    $words = explode(' ', $text, $excerpt_length + 1);
+    if (count($words)> $excerpt_length) {
+        array_pop($words);
+        $text = implode(' ', $words);
+        $text = $text . $excerpt_more;
+    } else {
+        $text = implode(' ', $words);
+    }
+    return $text;
+}
+remove_filter('get_the_excerpt', 'wp_trim_excerpt');
+add_filter('get_the_excerpt', 'wp_trim_all_excerpt');
 ?>

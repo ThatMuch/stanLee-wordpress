@@ -1,8 +1,8 @@
 <?
 /**
- * @author      Flurin Dürst
- * @version     1.3.4
- * @since       WPSeed 0.1
+ * @author      ThatMuch
+ * @version     0.1.0
+ * @since       Stanlee 0.1.0
  */
 ?>
 
