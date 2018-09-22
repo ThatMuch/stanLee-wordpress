@@ -10,3 +10,10 @@
  *
  */
  ?>
+  <section id="block-services">
+                <!-- Title -->
+                <?php if(get_sub_field('title') ) : ?>
+               <h2><?php echo get_sub_field('title'); ?></h2>
+        <?php endif; ?>
+       <!-- Title -->
+ </section>

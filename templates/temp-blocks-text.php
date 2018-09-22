@@ -10,3 +10,18 @@
  *
  */
  ?>
+
+ <section id="block-text">
+ <div class="container">
+        <!-- Title -->
+        <?php if(get_sub_field('title') ) : ?>
+            <h2><?php echo get_sub_field('title'); ?></h2>
+        <?php endif; ?>
+        <!-- Title -->
+        <!-- Texte -->
+        <?php if(get_sub_field('text') ) : ?>
+            <div><?php echo get_sub_field('text'); ?></div>
+        <?php endif; ?>
+        <!-- Texte -->
+    </div>
+ </section>

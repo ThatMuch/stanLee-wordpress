@@ -10,3 +10,28 @@
  *
  */
  ?>
+
+  <section id="block-link">
+               <!-- Title -->
+               <?php if(get_sub_field('title') ) : ?>
+               <h2><?php echo get_sub_field('title'); ?></h2>
+        <?php endif; ?>
+       <!-- Title -->
+
+           <!-- Text -->
+           <?php if(get_sub_field('text') ) : ?>
+          <p> <?php echo get_sub_field('text'); ?></p>
+        <?php endif; ?>
+       <!-- Text -->
+
+                         <!-- Button -->
+                         <?php if (have_rows('button')) : ?>
+                            <?php while ( have_rows('button') ) : the_row(); ?>
+                                <?php if (get_sub_field('label') ) : ?>
+                            <a href="<?php the_sub_field('link'); ?>" class="btn btn-primary"><?php the_sub_field('label'); ?></a>
+                                <?php endif; ?>
+
+                            <?php endwhile; ?>
+                    <?php endif; ?>
+            <!-- Button -->
+ </section>
