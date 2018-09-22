@@ -1596,7 +1596,7 @@ acf_add_local_field_group(array(
 				),
 				'layout_5ba4af1886493' => array(
 					'key' => 'layout_5ba4af1886493',
-					'name' => 'equipe',
+					'name' => 'team',
 					'label' => 'Équipe',
 					'display' => 'block',
 					'sub_fields' => array(
@@ -1920,7 +1920,7 @@ acf_add_local_field_group(array(
 				),
 				'layout_5ba502470c6c0' => array(
 					'key' => 'layout_5ba502470c6c0',
-					'name' => 'prix',
+					'name' => 'price',
 					'label' => 'Prix',
 					'display' => 'block',
 					'sub_fields' => array(
@@ -2298,7 +2298,7 @@ acf_add_local_field_group(array(
 				),
 				'layout_5ba672f6eb0ff' => array(
 					'key' => 'layout_5ba672f6eb0ff',
-					'name' => 'gallerie',
+					'name' => 'gallery',
 					'label' => 'Gallerie',
 					'display' => 'block',
 					'sub_fields' => array(
