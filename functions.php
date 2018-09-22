@@ -25,8 +25,6 @@ require('functions/functions-dev.php');
 require('functions/functions-setup.php');
 require('functions/functions-settings.php');
 
-
-
 /*==================================================================================
   BLOCKS
 ==================================================================================*/
@@ -41,6 +39,7 @@ require('acf.php');
 ==================================================================================*/
 require('functions/functions-custom.php');
 
-
+// Plugins
+require_once get_stylesheet_directory() . '/inc/plugin-activation.php';
 
 ?>
