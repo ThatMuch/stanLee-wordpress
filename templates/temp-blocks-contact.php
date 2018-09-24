@@ -17,4 +17,10 @@
                <h2><?php echo get_sub_field('title'); ?></h2>
         <?php endif; ?>
        <!-- Title -->
+         <!-- Contact form -->
+         <?php $form = get_sub_field('contact_form');?>
+         <?php if($form) : ?>
+                    <?php echo do_shortcode($form); ?>
+            <?php endif; ?>
+            <!-- Contact form -->
  </section>

@@ -26,7 +26,7 @@ if( $images ): ?>
     <div class="row">
         <?php foreach( $images as $image ): ?>
             <div class="col-sm-3 justify-content-center">
-                     <img src="<?php echo $image['sizes']['thumbnail']; ?>" alt="<?php echo $image['alt']; ?>"  class="m-auto d-block" />
+                     <img src="<?php echo $image['sizes']['medium']; ?>" alt="<?php echo $image['alt']; ?>"  class="m-auto d-block" />
                 </div>
         <?php endforeach; ?>
     </div>

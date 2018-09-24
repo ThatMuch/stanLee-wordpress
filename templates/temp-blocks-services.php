@@ -11,9 +11,34 @@
  */
  ?>
   <section id="block-services">
-                <!-- Title -->
-                <?php if(get_sub_field('title') ) : ?>
-               <h2><?php echo get_sub_field('title'); ?></h2>
-        <?php endif; ?>
-       <!-- Title -->
+      <!-- Title -->
+      <?php if(get_sub_field('title') ) : ?>
+            <h2><?php echo get_sub_field('title'); ?></h2>
+      <?php endif; ?>
+      <!-- Title -->
+      <div class="row">
+            <!-- Service -->
+            <?php if (have_rows('service') ) : ?>
+                  <?php while( have_rows('service') ) : the_row(); ?>
+                  <div class="col-sm-4">
+                        <!-- Icon -->
+                        <?php if (get_sub_field('icon') ) :?>
+                              <? the_sub_field('icon') ?>
+                        <?php endif; ?>
+                        <!-- Icon -->
+                        <!-- Icon title -->
+                        <?php if(get_sub_field('title') ) : ?>
+                              <h4><?php echo get_sub_field('title'); ?></h4>
+                        <?php endif; ?>
+                        <!-- Icon title -->
+                        <!-- Texte -->
+                        <?php if(get_sub_field('text') ) : ?>
+                              <p> <?php echo get_sub_field('text'); ?></p>
+                        <?php endif; ?>
+                        <!-- Texte -->
+                  </div>
+                  <? endwhile; ?>
+            <? endif;?>
+            <!-- Service -->
+      </div>
  </section>

@@ -46,6 +46,7 @@ function Stanlee_blocks() {
       if (get_row_layout() == 'carousel') : Stanlee_block_carousel(); endif;
       if (get_row_layout() == 'gallery') : Stanlee_block_gallery(); endif;
       if (get_row_layout() == 'contact') : Stanlee_block_contact(); endif;
+      if (get_row_layout() == 'stats') : Stanlee_block_stats(); endif;
     endwhile;
   endif;
   return ob_get_flush();
@@ -149,6 +150,14 @@ function Stanlee_block_gallery() {
 function Stanlee_block_contact() {
   ob_start('sanitize_output');
     include (get_template_directory().'/templates/temp-blocks-contact.php');
+  return ob_get_flush();
+}
+
+/* STATS
+/––––––––––––––––––––––––*/
+function Stanlee_block_stats() {
+  ob_start('sanitize_output');
+    include (get_template_directory().'/templates/temp-blocks-stats.php');
   return ob_get_flush();
 }
 
