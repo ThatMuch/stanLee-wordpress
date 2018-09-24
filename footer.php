@@ -5,8 +5,6 @@
  * @since       Stanlee 0.1.0
  */
 ?>
-			</div><!-- .row -->
-		</div><!-- .container -->
 	</div><!-- #content -->
     <footer class="footer">
       <div class="inner">Lorem Ipsum dolor sit amet</div>

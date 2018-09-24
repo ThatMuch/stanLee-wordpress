@@ -12,34 +12,36 @@
  ?>
 
  <section id="block-stats">
-     <!-- Title -->
-     <?php if(get_sub_field('title') ) : ?>
-        <h2><?php echo get_sub_field('title'); ?></h2>
-    <?php endif; ?>
-    <!-- Title -->
-    <div class="row">
-    <?php if (have_rows('radial_chart') ) : $i = 1 ; ?>
-        <?php while( have_rows('radial_chart') ) : the_row(); ?>
-        <div class="col-sx-6 col-sm-6 col-md-3 circle-bar circle-<?php echo $i ?>">
-            <svg class="radial-progress" data-percentage=" <?php if (get_sub_field('percentage') ) : ?>
-                <?php echo get_sub_field('percentage'); ?><?php endif; ?>" viewBox="0 0 80 80">
-                <circle class="incomplete" cx="40" cy="40" r="35"></circle>
-                <circle class="complete" cx="40" cy="40" r="35" style="stroke-dashoffset: 39.58406743523136;"></circle>
-                <text class="percentage text-circle-1" x="50%" y="57%" transform="matrix(0, 1, -1, 0, 80, 0)">
-                            <?php if (get_sub_field('operateur') ) : ?>
-                                <?php echo get_sub_field('operateur'); ?>
-                            <?php endif; ?>
-                            <?php if (get_sub_field('percentage') ) : ?>
-                                <?php echo get_sub_field('percentage'); ?>
-                            <?php endif; ?>
-                </text>
-            </svg>
-            <?php if (get_sub_field('label') ) : ?>
-                <h3><?php echo get_sub_field('label'); ?></h3>
-            <?php endif; ?>
-        </div>
-        <?php $i++; endwhile ?>
-    <?php endif ?>
+     <div class="container">
+         <!-- Title -->
+         <?php if(get_sub_field('title') ) : ?>
+            <h2><?php echo get_sub_field('title'); ?></h2>
+        <?php endif; ?>
+        <!-- Title -->
+        <div class="row">
+        <?php if (have_rows('radial_chart') ) : $i = 1 ; ?>
+            <?php while( have_rows('radial_chart') ) : the_row(); ?>
+            <div class="col-sx-6 col-sm-6 col-md-3 circle-bar circle-<?php echo $i ?>">
+                <svg class="radial-progress" data-percentage=" <?php if (get_sub_field('percentage') ) : ?>
+                    <?php echo get_sub_field('percentage'); ?><?php endif; ?>" viewBox="0 0 80 80">
+                    <circle class="incomplete" cx="40" cy="40" r="35"></circle>
+                    <circle class="complete" cx="40" cy="40" r="35" style="stroke-dashoffset: 39.58406743523136;"></circle>
+                    <text class="percentage text-circle-1" x="50%" y="57%" transform="matrix(0, 1, -1, 0, 80, 0)">
+                                <?php if (get_sub_field('operateur') ) : ?>
+                                    <?php echo get_sub_field('operateur'); ?>
+                                <?php endif; ?>
+                                <?php if (get_sub_field('percentage') ) : ?>
+                                    <?php echo get_sub_field('percentage'); ?>
+                                <?php endif; ?>
+                    </text>
+                </svg>
+                <?php if (get_sub_field('label') ) : ?>
+                    <h3><?php echo get_sub_field('label'); ?></h3>
+                <?php endif; ?>
+            </div>
+            <?php $i++; endwhile ?>
+        <?php endif ?>
 
-    </div>
+        </div>
+     </div>
  </section>

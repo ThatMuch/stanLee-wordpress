@@ -11,25 +11,27 @@
  */
  ?>
   <section id="block-gallery">
-            <!-- Title -->
-            <?php if(get_sub_field('title') ) : ?>
-               <h2><?php echo get_sub_field('title'); ?></h2>
-        <?php endif; ?>
-       <!-- Title -->
-    <?php
+      <div class="container">
+          <!-- Title -->
+          <?php if(get_sub_field('title') ) : ?>
+             <h2><?php echo get_sub_field('title'); ?></h2>
+      <?php endif; ?>
+     <!-- Title -->
+  <?php
 
 $images = get_sub_field('images');
 $size = 'thumbnail'; // (thumbnail, medium, large, full or custom size)
 
 if( $images ): ?>
-    <div class="row">
-        <?php foreach( $images as $image ): ?>
-            <div class="col-sm-3 justify-content-center">
-            <a href="<?php echo $image['url']; ?>" class="w-100 d-block">
-                     <img src="<?php echo $image['sizes']['medium']; ?>" alt="<?php echo $image['alt']; ?>" class="w-100" />
-                </a>
-                </div>
-        <?php endforeach; ?>
-    </div>
+  <div class="row">
+      <?php foreach( $images as $image ): ?>
+          <div class="col-sm-3 justify-content-center">
+          <a href="<?php echo $image['url']; ?>" class="w-100 d-block">
+                   <img src="<?php echo $image['sizes']['medium']; ?>" alt="<?php echo $image['alt']; ?>" class="w-100" />
+              </a>
+              </div>
+      <?php endforeach; ?>
+  </div>
 <?php endif; ?>
+      </div>
  </section>

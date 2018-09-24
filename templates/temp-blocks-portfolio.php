@@ -12,30 +12,32 @@
  ?>
 
   <section id="block-portfolio">
-    <!-- Title -->
-    <?php if(get_sub_field('title') ) : ?>
-        <h2><?php echo get_sub_field('title'); ?></h2>
-    <?php endif; ?>
-    <!-- Title -->
-    <!-- Portfolio -->
-    <?php
-      $args = array(
-      'post_type' => 'portfolio'
-      );
-       $the_query = new WP_Query($args);
-      if ($the_query->have_posts() ): ?>
-      <div class="row">
-        <?php while ( $the_query->have_posts() ): $the_query->the_post(); ?>
-            <div class="col-sm-3">
-                <!-- Image -->
-                    <img src="<?php the_post_thumbnail_url( 'medium' )?>" alt="" class="w-100">
-                <!-- Image -->
-                <!-- Title -->
-                    <h5><a href="<?php the_permalink()?>"><?php the_title()?></a></h5>
-                <!-- Title -->
+      <div class="container">
+          <!-- Title -->
+          <?php if(get_sub_field('title') ) : ?>
+              <h2><?php echo get_sub_field('title'); ?></h2>
+          <?php endif; ?>
+          <!-- Title -->
+          <!-- Portfolio -->
+          <?php
+            $args = array(
+            'post_type' => 'portfolio'
+            );
+             $the_query = new WP_Query($args);
+            if ($the_query->have_posts() ): ?>
+            <div class="row">
+              <?php while ( $the_query->have_posts() ): $the_query->the_post(); ?>
+                  <div class="col-sm-3">
+                      <!-- Image -->
+                          <img src="<?php the_post_thumbnail_url( 'medium' )?>" alt="" class="w-100">
+                      <!-- Image -->
+                      <!-- Title -->
+                          <h5><a href="<?php the_permalink()?>"><?php the_title()?></a></h5>
+                      <!-- Title -->
+                  </div>
+              <?php $i++; endwhile;?>
             </div>
-        <?php $i++; endwhile;?>
+            <? endif; wp_reset_query();?>
+          <!-- Portfolio -->
       </div>
-      <? endif; wp_reset_query();?>
-    <!-- Portfolio -->
  </section>

@@ -1,5 +1,5 @@
 /**
- * General CSS File
+ * Base CSS File
  * Contains defaults and presets of general elements.
  *
  * The Idea is to keep editing in this file to a
@@ -76,6 +76,18 @@ a {
     &:hover {
         color: $a__hovercolor;
     }
+}
+
+:focus {
+    outline: 0;
+}
+
+address {
+    font-style: normal;
+}
+
+table {
+    border-collapse: collapse;
 }
 
 /*==================================================================================

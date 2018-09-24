@@ -12,23 +12,25 @@
  ?>
 
   <section id="block-logos">
-            <!-- Title -->
-            <?php if(get_sub_field('title') ) : ?>
-               <h2><?php echo get_sub_field('title'); ?></h2>
-        <?php endif; ?>
-       <!-- Title -->
-    <?php
+      <div class="container">
+          <!-- Title -->
+          <?php if(get_sub_field('title') ) : ?>
+             <h2><?php echo get_sub_field('title'); ?></h2>
+      <?php endif; ?>
+     <!-- Title -->
+  <?php
 
 $images = get_sub_field('logo_list');
 $size = 'large'; // (thumbnail, medium, large, full or custom size)
 
 if( $images ): ?>
-    <div class="row">
-        <?php foreach( $images as $image ): ?>
-            <div class="col-sm-3 justify-content-center">
-                     <img src="<?php echo $image['sizes']['medium']; ?>" alt="<?php echo $image['alt']; ?>"  class="m-auto d-block" />
-                </div>
-        <?php endforeach; ?>
-    </div>
+  <div class="row">
+      <?php foreach( $images as $image ): ?>
+          <div class="col-sm-3 justify-content-center">
+                   <img src="<?php echo $image['sizes']['medium']; ?>" alt="<?php echo $image['alt']; ?>"  class="m-auto d-block" />
+              </div>
+      <?php endforeach; ?>
+  </div>
 <?php endif; ?>
+      </div>
 </section>

@@ -44,7 +44,7 @@
 // » https://developer.wordpress.org/reference/functions/wp_enqueue_script/
 function Stanlee_enqueue() {
   // load bootstrap css
-	wp_enqueue_style( 'wp-bootstrap-starter-bootstrap-css', get_template_directory_uri() . '/inc/assets/css/bootstrap.min.css' );
+	// wp_enqueue_style( 'wp-bootstrap-starter-bootstrap-css', get_template_directory_uri() . '/inc/assets/css/bootstrap.min.css' );
   // fontawesome cdn
   wp_enqueue_style( 'wp-bootstrap-pro-fontawesome-cdn', 'https://use.fontawesome.com/releases/v5.1.0/css/all.css' );
   // jQuery (from wp core)

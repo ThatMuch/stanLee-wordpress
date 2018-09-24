@@ -12,9 +12,11 @@
  ?>
 
   <section id="block-price">
-                  <!-- Title -->
-                  <?php if(get_sub_field('title') ) : ?>
-               <h2><?php echo get_sub_field('title'); ?></h2>
-        <?php endif; ?>
-       <!-- Title -->
+        <div class="container">
+            <!-- Title -->
+            <?php if(get_sub_field('title') ) : ?>
+                  <h2><?php echo get_sub_field('title'); ?></h2>
+            <?php endif; ?>
+            <!-- Title -->
+        </div>
  </section>

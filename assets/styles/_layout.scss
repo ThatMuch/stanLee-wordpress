@@ -201,6 +201,8 @@ main#subsites {
 
 main#blocks {
     section {
+        @extend .p-5;
+
         @include mobile {
             article {
                 flex-direction: column;
@@ -213,23 +215,14 @@ main#blocks {
         }
 
 
-        article {
-            display: flex;
-            flex-direction: row;
+        &.block-services {
+            .icon {
+                @extend .mb-2;
 
-            img,
-            .modernizr-of {
-                width: 30%;
-                height: 10rem;
-                margin: 0 1rem 0 0;
-                background-size: cover; // modernizr
-
-                object-fit: cover;
+                font-size: 50px;
             }
         }
     }
-
-    @import "./blocks/blocks.scss";
 }
 
 /*==================================================================================

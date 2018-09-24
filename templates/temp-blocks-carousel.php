@@ -12,34 +12,36 @@
  ?>
 
   <section id="block-carousel">
-    <!-- Title -->
-    <?php if(get_sub_field('title') ) : ?>
-        <h2><?php echo get_sub_field('title'); ?></h2>
-    <?php endif; ?>
-    <!-- Title -->
-    <? $images = get_sub_field('images'); ?>
-    <? if(images): $i =0; $y =0; ?>
-        <!-- Carrousel -->
-            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                <ol class="carousel-indicators">
-                <?php foreach( $images as $image ): ?>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="<?php echo $i?>" class="<?php if($i == 0) {echo 'active';} ?>"></li>
-                <?php  $i++; endforeach;?>
-                </ol>
-                <div class="carousel-inner">
-                    <?php foreach( $images as $image ): ?>
-                        <div class="carousel-item <?php if($y == 0) {echo 'active';} ?>">
-                            <img src="<?php echo $image['sizes']['large']; ?>" alt="<?php echo $image['alt']; ?>"/>
-                        </div>
-                    <?php  $y++; endforeach;?>
-                </div>
-                <a class="carousel-control-prev text-dark" href="#carouselExampleControls" role="button" data-slide="prev">
-                    <i class="fas fa-chevron-left fa-2x" aria-hidden="true"></i>
-                  </a>
-                <a class="carousel-control-next text-dark" href="#carouselExampleControls" role="button" data-slide="next">
-                    <i class="fas fa-chevron-right fa-2x" aria-hidden="true"></i>
-                </a>
-            </div>
-        <!-- Carrousel -->
-    <? endif; ?>
+      <div class="container">
+          <!-- Title -->
+          <?php if(get_sub_field('title') ) : ?>
+              <h2><?php echo get_sub_field('title'); ?></h2>
+          <?php endif; ?>
+          <!-- Title -->
+          <? $images = get_sub_field('images'); ?>
+          <? if(images): $i =0; $y =0; ?>
+              <!-- Carrousel -->
+                  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                      <ol class="carousel-indicators">
+                      <?php foreach( $images as $image ): ?>
+                          <li data-target="#carouselExampleIndicators" data-slide-to="<?php echo $i?>" class="<?php if($i == 0) {echo 'active';} ?>"></li>
+                      <?php  $i++; endforeach;?>
+                      </ol>
+                      <div class="carousel-inner">
+                          <?php foreach( $images as $image ): ?>
+                              <div class="carousel-item <?php if($y == 0) {echo 'active';} ?>">
+                                  <img src="<?php echo $image['sizes']['large']; ?>" alt="<?php echo $image['alt']; ?>"/>
+                              </div>
+                          <?php  $y++; endforeach;?>
+                      </div>
+                      <a class="carousel-control-prev text-dark" href="#carouselExampleControls" role="button" data-slide="prev">
+                          <i class="fas fa-chevron-left fa-2x" aria-hidden="true"></i>
+                        </a>
+                      <a class="carousel-control-next text-dark" href="#carouselExampleControls" role="button" data-slide="next">
+                          <i class="fas fa-chevron-right fa-2x" aria-hidden="true"></i>
+                      </a>
+                  </div>
+              <!-- Carrousel -->
+          <? endif; ?>
+      </div>
  </section>
