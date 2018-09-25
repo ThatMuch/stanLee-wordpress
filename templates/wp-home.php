@@ -10,7 +10,8 @@
 ?>
 
 <? get_header(); ?>
-
+<div class="container">
+  <div class="row">
   <main id="blog" class="content-area col-sm-12 col-lg-8">
 
     <section>
@@ -27,4 +28,6 @@
   </main>
 
 <? get_sidebar(); ?>
+  </div>
+</div>
 <? get_footer(); ?>

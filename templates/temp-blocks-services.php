@@ -10,7 +10,7 @@
  *
  */
  ?>
-  <section id="block-services" class="block-services">
+<section id="block-services" class="block-services">
         <div class="container">
               <!-- Title -->
               <?php if(get_sub_field('title') ) : ?>

@@ -11,33 +11,45 @@
  */
  ?>
 
-  <section id="block-testimonials">
+  <section id="block-testimonials" class="block-testimonials">
+        <!-- Section background: color or image -->
+      <? if(get_sub_field('fond') == "Couleur"):?>
+      <div class="section-background"  style="
+            <? if(get_sub_field('color')):?>
+            background-color:<? echo the_sub_field('color') ?>;
+            <? endif;?>"></div>
+      <? endif;?>
+      <? if(get_sub_field('fond') == "Image"):?>
+      <div class="section-background-image"  style="
+            <? if(get_sub_field('color')):?>
+            background-image:url(<? echo the_sub_field('image') ?>);
+            <? endif;?>"></div>
+      <? endif;?>
+      <!-- Section background: color or image -->
         <div class="container">
-
-              <!-- Title -->
-              <?php if(get_sub_field('title') ) : ?>
-                    <h2><?php echo get_sub_field('title'); ?></h2>
-              <?php endif; ?>
-              <!-- Title -->
-
               <?php
               $args = array(
               'post_type' => 'testimonials'
               );
                $the_query = new WP_Query($args);
               if ($the_query->have_posts() ): $i = 0; $y = 0; ?>
-                    <div id="carouselTestimonials" class="carousel slide" data-ride="carousel">
-                          <ol class="carousel-indicators">
+                    <div id="carouselTestimonials" class="testimonials-carousel carousel slide" data-ride="carousel">
+                          <ol class="carousel-indicators testimonials-carousel-indicators">
                           <?php while ( $the_query->have_posts() ): $the_query->the_post(); ?>
-                                <li data-target="#carouselExampleIndicators" data-slide-to="<?php echo $i?>" class="<?php if($i == 0) {echo 'active';
+                                <li data-target="#carouselTestimonials" data-slide-to="<?php echo $i?>" class="<?php if($i == 0) {echo 'active';
                                 } ?>"></li>
                           <?php $i++; endwhile;?>
                           </ol>
-                          <div class="carousel-inner">
+                        <!-- Title -->
+                        <?php if(get_sub_field('title') ) : ?>
+                              <h2 class="section-title"><?php echo get_sub_field('title'); ?></h2>
+                        <?php endif; ?>
+                        <!-- Title -->
+                          <div class="carousel-inner testimonials-carousel-inner">
                                 <?php  while ( $the_query->have_posts() ): $the_query->the_post(); ?>
-                                <div class="carousel-item <?php if($y == 0) {echo 'active';} ?>">
+                                <div class="carousel-item testimonials-carousel-item <?php if($y == 0) {echo 'active';} ?>">
                                       <!-- Image -->
-                                            <?php the_post_thumbnail('thumbnail')?>
+                                      <img src="<?php the_post_thumbnail_url('thumbnail')?>" alt="" class="testimonials-carousel-item-image">
                                       <!-- Image -->
                                       <!-- Job -->
                                       <?php if (get_field('quote') ) : ?>
