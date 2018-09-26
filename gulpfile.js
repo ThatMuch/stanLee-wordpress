@@ -23,7 +23,7 @@
 /* SETTINGS
 /===================================================== */
 // local domain used by browsersync
-var browsersync_proxy = "stanlee.local";
+var browsersync_proxy = "stanlee-clone.local";
 
 // default asset paths
 var assets = {

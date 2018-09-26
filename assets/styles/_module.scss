@@ -4,14 +4,15 @@
 
 .carousel {
     min-height: 400px;
-    padding: $header_height 0;
+    padding: $header_height; // Empêcher le menu de passer au dessus du carousel quand on clique sur la flêche
 
     &-inner {
         @extend .w-75, .m-auto;
     }
 
     &-control-prev, &-control-next {
-        top: $header_height;
+        top: $header_height; // Garde les flêches alignées au milieu
+   
     }
 }
 
