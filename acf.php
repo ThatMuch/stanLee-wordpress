@@ -284,7 +284,7 @@ acf_add_local_field_group(array(
 			'label' => 'Description',
 			'name' => 'description',
 			'type' => 'textarea',
-			'instructions' => '',
+			'instructions' => 'Courte description limitée à 160 charactères',
 			'required' => 0,
 			'conditional_logic' => 0,
 			'wrapper' => array(
@@ -294,7 +294,7 @@ acf_add_local_field_group(array(
 			),
 			'default_value' => '',
 			'placeholder' => '',
-			'maxlength' => '',
+			'maxlength' => '160',
 			'rows' => '',
 			'new_lines' => '',
 		),

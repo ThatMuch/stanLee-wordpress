@@ -270,6 +270,37 @@ main#blocks {
                 }
             }
         }
+
+        &.block-team {
+            .team-member {
+                margin-bottom: 30px;
+                text-align: center;
+                background-color: #fff;
+                padding: 60px 30px;
+
+                &-img {
+                    @extend .mb-3, .rounded-circle;
+                }
+
+                &-name {}
+
+                &-job {}
+
+                &-desc {}
+
+                &-rs {
+                    li {
+                        list-style: none;
+                        display: inline-block;
+                        font-size: 25px;
+
+                        &:not(:last-child) { // Ajouter une marge à droite sauf sur le dernier lien
+                            @extend .mr-2;
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 
