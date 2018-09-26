@@ -82,6 +82,52 @@ a {
     outline: 0;
 }
 
+/*=============================================
+=            HEADINGS                         =
+=============================================*/
+
+h1 {
+    @include heading-size(6);
+    @include mobile {
+        @include heading-size(4);
+    }
+}
+
+h2 {
+    @include heading-size(5);
+    @include mobile {
+        @include heading-size(3);
+    }
+}
+
+h3 {
+    @include heading-size(4);
+    @include mobile {
+        @include heading-size(2);
+    }
+}
+
+h4 {
+    @include heading-size(3);
+    @include mobile {
+        @include heading-size(2);
+    }
+}
+
+h5 {
+    @include heading-size(2);
+
+    letter-spacing: 1px;
+}
+
+h6 {
+    @include heading-size(1);
+
+    letter-spacing: 1px;
+}
+
+/*=====  End of HEADINGS               ======*/
+
 address {
     font-style: normal;
 }

@@ -42,15 +42,19 @@
                       <?php  while ( $the_query->have_posts() ): $the_query->the_post(); ?>
                           <div class="col-sm-4">
                               <div class="team-member">
-                                  <!-- Image -->
+                                <!-- Image -->
+                                <?php if (get_the_post_thumbnail()) : ?>
                                     <img class="team-member-img" src="<?php the_post_thumbnail_url('thumbnail')?>" alt="<?php the_title()?>">
-                                  <!-- Image -->
+                                <? else : ?>
+                                    <div class="team-member-img"></div>
+                                <? endif;?>
+                                <!-- Image -->
                                   <!-- Name -->
-                                      <h3 class="team-member-name"><?php the_title()?></h3>
+                                      <h4 class="team-member-name"><?php the_title()?></h4>
                                   <!-- Name -->
                                   <!-- Job -->
                                   <?php if (get_field('job') ) : ?>
-                                      <h4 class="team-member-job"> <?php echo get_field('job'); ?></h4>
+                                      <h5 class="team-member-job"> <?php echo get_field('job'); ?></h5>
                                   <?php endif; ?>
                                   <!-- Job -->
                                   <!-- Description -->

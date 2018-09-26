@@ -19,7 +19,7 @@
           <?php endif; ?>
           <!-- Title -->
           <? $images = get_sub_field('images'); ?>
-          <? if(images): $i =0; $y =0; ?>
+          <? if($images): $i =0; $y =0; ?>
               <!-- Carrousel -->
                   <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                       <ol class="carousel-indicators">

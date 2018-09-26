@@ -48,9 +48,13 @@
                           <div class="carousel-inner testimonials-carousel-inner">
                                 <?php  while ( $the_query->have_posts() ): $the_query->the_post(); ?>
                                 <div class="carousel-item testimonials-carousel-item <?php if($y == 0) {echo 'active';} ?>">
-                                      <!-- Image -->
-                                      <img src="<?php the_post_thumbnail_url('thumbnail')?>" alt="" class="testimonials-carousel-item-image">
-                                      <!-- Image -->
+                                    <!-- Image -->
+                                    <?php if (get_the_post_thumbnail()) : ?>
+                                          <img src="<?php the_post_thumbnail_url('thumbnail')?>" alt="" class="testimonials-carousel-item-image">
+                                    <? else : ?>
+                                          <div class="testimonials-carousel-item-image"></div>
+                                    <? endif;?>
+                                    <!-- Image -->
                                       <!-- Job -->
                                       <?php if (get_field('quote') ) : ?>
                                             <p> <?php echo get_field('quote'); ?></p>

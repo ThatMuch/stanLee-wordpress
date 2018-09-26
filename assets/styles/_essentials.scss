@@ -108,3 +108,17 @@ Table of Contents:
 
     @return $number;
 }
+
+/* HEADINGS
+/––––––––––––––––––––––––*/
+// Create a step size
+/* This is the percentage each heading will be reduced by. */
+$step-size-heading: 0.33333;
+
+/* Amplifier value */
+$amplifier-heading: 1.5;
+
+/* The mixin */
+@mixin heading-size($size) {
+    font-size: $size * $step-size-heading * $amplifier-heading + rem;
+}
