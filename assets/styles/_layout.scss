@@ -309,10 +309,54 @@ main#blocks {
                         display: inline-block;
                         font-size: 25px;
 
-                        &:not(:last-child) { // Ajouter une marge à droite sauf sur le dernier lien
+                        &:not(:last-child) {
+                            // Ajouter une marge à droite sauf sur le dernier lien
                             @extend .mr-2;
                         }
                     }
+                }
+            }
+        }
+
+        &.block-stats {
+            .section-title {
+                text-align: center;
+            }
+            .circle-bar {
+                margin-bottom: 30px;
+
+                &-title {
+                    text-align: center;
+                }
+            }
+
+            .radial-progress {
+                max-width: 200px;
+                -webkit-transform: rotate(-90deg);
+                transform: rotate(-90deg);
+                width: 100%;
+                margin: auto;
+                display: block;
+
+                circle {
+                    fill: transparent;
+                    stroke: #fff;
+                    stroke-dashoffset: 219.91148575129;
+                    stroke-width: 2;
+                    stroke: $color__main;
+                }
+
+                .incomplete {
+                    opacity: 0.25;
+                }
+
+                .complete {
+                    stroke-dasharray: 219.91148575129;
+                }
+
+                text {
+                    text-anchor: middle;
+                    fill: $color__main;
                 }
             }
         }
@@ -332,6 +376,6 @@ main#blocks {
 
     .inner {
         padding: 1.5rem 0;
-        font-size: .8rem;
+        font-size: 0.8rem;
     }
 }
