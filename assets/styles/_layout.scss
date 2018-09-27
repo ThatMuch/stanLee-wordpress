@@ -322,6 +322,7 @@ main#blocks {
             .section-title {
                 text-align: center;
             }
+
             .circle-bar {
                 margin-bottom: 30px;
 
@@ -357,6 +358,47 @@ main#blocks {
                 text {
                     text-anchor: middle;
                     fill: $color__main;
+                }
+            }
+        }
+
+        &.block-price {
+            background-color: $color__grey;
+
+            .price-column {
+                &-wrapper {
+                    background-color: #fff;
+                    padding: 60px 30px;
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                }
+
+                &-title {
+                    text-align: center;
+                }
+
+                &-price {
+                    text-align: center;
+                    font-size: 2rem;
+                    font-weight: bold;
+                    color: $color__main;
+                }
+
+                &-service {
+                    @extend .pt-3, .pb-3;
+
+                    list-style: none;
+                    border-bottom: 1px solid #ccc;
+                }
+
+                &-btn {
+                    margin-top: 10px;
+                    display: block;
+                }
+
+                ul {
+                    margin-bottom: auto;
                 }
             }
         }
