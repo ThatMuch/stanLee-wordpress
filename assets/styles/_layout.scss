@@ -195,27 +195,14 @@ main#subsites {
     }
 }
 
-/* BLOCK - ARTICLE
+/* BLOCKS -
 /––––––––––––––––––––––––*/
-//=> templates/temp-bocks-article.php
 
 main#blocks {
     section {
         @extend .p-5;
 
         position: relative;
-
-        @include mobile {
-            article {
-                flex-direction: column;
-
-                img {
-                    width: 100%;
-                    margin: 0 0 1rem 0;
-                }
-            }
-        }
-
 
         .container {
             position: relative;
@@ -506,7 +493,6 @@ main#blocks {
 /*==================================================================================
   5.0 FOOTER
 ==================================================================================*/
-//=> templates/str-footer.php
 
 .footer {
     width: 100vw;
@@ -514,8 +500,32 @@ main#blocks {
     color: $color-grey;
     background: $color-dark;
 
+    .widget-title {
+        color: $color-grey1;
+        margin-bottom: 1rem;
+    }
+
+    .nav {
+        padding: 0;
+
+        .nav-link {
+            color: $color-light;
+            padding: 0 0 .5rem 0;
+        }
+    }
+
     .inner {
         padding: 1.5rem 0;
         font-size: 0.8rem;
+    }
+
+    .credits {
+        background-color: $color-black;
+        color: $color-grey2;
+        text-align: center;
+
+        a {
+            color: $color-grey2;
+        }
     }
 }

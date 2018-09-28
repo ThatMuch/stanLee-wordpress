@@ -234,10 +234,10 @@ add_action( 'admin_head', 'onlyadmin_update', 1 );
 
 /* 2.9 DISABLE BACKEND-THEME-EDITOR
 /–––––––––––––––––––––––––––––––––*/
-function remove_editor_menu() {
+/* function remove_editor_menu() {
   remove_action('admin_menu', '_add_themes_utility_last', 101);
 }
-add_action('_admin_menu', 'remove_editor_menu', 1);
+add_action('_admin_menu', 'remove_editor_menu', 1); */
 
 
 /* 2.10 LOAD TEXTDOMAIN (BASED ON LOCALE)
