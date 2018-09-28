@@ -23,35 +23,28 @@
   <body>
     <? Stanlee_gtm('body') ?>
 
-    <header>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+  <a class="navbar-brand" href="<?php echo site_url(); ?>"> <div class="logo"></div> </a>
+    <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="<?php esc_html_e( 'Toggle Navigation', 'theme-textdomain' ); ?>">
+        <span class="navbar-toggler-icon"></span>
+    </button>
 
-      <nav>
+    <div class="collapse navbar-collapse" id="navbar-content">
 
-        <a href="<?= get_bloginfo('url'); ?>">
-          <div class="logo"></div>
-        </a>
 
-        <!-- DESKTOP NAV -->
-          <?
-            // make sure there's a menu placed at 'mainmenu' or a div will be created by WP
-            wp_nav_menu([
-              'menu_class'=> 'hidden_mobile',
-              'menu_id' => 'menu_main',
-              'container'=> false,
-              'depth' => 1,
-              'theme_location' => 'mainmenu'
-            ]);
-          ?>
-        <!-- </nav> -->
-
-        <!-- MOBILE NAV (BURGER) -->
-        <button class="hamburger--squeeze" id="hamburger" type="button">
-          <span class="hamburger-box">
-            <span class="hamburger-inner"></span>
-          </span>
-        </button>
-
-      </div>
-
-    </header>
+        <?php
+        wp_nav_menu( array(
+            'theme_location' => 'mainmenu', // Defined when registering the menu
+            'menu_id'        => 'menu-main',
+            'container'      => false,
+            'depth'          => 2,
+            'menu_class'     => 'navbar-nav ml-auto',
+            'walker'         => new Bootstrap_NavWalker(), // This controls the display of the Bootstrap Navbar
+            'fallback_cb'    => 'Bootstrap_NavWalker::fallback', // For menu fallback
+        ) );
+        ?>
+    </div>
+  </div>
+</nav>
     <div id="content" class="site-content">

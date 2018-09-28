@@ -38,6 +38,7 @@ require('acf.php');
   CUSTOM
 ==================================================================================*/
 require('functions/functions-custom.php');
+require get_template_directory() . '/bootstrap-navwalker.php';
 
 // Plugins
 require_once get_stylesheet_directory() . '/inc/plugin-activation.php';

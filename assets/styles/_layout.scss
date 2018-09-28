@@ -57,47 +57,6 @@ footer .inner {
   2.0 HEADER
 ==================================================================================*/
 
-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 200;
-    width: 100vw;
-    height: $header_height;
-    background-color: $color-grey;
-
-    nav {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        height: 100%;
-
-        .logo  {
-            width: 12rem;
-            height: 3rem;
-            margin-right: 2rem;
-            background-image: url("assets/images/logo.svg");
-            background-repeat: no-repeat;
-            background-size: contain;
-
-            @include vpw_max($element_maxwidth) {
-                background-image: url("assets/images/logo_simplified.svg");
-            }
-
-
-            @include vpw_max(1000px) {
-                background-image: url("assets/images/logo_minimal.svg");
-            }
-
-
-            @include mobile {
-                background-image: url("assets/images/logo_simplified.svg");
-            }
-        }
-    }
-}
-
 /*==================================================================================
   3.0 HEADINGS & PARAGRAPHS
 ==================================================================================*/
@@ -232,7 +191,7 @@ main#blocks {
         &.bg-primary {
             .btn {
                 @extend .btn-light; // Passer le bouton en blanc quand le fond est en couleur
-           
+
             }
 
             a {
