@@ -30,6 +30,6 @@
 /*==================================================================================
   BOOTSTRAP
 ==================================================================================*/
-$theme-colors: ("primary": $color__main, "secondary": $color__sub);
+$theme-colors: ("primary": $color-primary, "secondary": $color-secondary);
 
 @import "../../node_modules/bootstrap/scss/bootstrap";

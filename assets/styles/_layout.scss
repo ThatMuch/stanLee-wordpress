@@ -64,7 +64,7 @@ header {
     z-index: 200;
     width: 100vw;
     height: $header_height;
-    background-color: $color__grey;
+    background-color: $color-grey;
 
     nav {
         display: flex;
@@ -256,7 +256,7 @@ main#blocks {
         &.block-services {
             &.bg-primary {
                 .service-icon {
-                    color: $color__main-darker;
+                    color: $color-primary-darker;
                 }
             }
 
@@ -271,7 +271,7 @@ main#blocks {
                     @extend .mb-2;
 
                     font-size: 50px;
-                    color: $color__main;
+                    color: $color-primary;
                 }
 
                 &-title {}
@@ -369,7 +369,7 @@ main#blocks {
                     stroke: #fff;
                     stroke-dashoffset: 219.91148575129;
                     stroke-width: 2;
-                    stroke: $color__main;
+                    stroke: $color-primary;
                 }
 
                 .incomplete {
@@ -382,7 +382,7 @@ main#blocks {
 
                 text {
                     text-anchor: middle;
-                    fill: $color__main;
+                    fill: $color-primary;
                 }
             }
         }
@@ -405,7 +405,7 @@ main#blocks {
                     text-align: center;
                     font-size: 2rem;
                     font-weight: bold;
-                    color: $color__main;
+                    color: $color-primary;
                 }
 
                 &-service {
@@ -511,8 +511,8 @@ main#blocks {
 .footer {
     width: 100vw;
     margin-top: auto;
-    color: $color__grey;
-    background: $color__dark;
+    color: $color-grey;
+    background: $color-dark;
 
     .inner {
         padding: 1.5rem 0;
