@@ -11,11 +11,11 @@
  */
  ?>
 
-  <section id="block-portfolio">
+  <section id="block-portfolio" class="block-portfolio">
       <div class="container">
           <!-- Title -->
           <?php if(get_sub_field('title') ) : ?>
-              <h2><?php echo get_sub_field('title'); ?></h2>
+              <h2 class="section-title"><?php echo get_sub_field('title'); ?></h2>
           <?php endif; ?>
           <!-- Title -->
           <!-- Portfolio -->
@@ -29,7 +29,9 @@
               <?php while ( $the_query->have_posts() ): $the_query->the_post(); ?>
                   <div class="col-sm-3">
                       <!-- Image -->
-                          <img src="<?php the_post_thumbnail_url( 'medium' )?>" alt="" class="w-100">
+                      <a href="<?php the_permalink()?>">
+                        <img src="<?php the_post_thumbnail_url( 'medium' )?>" alt="">
+                    </a>
                       <!-- Image -->
                       <!-- Title -->
                           <h5><a href="<?php the_permalink()?>"><?php the_title()?></a></h5>
