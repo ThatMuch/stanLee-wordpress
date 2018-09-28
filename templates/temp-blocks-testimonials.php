@@ -21,7 +21,7 @@
       <? endif;?>
       <? if(get_sub_field('fond') == "Image"):?>
       <div class="section-background-image"  style="
-            <? if(get_sub_field('color')):?>
+            <? if(get_sub_field('image')):?>
             background-image:url(<? echo the_sub_field('image') ?>);
             <? endif;?>"></div>
       <? endif;?>

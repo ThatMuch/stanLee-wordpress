@@ -11,26 +11,24 @@
  */
  ?>
 
-  <section id="block-text-image">
+  <section id="block-text-image" class="block-text-image">
     <div class="row">
-    <div class="col-sm-6">
-        <!-- Title -->
-        <?php if(get_sub_field('title') ) : ?>
-               <h2><?php echo get_sub_field('title'); ?></h2>
-        <?php endif; ?>
-       <!-- Title -->
-       <!-- Text -->
-        <?php if(get_sub_field('text') ) : ?>
-            <?php echo get_sub_field('text'); ?>
-        <?php endif; ?>
-       <!-- Text -->
-    </div>
-    <div class="col-sm-6">
-            <!-- Image -->
-            <?php if(get_sub_field('image') ) : $img = get_sub_field('image'); ?>
-        <img src="<?php echo $img['url']?>" alt="<?php echo $img['alt']?>" class="w-100">
+    <div class="col-sm-6 block-text">
+        <div>
+            <!-- Title -->
+            <?php if(get_sub_field('title') ) : ?>
+                   <h2 class="section-title"><?php echo get_sub_field('title'); ?></h2>
             <?php endif; ?>
-        <!-- Image -->
+           <!-- Title -->
+           <!-- Text -->
+            <?php if(get_sub_field('text') ) : ?>
+               <div class="text"><?php echo get_sub_field('text'); ?></div>
+            <?php endif; ?>
+           <!-- Text -->
+        </div>
+    </div>
+    <div class="col-sm-6 block-image">
+        <div class="bg" style="background-image: url(<?php if(get_sub_field('image') ) : $img = get_sub_field('image'); echo $img['url']; endif;?>)"></div>
     </div>
     </div>
  </section>
