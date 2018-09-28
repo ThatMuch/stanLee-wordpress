@@ -10,7 +10,8 @@
         @extend .w-75, .m-auto;
     }
 
-    &-control-prev, &-control-next {
+    &-control-prev,
+    &-control-next {
         top: $header_height; // Garde les flêches alignées au milieu
    
     }

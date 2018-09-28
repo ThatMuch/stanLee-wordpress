@@ -14,7 +14,6 @@
 /*==================================================================================
   PRESETS/ASSETS
 ==================================================================================*/
-@import "../../inc/assets/css/bootstrap";
 @import "vars";
 @import "essentials";
 @import "fonts";
@@ -27,3 +26,10 @@
 @import "layout";
 @import "module";
 @import "nav";
+
+/*==================================================================================
+  BOOTSTRAP
+==================================================================================*/
+$theme-colors: ("primary": $color__main, "secondary": $color__sub);
+
+@import "../../node_modules/bootstrap/scss/bootstrap";
