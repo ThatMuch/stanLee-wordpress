@@ -11,23 +11,23 @@
  */
  ?>
 
-  <section id="block-logos">
+  <section id="block-logos" class="block-logos">
       <div class="container">
-          <!-- Title -->
-          <?php if(get_sub_field('title') ) : ?>
-             <h2><?php echo get_sub_field('title'); ?></h2>
-      <?php endif; ?>
-     <!-- Title -->
+        <!-- Title -->
+        <?php if(get_sub_field('title') ) : ?>
+             <h2 class="section-title"><?php echo get_sub_field('title'); ?></h2>
+        <?php endif; ?>
+        <!-- Title -->
   <?php
 
 $images = get_sub_field('logo_list');
-$size = 'large'; // (thumbnail, medium, large, full or custom size)
+$size = 'medium';
 
 if( $images ): ?>
   <div class="row">
       <?php foreach( $images as $image ): ?>
-          <div class="col-sm-3 justify-content-center">
-                   <img src="<?php echo $image['sizes']['medium']; ?>" alt="<?php echo $image['alt']; ?>"  class="m-auto d-block" />
+          <div class="logo col-sm-3">
+                   <img src="<?php echo $image['sizes'][$size]; ?>" alt="<?php echo $image['alt']; ?>" />
               </div>
       <?php endforeach; ?>
   </div>
