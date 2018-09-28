@@ -10,7 +10,10 @@
  *
  */
  ?>
-<section id="block-services" class="block-services">
+<section id="block-services" class="block-services
+<? if(get_sub_field('fond') == "Couleur"):?> bg-primary
+  <? elseif(get_sub_field('fond') == "Gris"):?> bg-light<? endif;?>">
+
         <div class="container">
               <!-- Title -->
               <?php if(get_sub_field('title') ) : ?>

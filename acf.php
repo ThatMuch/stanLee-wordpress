@@ -450,6 +450,7 @@ acf_add_local_field_group(array(
 				'id' => '',
 			),
 			'layouts' => array(
+				/* TEXT */
 				'5b9bb1c928ace' => array(
 					'key' => '5b9bb1c928ace',
 					'name' => 'text',
@@ -498,6 +499,7 @@ acf_add_local_field_group(array(
 					'min' => '',
 					'max' => '',
 				),
+				/* TEXT + IMAGE */
 				'layout_5b9bb2b0734ba' => array(
 					'key' => 'layout_5b9bb2b0734ba',
 					'name' => 'text_image',
@@ -570,6 +572,7 @@ acf_add_local_field_group(array(
 					'min' => '',
 					'max' => '',
 				),
+				/* LINK */
 				'layout_5b9bb37d734bf' => array(
 					'key' => 'layout_5b9bb37d734bf',
 					'name' => 'link',
@@ -613,64 +616,6 @@ acf_add_local_field_group(array(
 							'maxlength' => '',
 							'rows' => '',
 							'new_lines' => '',
-						),
-						array(
-							'key' => 'field_5b9bb37d734c2',
-							'label' => 'Fond',
-							'name' => 'fond',
-							'type' => 'radio',
-							'instructions' => '',
-							'required' => 0,
-							'conditional_logic' => 0,
-							'wrapper' => array(
-								'width' => '',
-								'class' => '',
-								'id' => '',
-							),
-							'choices' => array(
-								'Blanc' => 'Blanc',
-								'Gris' => 'Gris',
-								'Couleur' => 'Couleur',
-								'Image' => 'Image',
-							),
-							'allow_null' => 0,
-							'other_choice' => 0,
-							'default_value' => 'Blanc',
-							'layout' => 'horizontal',
-							'return_format' => 'value',
-							'save_other_choice' => 0,
-						),
-						array(
-							'key' => 'field_5ba625cd36789',
-							'label' => 'Image',
-							'name' => 'image',
-							'type' => 'image',
-							'instructions' => '',
-							'required' => 0,
-							'conditional_logic' => array(
-								array(
-									array(
-										'field' => 'field_5b9bb37d734c2',
-										'operator' => '==',
-										'value' => 'Image',
-									),
-								),
-							),
-							'wrapper' => array(
-								'width' => '',
-								'class' => '',
-								'id' => '',
-							),
-							'return_format' => 'url',
-							'preview_size' => 'thumbnail',
-							'library' => 'all',
-							'min_width' => '',
-							'min_height' => '',
-							'min_size' => '',
-							'max_width' => '',
-							'max_height' => '',
-							'max_size' => '',
-							'mime_types' => '',
 						),
 						array(
 							'key' => 'field_5b9bb3d9734c3',
@@ -783,10 +728,69 @@ acf_add_local_field_group(array(
 								),
 							),
 						),
+						array(
+							'key' => 'field_5b9bb37d564c2',
+							'label' => 'Fond',
+							'name' => 'fond',
+							'type' => 'radio',
+							'instructions' => '',
+							'required' => 0,
+							'conditional_logic' => 0,
+							'wrapper' => array(
+								'width' => '',
+								'class' => '',
+								'id' => '',
+							),
+							'choices' => array(
+								'Blanc' => 'Blanc',
+								'Gris' => 'Gris',
+								'Couleur' => 'Couleur',
+								'Image' => 'Image',
+							),
+							'allow_null' => 0,
+							'other_choice' => 0,
+							'default_value' => 'Blanc',
+							'layout' => 'horizontal',
+							'return_format' => 'value',
+							'save_other_choice' => 0,
+						),
+						array(
+							'key' => 'field_5ba625cd36789',
+							'label' => 'Image',
+							'name' => 'image',
+							'type' => 'image',
+							'instructions' => '',
+							'required' => 0,
+							'conditional_logic' => array(
+								array(
+									array(
+										'field' => 'field_5b9bb37d734c2',
+										'operator' => '==',
+										'value' => 'Image',
+									),
+								),
+							),
+							'wrapper' => array(
+								'width' => '',
+								'class' => '',
+								'id' => '',
+							),
+							'return_format' => 'url',
+							'preview_size' => 'thumbnail',
+							'library' => 'all',
+							'min_width' => '',
+							'min_height' => '',
+							'min_size' => '',
+							'max_width' => '',
+							'max_height' => '',
+							'max_size' => '',
+							'mime_types' => '',
+						),
 					),
 					'min' => '',
 					'max' => '',
 				),
+				/* SERVICES */
 				'layout_5ba4acdb8648b' => array(
 					'key' => 'layout_5ba4acdb8648b',
 					'name' => 'services',
@@ -811,6 +815,31 @@ acf_add_local_field_group(array(
 							'prepend' => '',
 							'append' => '',
 							'maxlength' => '',
+						),
+						array(
+							'key' => 'field_5b9rr37d734c2',
+							'label' => 'Fond',
+							'name' => 'fond',
+							'type' => 'radio',
+							'instructions' => '',
+							'required' => 0,
+							'conditional_logic' => 0,
+							'wrapper' => array(
+								'width' => '',
+								'class' => '',
+								'id' => '',
+							),
+							'choices' => array(
+								'Blanc' => 'Blanc',
+								'Gris' => 'Gris',
+								'Couleur' => 'Couleur'
+							),
+							'allow_null' => 0,
+							'other_choice' => 0,
+							'default_value' => 'Blanc',
+							'layout' => 'horizontal',
+							'return_format' => 'value',
+							'save_other_choice' => 0,
 						),
 						array(
 							'key' => 'field_5ba4ad318648f',
@@ -1573,6 +1602,7 @@ acf_add_local_field_group(array(
 					'min' => '',
 					'max' => '',
 				),
+				/* TEAM */
 				'layout_5ba4af1886493' => array(
 					'key' => 'layout_5ba4af1886493',
 					'name' => 'team',
@@ -1660,6 +1690,7 @@ acf_add_local_field_group(array(
 					'min' => '',
 					'max' => '1',
 				),
+				/* PORTFOLIO */
 				'layout_5ba630200ea4a' => array(
 					'key' => 'layout_5ba630200ea4a',
 					'name' => 'portfolio',
@@ -1747,6 +1778,7 @@ acf_add_local_field_group(array(
 					'min' => '',
 					'max' => '1',
 				),
+				/* TESTIMONIALS */
 				'layout_5ba630a0a7bfc' => array(
 					'key' => 'layout_5ba630a0a7bfc',
 					'name' => 'testimonials',
@@ -1834,6 +1866,7 @@ acf_add_local_field_group(array(
 					'min' => '',
 					'max' => '1',
 				),
+				/* PRICE */
 				'layout_5ba502470c6c0' => array(
 					'key' => 'layout_5ba502470c6c0',
 					'name' => 'price',
@@ -1858,6 +1891,64 @@ acf_add_local_field_group(array(
 							'prepend' => '',
 							'append' => '',
 							'maxlength' => '',
+						),
+						array(
+							'key' => 'field_5b3eb37d734c2',
+							'label' => 'Fond',
+							'name' => 'fond',
+							'type' => 'radio',
+							'instructions' => '',
+							'required' => 0,
+							'conditional_logic' => 0,
+							'wrapper' => array(
+								'width' => '',
+								'class' => '',
+								'id' => '',
+							),
+							'choices' => array(
+								'Blanc' => 'Blanc',
+								'Gris' => 'Gris',
+								'Couleur' => 'Couleur',
+								'Image' => 'Image',
+							),
+							'allow_null' => 0,
+							'other_choice' => 0,
+							'default_value' => 'Gris',
+							'layout' => 'horizontal',
+							'return_format' => 'value',
+							'save_other_choice' => 0,
+						),
+						array(
+							'key' => 'field_5ba625cd36789',
+							'label' => 'Image',
+							'name' => 'image',
+							'type' => 'image',
+							'instructions' => '',
+							'required' => 0,
+							'conditional_logic' => array(
+								array(
+									array(
+										'field' => 'field_5b9bb37d734c2',
+										'operator' => '==',
+										'value' => 'Image',
+									),
+								),
+							),
+							'wrapper' => array(
+								'width' => '',
+								'class' => '',
+								'id' => '',
+							),
+							'return_format' => 'url',
+							'preview_size' => 'thumbnail',
+							'library' => 'all',
+							'min_width' => '',
+							'min_height' => '',
+							'min_size' => '',
+							'max_width' => '',
+							'max_height' => '',
+							'max_size' => '',
+							'mime_types' => '',
 						),
 						array(
 							'key' => 'field_5ba502550c6c1',
@@ -2100,10 +2191,12 @@ acf_add_local_field_group(array(
 								),
 							),
 						),
+
 					),
 					'min' => '',
 					'max' => '4',
 				),
+				/* LOGOS */
 				'layout_5ba6725ceb0fa' => array(
 					'key' => 'layout_5ba6725ceb0fa',
 					'name' => 'logos',
@@ -2158,6 +2251,7 @@ acf_add_local_field_group(array(
 					'min' => '',
 					'max' => '',
 				),
+				/* CAROUSEL */
 				'layout_5ba672c4eb0fd' => array(
 					'key' => 'layout_5ba672c4eb0fd',
 					'name' => 'carousel',
@@ -2212,6 +2306,7 @@ acf_add_local_field_group(array(
 					'min' => '',
 					'max' => '',
 				),
+				/* GALLERY */
 				'layout_5ba672f6eb0ff' => array(
 					'key' => 'layout_5ba672f6eb0ff',
 					'name' => 'gallery',
@@ -2266,6 +2361,7 @@ acf_add_local_field_group(array(
 					'min' => '',
 					'max' => '',
 				),
+				/* CONTACT */
 				'layout_5ba67318eb101' => array(
 					'key' => 'layout_5ba67318eb101',
 					'name' => 'contact',
@@ -2305,10 +2401,70 @@ acf_add_local_field_group(array(
 								'id' => '',
 							),
 						),
+						array(
+							'key' => 'field_5b9bb37d734c2',
+							'label' => 'Fond',
+							'name' => 'fond',
+							'type' => 'radio',
+							'instructions' => '',
+							'required' => 0,
+							'conditional_logic' => 0,
+							'wrapper' => array(
+								'width' => '',
+								'class' => '',
+								'id' => '',
+							),
+							'choices' => array(
+								'Blanc' => 'Blanc',
+								'Gris' => 'Gris',
+								'Couleur' => 'Couleur',
+								'Image' => 'Image',
+							),
+							'allow_null' => 0,
+							'other_choice' => 0,
+							'default_value' => 'Gris',
+							'layout' => 'horizontal',
+							'return_format' => 'value',
+							'save_other_choice' => 0,
+						),
+						array(
+							'key' => 'field_5ba625cd36789',
+							'label' => 'Image',
+							'name' => 'image',
+							'type' => 'image',
+							'instructions' => '',
+							'required' => 0,
+							'conditional_logic' => array(
+								array(
+									array(
+										'field' => 'field_5b9bb37d734c2',
+										'operator' => '==',
+										'value' => 'Image',
+									),
+								),
+							),
+							'wrapper' => array(
+								'width' => '',
+								'class' => '',
+								'id' => '',
+							),
+							'return_format' => 'url',
+							'preview_size' => 'thumbnail',
+							'library' => 'all',
+							'min_width' => '',
+							'min_height' => '',
+							'min_size' => '',
+							'max_width' => '',
+							'max_height' => '',
+							'max_size' => '',
+							'mime_types' => '',
+						),
+
 					),
 					'min' => '',
 					'max' => '1',
 				),
+				/* STATS */
 				'layout_5b86744c3c170' => array(
 					'key' => 'layout_5b86744c3c170',
 					'name' => 'stats',
