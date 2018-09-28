@@ -39,7 +39,7 @@
         <?php if (have_rows('button')) : ?>
             <?php while ( have_rows('button') ) : the_row(); ?>
                 <?php if (get_sub_field('label') ) : ?>
-                    <a href="<?php the_sub_field('link'); ?>" class="btn btn-primary"><?php the_sub_field('label'); ?></a>
+                    <a href="<?php the_sub_field('link'); ?>" class="btn  btn-primary"><?php the_sub_field('label'); ?></a>
                 <?php endif; ?>
             <?php endwhile; ?>
         <?php endif; ?>

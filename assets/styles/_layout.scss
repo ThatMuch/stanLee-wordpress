@@ -242,7 +242,24 @@ main#blocks {
             background-repeat: no-repeat;
         }
 
+        &.bg-primary {
+            .btn {
+                @extend .btn-light; // Passer le bouton en blanc quand le fond est en couleur
+           
+            }
+
+            a {
+                color: #fff;
+            }
+        }
+
         &.block-services {
+            &.bg-primary {
+                .service-icon {
+                    color: $color__main-darker;
+                }
+            }
+
             .section-title {
                 text-align: center;
             }
