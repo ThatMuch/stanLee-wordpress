@@ -222,7 +222,7 @@ main#blocks {
         }
 
         .section-title {
-            @extend .mb-4;
+            @extend .mb-5;
 
             position: relative;
         }
@@ -248,10 +248,23 @@ main#blocks {
         }
 
         &.block-services {
-            .icon {
-                @extend .mb-2;
+            .section-title {
+                text-align: center;
+            }
 
-                font-size: 50px;
+            .service {
+                text-align: center;
+
+                &-icon {
+                    @extend .mb-2;
+
+                    font-size: 50px;
+                    color: $color__main;
+                }
+
+                &-title {}
+
+                &-text {}
             }
         }
 
