@@ -470,6 +470,18 @@ main#blocks {
                 }
             }
         }
+
+        &.block-gallery {
+            a {
+                width: 100%;
+                display: block;
+
+                img {
+                    width: 100%;
+                    margin-bottom: 30px;
+                }
+            }
+        }
     }
 }
 

@@ -10,11 +10,11 @@
  *
  */
  ?>
-  <section id="block-gallery">
+  <section id="block-gallery" class="block-gallery">
       <div class="container">
           <!-- Title -->
           <?php if(get_sub_field('title') ) : ?>
-             <h2><?php echo get_sub_field('title'); ?></h2>
+             <h2 class="section-title"><?php echo get_sub_field('title'); ?></h2>
       <?php endif; ?>
      <!-- Title -->
   <?php
@@ -23,11 +23,11 @@ $images = get_sub_field('images');
 $size = 'thumbnail'; // (thumbnail, medium, large, full or custom size)
 
 if( $images ): ?>
-  <div class="row">
+  <div class="row justify-content-center">
       <?php foreach( $images as $image ): ?>
-          <div class="col-sm-3 justify-content-center">
-          <a href="<?php echo $image['url']; ?>" class="w-100 d-block">
-                   <img src="<?php echo $image['sizes']['medium']; ?>" alt="<?php echo $image['alt']; ?>" class="w-100" />
+          <div class="col-sm-3">
+          <a href="<?php echo $image['url']; ?>" target="_blank">
+                   <img src="<?php echo $image['sizes']['medium']; ?>" alt="<?php echo $image['alt']; ?>" />
               </a>
               </div>
       <?php endforeach; ?>
