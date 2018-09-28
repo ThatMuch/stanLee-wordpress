@@ -11,21 +11,18 @@
  */
  ?>
 
-  <section id="block-link">
-    <!-- Section background: color or image -->
-    <? if(get_sub_field('fond') == "Couleur"):?>
-        <div class="section-background"  style="
-        <? if(get_sub_field('color')):?>
-        background-color:<? echo the_sub_field('color') ?>;
-        <? endif;?>"></div>
-    <? endif;?>
+  <section id="block-link" class="block-link
+  <? if(get_sub_field('fond') == "Couleur"):?> bg-primary
+  <? elseif(get_sub_field('fond') == "Gris"):?> bg-light<? endif;?>">
+
+    <!-- Section background: image -->
     <? if(get_sub_field('fond') == "Image"):?>
         <div class="section-background-image"  style="
         <? if(get_sub_field('color')):?>
         background-image:url(<? echo the_sub_field('image') ?>);
         <? endif;?>"></div>
     <? endif;?>
-    <!-- Section background: color or image -->
+    <!-- Section background: image -->
     <div class="container">
         <!-- Title -->
         <?php if(get_sub_field('title') ) : ?>
