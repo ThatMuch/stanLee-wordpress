@@ -114,6 +114,21 @@ function stanlee_widgets_init() {
   ) );
 }
 add_action( 'widgets_init', 'stanlee_widgets_init' );
+
+
+// Custom search widget
+ function my_search_form( $form ) {
+  $form = '<form role="search" method="get" id="searchform" class="search-form" action="' . home_url( '/' ) . '" >
+  <div><label>
+  <input class="search-field form-control" placeholder="Rechercher" type="text" value="' . get_search_query() . '" name="s" id="s" />
+  </label>
+  </div>
+  </form>';
+
+  return $form;
+}
+
+add_filter( 'get_search_form', 'my_search_form', 100 );
 ?>
 
 

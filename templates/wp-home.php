@@ -17,12 +17,28 @@
     <section>
       <? if (have_posts() ) : while (have_posts()) : the_post(); ?>
         <article>
-          <h2 class="entry-title"><a href="<? the_permalink()?>"><? the_title(); ?></a></h2>
-          <div class="postinfo"><?= get_the_date_stanlee(); ?></div>
-          <? the_post_thumbnail('large', ['class' => 'modernizr-of']); ?>
-          <? the_excerpt(); ?>
+          <div class="row">
+            <? if (has_post_thumbnail($post->ID)): ?>
+              <div class="col-sm-4">
+                <? the_post_thumbnail('large', ['class' => 'modernizr-of']); ?>
+              </div>
+            <? endif; ?>
+            <div class="<? if (has_post_thumbnail($post->ID)): ?> col-sm-8 <? else : ?> col-sm-12<?endif; ?>">
+              <h2 class="entry-title"><a href="<? the_permalink()?>"><? the_title(); ?></a></h2>
+              <? the_excerpt(); ?>
+              <hr>
+              <div class="postinfo"><?= get_the_date_stanlee(); ?></div>
+            </div>
+          </div>
         </article>
       <? endwhile; endif; ?>
+<? the_posts_pagination( array(
+	'mid_size'  => 2,
+	'prev_text' => __( '<', 'stanlee' ),
+  'next_text' => __( '>', 'stanlee' ),
+  'screen_reader_text' => __( '&nbsp;' )
+) ); ?>
+
     </section>
 
   </main>
