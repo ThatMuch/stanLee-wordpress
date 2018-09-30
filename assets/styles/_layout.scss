@@ -229,7 +229,7 @@ main#blocks {
             background-repeat: no-repeat;
         }
 
-        &.bg-primary {
+        &.bg-primary:not(.block-team) {
             .btn {
                 @extend .btn-light; // Passer le bouton en blanc quand le fond est en couleur
            
@@ -237,6 +237,10 @@ main#blocks {
 
             a {
                 color: #fff;
+
+                &:hover {
+                    opacity: .7;
+                }
             }
         }
 
@@ -485,6 +489,27 @@ main#blocks {
                 @extend .mb-3;
 
                 width: 100%;
+            }
+        }
+
+        &.block-contact {
+            .section-title {
+                text-align: center;
+            }
+
+            .contact-infos {
+                li {
+                    list-style: none;
+                    margin-bottom: 1rem;
+                }
+
+                &-rs {
+                    li {
+                        display: inline-block;
+                        font-size: 1.5rem;
+                        margin-right: 1rem;
+                    }
+                }
             }
         }
     }
