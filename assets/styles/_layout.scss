@@ -44,7 +44,7 @@ aside {
         border-bottom: 1px solid $color-grey;
 
         .nav-link {
-            padding: 0 0 .5rem 0;
+            padding: 0 0 0.5rem 0;
         }
     }
 }
@@ -101,13 +101,14 @@ main#page {
 /––––––––––––––––––––––––*/
 //=> templates/wp-home.php
 //=> templates/wp-single.php
+
+.postinfo {
+    font-size: 0.7rem;
+}
+
 main#blog {
     section {
         article {
-            .postinfo {
-                font-size: 0.7rem;
-            }
-
             img,
             .modernizr-of {
                 width: 100%;
@@ -116,6 +117,7 @@ main#blog {
                 object-fit: cover;
             }
         }
+
         .pagination {
             justify-content: center;
         }
@@ -127,10 +129,33 @@ main#post {
         article {
             img,
             .modernizr-of {
-                width: 100%;
-                height: 20rem;
+                max-width: 100%;
+
+                // height: 20rem;
                 background-size: cover; // modernizr
                 object-fit: cover;
+            }
+
+            .postinfo {
+                margin-bottom: .5rem;
+            }
+
+            dl,
+            ol,
+            ul {
+                padding-left: 2rem;
+            }
+
+            h2 {
+                @include heading-size(3);
+            }
+
+            h3 {
+                @include heading-size(2);
+            }
+
+            h4 {
+                @include heading-size(1);
             }
         }
     }
@@ -207,7 +232,7 @@ main#blocks {
         &.bg-primary {
             .btn {
                 @extend .btn-light; // Passer le bouton en blanc quand le fond est en couleur
-
+           
             }
 
             a {
@@ -485,7 +510,7 @@ main#blocks {
 
         .nav-link {
             color: $color-light;
-            padding: 0 0 .5rem 0;
+            padding: 0 0 0.5rem 0;
         }
     }
 

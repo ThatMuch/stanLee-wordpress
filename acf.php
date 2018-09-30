@@ -2459,6 +2459,31 @@ acf_add_local_field_group(array(
 							'max_size' => '',
 							'mime_types' => '',
 						),
+						array(
+							'key' => 'field_5b9bb37d734c2',
+							'label' => 'Afficher les coordonnées',
+							'name' => 'contact_infos',
+							'type' => 'radio',
+							'instructions' => '',
+							'required' => 0,
+							'conditional_logic' => 0,
+							'wrapper' => array(
+								'width' => '',
+								'class' => '',
+								'id' => '',
+							),
+							'choices' => array(
+								'Oui' => 'Oui',
+								'Non' => 'Non',
+
+							),
+							'allow_null' => 0,
+							'other_choice' => 0,
+							'default_value' => 'Oui',
+							'layout' => 'horizontal',
+							'return_format' => 'value',
+							'save_other_choice' => 0,
+						),
 
 					),
 					'min' => '',
