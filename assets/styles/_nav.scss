@@ -25,23 +25,9 @@ nav.navbar {
         width: 12rem;
         height: 3rem;
         margin-right: 2rem;
-        background-image: url("assets/images/logo.svg");
+       // background-image: url("assets/images/logo.svg");
         background-repeat: no-repeat;
         background-size: contain;
-
-        @include vpw_max($element_maxwidth) {
-            background-image: url("assets/images/logo_simplified.svg");
-        }
-
-
-        @include vpw_max(1000px) {
-            background-image: url("assets/images/logo_minimal.svg");
-        }
-
-
-        @include mobile {
-            background-image: url("assets/images/logo_simplified.svg");
-        }
     }
 
     .navbar-collapse.show {

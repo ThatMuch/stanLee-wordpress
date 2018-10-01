@@ -23,9 +23,14 @@
   <body>
     <? Stanlee_gtm('body') ?>
 
+     <? $custom_logo_id = get_theme_mod( 'custom_logo' );
+        $image = wp_get_attachment_image_src( $custom_logo_id , 'full' ); ?>
+
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container">
-  <a class="navbar-brand" href="<?php echo site_url(); ?>"> <div class="logo"></div> </a>
+  <a class="navbar-brand" href="<?php echo site_url(); ?>">
+    <div class="logo" style="background-image: url('<? if($image[0]): echo $image[0]; else: echo get_template_directory_uri()?>/assets/images/logo.svg<?endif; ?>')"></div>
+  </a>
     <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="<?php esc_html_e( 'Toggle Navigation', 'theme-textdomain' ); ?>">
         <span class="navbar-toggler-icon"></span>
     </button>

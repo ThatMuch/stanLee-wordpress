@@ -525,6 +525,21 @@ main#blocks {
     color: $color-grey;
     background: $color-dark;
 
+    &-rs {
+        text-align: center;
+
+        li {
+            display: inline-block;
+            list-style: none;
+            margin-right: .5rem;
+
+            a {
+                color: $color-grey1;
+                font-size: 1.5rem;
+            }
+        }
+    }
+
     .widget-title {
         color: $color-grey1;
         margin-bottom: 1rem;

@@ -107,7 +107,7 @@ function stanlee_widgets_init() {
       'name'          => esc_html__( 'Footer 1', 'stanlee' ),
       'id'            => 'footer-1',
       'description'   => esc_html__( 'Add widgets here.', 'stanlee' ),
-      'before_widget' => '<div id="%1$s" class="col-sm-4 widget %2$s">',
+      'before_widget' => '<div id="%1$s" class="col-sm widget %2$s">',
       'after_widget'  => '</div>',
       'before_title'  => '<h4 class="widget-title">',
       'after_title'   => '</h4>',
@@ -130,5 +130,7 @@ add_action( 'widgets_init', 'stanlee_widgets_init' );
 
 add_filter( 'get_search_form', 'my_search_form', 100 );
 ?>
+
+
 
 
