@@ -1,0 +1,153 @@
+/**
+ * Base CSS File
+ * Contains defaults and presets of general elements.
+ *
+ * The Idea is to keep editing in this file to a
+ * minimum while using vars.scss for very basic styling.
+ *
+ * @author      ThatMuch
+ * @version     0.1.0
+ * @since       Stanlee 0.1.0.0
+ *
+ */
+
+@import "vars";
+
+/*==================================================================================
+  GENERAL
+==================================================================================*/
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: contain;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html {
+    max-width: 100vw;
+    height: 100%;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    font-family: $html__fontname;
+    font-size: $base_size; // only used for rem-handling, the actual font-size is $body__fontsize
+    color: $html__textcolor;
+    background-color: $html__bgcolor;
+
+    @include vpw_min($scaling_endpoint) {
+        font-size: $scaling_endpoint / 100 * stripunit($base_size);
+    }
+
+
+    @include mobile {
+        font-size: $base_size_mobile;
+    }
+
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    // used as wrapper for sticky footer
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    font-size: $body__fontsize;
+    font-weight: $body__fontweight;
+    line-height: $body__lineheight;
+
+    @include mobile {
+        font-size: $body__fontsize_mobile;
+    }
+}
+
+a {
+    color: $a__linkcolor;
+    text-decoration: $a__textdecoration;
+    transition: $transition_fast;
+
+    &:hover {
+        color: $a__hovercolor;
+    }
+}
+
+:focus {
+    outline: 0;
+}
+
+/*=============================================
+=            HEADINGS                         =
+=============================================*/
+
+h1 {
+    @include heading-size(6);
+    @include mobile {
+        @include heading-size(4);
+    }
+}
+
+h2 {
+    @include heading-size(5);
+    @include mobile {
+        @include heading-size(3);
+    }
+}
+
+h3 {
+    @include heading-size(4);
+    @include mobile {
+        @include heading-size(2);
+    }
+}
+
+h4 {
+    @include heading-size(3);
+    @include mobile {
+        @include heading-size(2);
+    }
+}
+
+h5 {
+    @include heading-size(2);
+
+    letter-spacing: 1px;
+}
+
+h6 {
+    @include heading-size(1);
+
+    letter-spacing: 1px;
+}
+
+/*=====  End of HEADINGS               ======*/
+
+address {
+    font-style: normal;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+/*==================================================================================
+  PRESETS
+==================================================================================*/
+
+// defaut wowjs div
+.wow {
+    visibility: hidden;
+}
+
+// anchor div to fix .top overlap when navigation through 'domain.tld/#anchor'
+.anchor {
+    display: block;
+    height: $header_height;
+    margin-top: -$header_height; // negative top_height
+}

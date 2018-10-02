@@ -1,0 +1,35 @@
+/*
+ * Main CSS File
+ * Merges all .scss files (in the desired order) before they're processed by gulp.
+ * To add vendors, use gulp-vendors.json.
+ *
+ * @author      ThatMuch
+ * @version     0.1.0
+ * @since       Stanlee 0.1.0.0
+ *
+ */
+
+@charset "UTF-8";
+
+/*==================================================================================
+  PRESETS/ASSETS
+==================================================================================*/
+@import "vars";
+@import "essentials";
+@import "fonts";
+@import "state";
+
+/*==================================================================================
+  SITE STYLES
+==================================================================================*/
+@import "base";
+@import "layout";
+@import "module";
+@import "nav";
+
+/*==================================================================================
+  BOOTSTRAP
+==================================================================================*/
+$theme-colors: ("primary": $color-primary, "secondary": $color-secondary);
+
+@import "../../node_modules/bootstrap/scss/bootstrap";
