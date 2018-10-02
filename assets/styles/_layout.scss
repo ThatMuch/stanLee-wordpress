@@ -203,6 +203,7 @@ main#blocks {
         @extend .p-5;
 
         position: relative;
+        width: 100vw;
 
         .container {
             position: relative;
@@ -272,11 +273,21 @@ main#blocks {
         }
 
         &.block-testimonials {
+            @include mobile {
+                padding: 3rem 0 !important;
+            }
+
+
             .section-title {
                 text-align: center;
             }
 
             .testimonials-carousel {
+                @include mobile {
+                    min-height: 500px;
+                }
+
+
                 &-item {
                     &-image {
                         @extend .mb-3, .rounded-circle;
@@ -287,6 +298,13 @@ main#blocks {
                         height: 150px;
                         width: 150px;
                         background-color: #ccc;
+                    }
+                }
+
+                .carousel-control-prev,
+                .carousel-control-next {
+                    @include mobile {
+                        display: none;
                     }
                 }
             }
@@ -468,6 +486,10 @@ main#blocks {
                     background-position: center;
                     width: 100%;
                     height: 100%;
+
+                    @include mobile {
+                        height: 300px;
+                    }
                 }
             }
         }
@@ -509,6 +531,19 @@ main#blocks {
                         font-size: 1.5rem;
                         margin-right: 1rem;
                     }
+                }
+            }
+        }
+
+        &.block-carousel {
+            @include mobile {
+                padding: 3rem 0 !important;
+            }
+
+
+            .carousel-item {
+                img {
+                    width: 100%;
                 }
             }
         }

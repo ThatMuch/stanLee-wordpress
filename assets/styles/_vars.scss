@@ -15,7 +15,7 @@
 ==================================================================================*/
 
 $base_size: 1.5vw; // scales all `rem` based elements by adding this value as html font-size
-$breakpoint: 800px; // breakpoint between @desktop and @mobile mixins
+$breakpoint: 768px; // breakpoint between @desktop and @mobile mixins
 $scaling_endpoint: 1200px; // scaling of all `rem` based elements stops here
 $base_size_mobile: $base_size * 2.2; // scaling multiplicator for mobile viewport
 

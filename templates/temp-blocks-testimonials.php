@@ -62,10 +62,10 @@
                                 </div>
                                 <? $y++ ; endwhile;?>
                           </div>
-                          <a class="carousel-control-prev text-dark" href="#carouselTestimonials" role="button" data-slide="prev">
+                          <a class="carousel-control-prev" href="#carouselTestimonials" role="button" data-slide="prev">
                                 <i class="fas fa-chevron-left fa-2x" aria-hidden="true"></i>
                           </a>
-                          <a class="carousel-control-next text-dark" href="#carouselTestimonials" role="button" data-slide="next">
+                          <a class="carousel-control-next" href="#carouselTestimonials" role="button" data-slide="next">
                                 <i class="fas fa-chevron-right fa-2x" aria-hidden="true"></i>
                           </a>
                     </div>

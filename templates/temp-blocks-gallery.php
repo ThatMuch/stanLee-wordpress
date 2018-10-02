@@ -25,7 +25,7 @@ $size = 'thumbnail'; // (thumbnail, medium, large, full or custom size)
 if( $images ): ?>
   <div class="row justify-content-center">
       <?php foreach( $images as $image ): ?>
-          <div class="col-sm-3">
+          <div class=" col-6 col-sm-3">
           <a href="<?php echo $image['url']; ?>" target="_blank">
                    <img src="<?php echo $image['sizes']['medium']; ?>" alt="<?php echo $image['alt']; ?>" />
               </a>
