@@ -28,9 +28,10 @@
                   <h2 class="section-title"><?php echo get_sub_field('title'); ?></h2>
             <?php endif; ?>
             <!-- Title -->
-            <div class="row justify-content-center">
                   <?php if (have_rows('colonne') ) : ?>
+            <div class="row justify-content-center">
                         <? while(have_rows('colonne')) : the_row() ?>
+                        <?php if( get_sub_field('title') ) : ?>
                         <div class="col-sm-4 price-column">
                               <div class="price-column-wrapper">
                                     <!-- Title -->
@@ -73,9 +74,9 @@
 
                               </div>
                         </div>
+                        <?php endif; ?>
                         <? endwhile; ?>
-                  <?php endif; ?>
-
             </div>
+                  <?php endif; ?>
         </div>
  </section>
