@@ -755,7 +755,7 @@ acf_add_local_field_group(array(
 							'save_other_choice' => 0,
 						),
 						array(
-							'key' => 'field_5ba625cd36789',
+							'key' => 'field_5ba612cd36789',
 							'label' => 'Image',
 							'name' => 'image',
 							'type' => 'image',
@@ -1919,7 +1919,7 @@ acf_add_local_field_group(array(
 							'save_other_choice' => 0,
 						),
 						array(
-							'key' => 'field_5ba625cd36789',
+							'key' => 'field_5ba625cd54789',
 							'label' => 'Image',
 							'name' => 'image',
 							'type' => 'image',
