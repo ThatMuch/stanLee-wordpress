@@ -1,4 +1,4 @@
-<img src="/assets/images/stanlee.png" width="480"/>
+<img src="/assets/images/stanlee_logo.png" width="480"/>
 
 **Version 2.0.2 BETA Release Candidate 2** (20.08.2018)
 
