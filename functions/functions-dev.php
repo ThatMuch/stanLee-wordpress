@@ -2,7 +2,7 @@
 /**
  * Functions used for development purposes.
  *
- * @author      ThatMuch
+ * @author      _a
  * @version     0.1.0
  * @since       WPegg 0.1.0
  *

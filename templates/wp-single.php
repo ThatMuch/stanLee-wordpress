@@ -2,7 +2,7 @@
 /**
  * The template for displaying all single posts and attachments
  *
- * @author      ThatMuch
+ * @author      _a
  * @version     0.1.0
  * @since       _s 0.1.0
  */

@@ -13,7 +13,7 @@
  *              - `modernizr -c assets/scripts/modernizr-config.json -d assets/scripts` to generate the modernizr.js file from the config-file
  *              - add vendor-requirements to gulp-vendors.json, they will be compiled/bundled by `gulp` (restart `gulp watch`)
  *
- * Author:      ThatMuch (https://flurinduerst.ch)
+ * Author:      _a (https://flurinduerst.ch)
  *
  * Version:     2.3.1
  *

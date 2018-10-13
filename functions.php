@@ -5,7 +5,7 @@
  * • WP-Support & WP-Setup
  * • general functions like replacements, translations
  *
- * @author      ThatMuch
+ * @author      _a
  * @version     0.1.0
  * @since       _s 0.1.0
  *

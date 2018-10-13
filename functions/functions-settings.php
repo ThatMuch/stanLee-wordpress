@@ -2,7 +2,7 @@
 /**
  * Theme-settings and general functions that normally don't need much editing
  *
- * @author      ThatMuch
+ * @author      _a
  * @version     0.1.0
  * @since       _s 0.1.0
  *

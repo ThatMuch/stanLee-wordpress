@@ -3,7 +3,7 @@
  * The starting point for setting up a new theme.
  * Go through this file to setup your preferences
  *
- * @author      ThatMuch
+ * @author      _a
  * @version     0.1.0
  * @since       _s 0.1.0
  *
