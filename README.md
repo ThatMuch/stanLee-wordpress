@@ -1,42 +1,43 @@
 <img src="/assets/images/stanlee_logo.png" width="480"/>
 
-## Stanlee c'est quoi ?
+# :question: Stanlee c'est quoi ?
+
 ...
-## Prérequis :
+
+## :warning: Prérequis :
 
 - Node >= 8.0 - [nodejs.org](https://nodejs.org/)
 - npm >=5.0 - [npm](https://www.npmjs.com/)
+
 ```bash
  npm install -g npm@latest
 ```
+
 - gulp - [gulp](https://gulpjs.com)
+
 ```bash
 npm install -g gulp
 ```
+
 - php >= 7.1 (S'assurer que [short_open_tag](http://php.net/manual/de/ini.core.php#ini.short-open-tag) est `true` dans votre VM/Webserver).
 
-## Installation avec git
+## :wrench: Installation avec Yeoman
 
-Clonez Stanlee dans le dossier `themes` de wordpress.
-```bash
-$ git clone https://github.com/ThatMuch/stanLee-wordpress.git
-```
-
-## Installation avec Yeoman
 Yeoman est un générateur de webapp. En quelques lignes de commandes votre thème Stan Lee est installé et paramétré !
-### Prérequis:
-##### Installation de `yo`
-##
+
+#### Installer `yeoman`
+
 ```bash
 npm install -g yo
 ```
 
-##### Installation du générateur `generator-stanlee`
-##
+#### Installer le générateur
+
 ```bash
 npm install -g generator-stanlee
 ```
-##### Utiliser le générateur
+
+#### Installer le thème avec le générateur
 
 Dans le dossier `themes` de wordpress, créez votre dossier `mon-theme` et entrez dedans :
 
@@ -45,49 +46,50 @@ mkdir mon-theme && cd $_
 ```
 
 Lancer l'installation du thème:
+
 ```bash
 yo stanlee
 ```
-Vous n'avez plus qu'à suivre les instructions pour entrer vos configurations.
 
-## Workflow
+:tada: Vous n'avez plus qu'à suivre les instructions pour entrer vos configurations. :tada:
+
+## :blue_book: Workflow
 
 #### Gulp
 
 Stanlee utilise npm pour gérer les modules de développement, les modules frontend et [gulp](https://gulpjs.com) pour compiler les assets depuis `assets` vers `dist`. Voir les détails dans `gulpfile.js`
 
-- ajouter son domain/ip à `browsersync_proxy` dans `gulpfile.js` (inutile si vous avez choisis l'installation par Yeoman)
-- depuis le dossier de votre thème lancer :
-```bash
-npm install
-```
 ##### Commandes gulp
-- `gulp` : compile et optimise vos fichiers et lance browsersync.
-- `gulp watch` : compile vos fichiers
+
+- `gulp` : compile, optimise vos fichiers et lance browsersync.
+- `gulp watch` : surveille les changements et compile si il y a une modification
+- `gulp build` : copie tous les fichiers nécessaires pour votre thème dans le dossier `dist`. Compile le SCSS en CSS et mets à jour les fichiers de langue.
 
 Plus d'informations sur gulp [gulpjs.com](https://gulpjs.com/)
 
 ## HTML Structure
 
-In Stanlee the following semantical structure is used on every site:
-
 ```html
-<header>                    
-    Le header de la page qui contient la navigaiton et le logo
-    <nav> La navigation principale </nav>                       
+<nav> La navigation principale </nav>
+<header>
+    Le header de la page qui contient le titre de la page et/ou l'image
 </header>
-<main>                          
+<main>
     Contient tout sauf le header, le footer et la sidebar
-    <section>                     
+    <section>
     Sert de container et/ou de fullwidth-background
-        <article>                   
+        <article>
         Contient le contenu quand l'tuilisation du tag article est semantiquement correcte.
         </article>
-        <div class="element">    
+        <div class="element">
         Contient le contenu quand l'utilisation du tag article n'est pas correct
         </div>
-    </main>
-<footer>       
+    </section>
+</main>
+<sidebar>
+    Contient les widgets de la page
+</sidebar>
+<footer>
     Le footer de la page, peut contenir des liens en plus et des informations comme l'adresse ou le logo
 </footer>
 ```
@@ -103,11 +105,12 @@ Première choses à faire quand on crée un nouveau site avec Stanlee:
 - ajouter vos acf-blocks dans `functions-blocks.php` et créer un template comme `templates/temp-blocks-monblock`
 - utiliser les fichiers SASS dans `assets/styles` pour ajouter votre css
 
-Pour des informations plus détaillées se référer à "Fichiers/Dossiers important" 
+Pour des informations plus détaillées se référer à "Fichiers/Dossiers important"
 
 ## Deploiement
-  - `gulp build` pour compiler
-  - Note: le dossier `npm_modules` n'est pas nécessaire.
+
+- `gulp build` pour compiler et créer un fichier zip pour votre thème
+- Note: le dossier `npm_modules` n'est pas nécessaire.
 
 ## Usage
 
@@ -118,7 +121,9 @@ Tout les fichiers importants contiennent une description. Assurez vous de la lir
 ### Fichiers/Dossiers important
 
 ##### Functions
+
 ##
+
 ```
 functions-blocks.php      fonctions pour afficher les ACFs flexible blocks (appelé "blocks" dans Stanlee)
 functions-custom.php      espace pour vos propres fonctions (ex: shortcodes ...)
@@ -130,13 +135,15 @@ functions-setup.php       point de départ pour paramètrer le nouveau thème, c
 ##### CSS
 
 ```
-assets/styles/bundle.scss       gathers all .scss files for compiling with gulp
-assets/styles/content.scss      content related styles
-assets/styles/essentials.scss   required SASS functions and all presets for responsive
-assets/styles/general.scss      re-usable classes and settings
+assets/styles/_base.scss        style des éléments html
+assets/styles/_essentials.scss  mixins, fonctions SASS et mixins pour le responsive
 assets/styles/fonts.scss        fonts stoquées en local
-assets/styles/nav.scss          navigation
-assets/styles/vars.scss         gestion des tailles, toutes les couleurs, fonts et autres variables
+assets/styles/_layout.scss      style des contenus
+assets/styles/_module.scss
+assets/styles/_nav.scss         navigation du site
+assets/styles/state.scss
+assets/styles/_vars.scss        gestion des tailles, toutes les couleurs, fonts et autres variables
+assets/styles/styles.scss       récupère tous les fichiers .scss pour la compilation gulp
 ```
 
 ##### Javascript
@@ -144,8 +151,8 @@ assets/styles/vars.scss         gestion des tailles, toutes les couleurs, fonts 
 ```
 assets/scrips/essentials.js   javascript/jQuery fonctions/variables réutilisables
 assets/scrips/functions.js    javascript/jQuery
-modernizr-config.json         Modernizr configuration, see the "Modernizr" section above
-modernizr.js                  Modernizr modules, see the "Modernizr" section above
+modernizr-config.json         Modernizr configuration, voir la section "Modernizr"
+modernizr.js                  Modernizr modules, voir la section "Modernizr"
 ```
 
 ##### Templates
@@ -179,6 +186,7 @@ La mise à l'échelle peut être configurée dans la section `SIZE/SCALING` dans
 **definie par des variables**
 
 La largeur des deux variables disponibles `mobile` et `desktop` sont définies dans `vars.scss`.
+
 - min 800px `@include desktop {...}`
 - max 799px`@include mobile {...}`
 
