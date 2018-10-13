@@ -4,7 +4,7 @@
  *
  * @author      ThatMuch
  * @version     0.1.0
- * @since       Stanlee 0.1.0
+ * @since       _s 0.1.0
  *
  *
  */
@@ -17,7 +17,7 @@
 
   <? if (have_posts()): while (have_posts()): the_post() ?>
 
-    <? Stanlee_blocks() ?>
+    <? _s_blocks() ?>
   <? endwhile; endif ?>
 
 </main>

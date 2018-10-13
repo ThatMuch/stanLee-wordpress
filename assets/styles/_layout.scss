@@ -5,7 +5,7 @@
  *
  * @author      ThatMuch
  * @version     0.1.0
- * @since       Stanlee 0.1.0.0
+ * @since       _s 0.1.0.0
  *
  */
 
@@ -233,7 +233,7 @@ main#blocks {
         &.bg-primary:not(.block-team) {
             .btn {
                 @extend .btn-light; // Passer le bouton en blanc quand le fond est en couleur
-           
+
             }
 
             a {

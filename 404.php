@@ -4,7 +4,7 @@
  *
  * @author      ThatMuch
  * @version     0.1.0
- * @since       Stanlee 0.1.0.0
+ * @since       _s 0.1.0.0
  */
 ?>
 

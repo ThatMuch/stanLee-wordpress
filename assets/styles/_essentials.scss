@@ -10,7 +10,7 @@
  *
  * @author      ThatMuch
  * @version     0.1.0
- * @since       Stanlee 0.1.0.0
+ * @since       _s 0.1.0.0
  *
  */
 
@@ -33,65 +33,65 @@ Table of Contents:
 /––––––––––––––––––––––––*/
 // breakpoint-width defined in vars.scss
 @mixin desktop {
-    @media (min-width: #{$breakpoint}) {
-        @content;
-    }
+  @media (min-width: #{$breakpoint}) {
+    @content;
+  }
 }
 
 @mixin mobile {
-    @media (max-width: #{$breakpoint - 1px}) {
-        @content;
-    }
+  @media (max-width: #{$breakpoint - 1px}) {
+    @content;
+  }
 }
 
 /* BY PIXELS
 /––––––––––––––––––––––––*/
 // usage example:  { ... }
 @mixin vpw_min($min) {
-    @media (min-width: #{$min}) {
-        @content;
-    }
+  @media (min-width: #{$min}) {
+    @content;
+  }
 }
 
 @mixin vpw_max($max) {
-    @media (max-width: #{$max}) {
-        @content;
-    }
+  @media (max-width: #{$max}) {
+    @content;
+  }
 }
 
 @mixin vpw($min: 0px, $max: 0px) {
-    @media (min-width: #{$min}) and (max-width: #{$max}) {
-        @content;
-    }
+  @media (min-width: #{$min}) and (max-width: #{$max}) {
+    @content;
+  }
 }
 
 /* BY ASPECT RATIO
 /––––––––––––––––––––––––*/
 // usage example: asr_min(16,9) { ... }
 @mixin asr_min($width: 16, $height: 9) {
-    @media (min-aspect-ratio: #{$width} / #{$height}) {
-        @content;
-    }
+  @media (min-aspect-ratio: #{$width} / #{$height}) {
+    @content;
+  }
 }
 
 @mixin asr_max($width: 16, $height: 9) {
-    @media (max-aspect-ratio: #{$width} / #{$height}) {
-        @content;
-    }
+  @media (max-aspect-ratio: #{$width} / #{$height}) {
+    @content;
+  }
 }
 
 /* BY CLASS
 /––––––––––––––––––––––––*/
 .mobile {
-    @include desktop {
-        display: none;
-    }
+  @include desktop {
+    display: none;
+  }
 }
 
 .desktop {
-    @include mobile {
-        display: none;
-    }
+  @include mobile {
+    display: none;
+  }
 }
 
 /*==================================================================================
@@ -102,11 +102,11 @@ Table of Contents:
 /––––––––––––––––––––––––*/
 // removes a unit from a variable
 @function stripunit($number) {
-    @if type-of($number) == "number" and not unitless($number) {
-        @return $number / ($number * 0 + 1);
-    }
+  @if type-of($number) == "number" and not unitless($number) {
+    @return $number / ($number * 0 + 1);
+  }
 
-    @return $number;
+  @return $number;
 }
 
 /* HEADINGS
@@ -120,5 +120,5 @@ $amplifier-heading: 1.5;
 
 /* The mixin */
 @mixin heading-size($size) {
-    font-size: $size * $step-size-heading * $amplifier-heading + rem;
+  font-size: $size * $step-size-heading * $amplifier-heading + rem;
 }
