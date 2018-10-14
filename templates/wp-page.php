@@ -7,6 +7,7 @@
 ?>
 
 <? get_header(); ?>
+<div class="container">
 
 <main id="page">
 
@@ -28,5 +29,7 @@
   </section>
 
 </main>
+</div>
+
 
 <? get_footer(); ?>
