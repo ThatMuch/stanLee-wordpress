@@ -5,7 +5,6 @@
   ],
   "css": [
     "node_modules/hamburgers/dist/hamburgers.min.css",
-    "node_modules/bootstrap/dist/css/bootstrap.min.css",
     "node_modules/normalize.css/normalize.css",
     "node_modules/animate.css/animate.min.css"
   ],

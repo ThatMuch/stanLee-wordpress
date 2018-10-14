@@ -221,20 +221,6 @@ acf_add_local_field_group(array(
 				),
 			),
 		),
-		array(
-			'key' => 'field_5b9283b4c68ef',
-			'label' => 'Contact form',
-			'name' => 'contact_form',
-			'type' => 'CONTACT_FORM_7',
-			'instructions' => '',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'wrapper' => array(
-				'width' => '',
-				'class' => '',
-				'id' => '',
-			),
-		),
 	),
 	'location' => array(
 		array(
@@ -467,7 +453,7 @@ acf_add_local_field_group(array(
 							'conditional_logic' => 0,
 							'wrapper' => array(
 								'width' => '',
-								'class' => 'section-title',
+								'class' => 'title',
 								'id' => '',
 							),
 							'default_value' => '',
@@ -516,7 +502,7 @@ acf_add_local_field_group(array(
 							'conditional_logic' => 0,
 							'wrapper' => array(
 								'width' => '',
-								'class' => 'section-title',
+								'class' => '',
 								'id' => '',
 							),
 							'default_value' => '',
@@ -2388,7 +2374,7 @@ acf_add_local_field_group(array(
 							'maxlength' => '',
 						),
 						array(
-							'key' => 'field_5ba6731feb102',
+							'key' => 'field_5ba6741fet102',
 							'label' => 'Contact Form',
 							'name' => 'contact_form',
 							'type' => 'CONTACT_FORM_7',
@@ -2487,7 +2473,7 @@ acf_add_local_field_group(array(
 
 					),
 					'min' => '',
-					'max' => '1',
+					'max' => '',
 				),
 				/* STATS */
 				'layout_5b86744c3c170' => array(
