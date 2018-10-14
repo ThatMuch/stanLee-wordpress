@@ -78,6 +78,10 @@ a {
     }
 }
 
+header {
+    margin-top: $header_height;
+}
+
 :focus {
     outline: 0;
 }
