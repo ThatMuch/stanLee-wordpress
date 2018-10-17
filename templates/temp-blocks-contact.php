@@ -105,7 +105,7 @@
     <!-- Contact form -->
     <?php $form = get_sub_field('contact_form');?>
     <?php if($form) : ?>
-          <?php echo do_shortcode($form); ?>
+          <?php echo $form; ?>
     <?php endif; ?>
     <!-- Contact form -->
   </div>

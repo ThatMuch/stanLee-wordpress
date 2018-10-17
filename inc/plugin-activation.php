@@ -84,11 +84,12 @@ function _s_register_required_plugins() {
 		// This is an example of how to include a plugin from a GitHub repository in your theme.
 		// This presumes that the plugin code is based in the root of the GitHub repository
 		// and not in a subdirectory ('/src') of the repository.
-/* 		array(
-			'name'      => 'Adminbar Link Comments to Pending',
-			'slug'      => 'adminbar-link-comments-to-pending',
-			'source'    => 'https://github.com/jrfnl/WP-adminbar-comments-to-pending/archive/master.zip',
-		), */
+		array(
+			'name'      => 'Advanced Custom Fields: Contact Form 7',
+			'slug'      => 'advanced-custom-fields-contact-form-7',
+			'source'    => 'https://github.com/taylormsj/acf-cf7/archive/master.zip',
+			'required'  => true,
+		),
 
 		// This is an example of how to include a plugin from the WordPress Plugin Repository.
 		array(
@@ -110,12 +111,6 @@ function _s_register_required_plugins() {
 		array(
 			'name'      => 'Advanced Custom Fields: Font Awesome',
 			'slug'      => 'advanced-custom-fields-font-awesome',
-			'required'  => true,
-			'force_activation'   => true,
-		),
-		array(
-			'name'      => 'Advanced Custom Fields Contact Form 7',
-			'slug'      => 'acf-contact-form-7',
 			'required'  => true,
 			'force_activation'   => true,
 		),

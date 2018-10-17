@@ -2377,7 +2377,7 @@ acf_add_local_field_group(array(
 							'key' => 'field_5ba6741fet102',
 							'label' => 'Contact Form',
 							'name' => 'contact_form',
-							'type' => 'CONTACT_FORM_7',
+							'type' => 'cf7',
 							'instructions' => '',
 							'required' => 0,
 							'conditional_logic' => 0,
