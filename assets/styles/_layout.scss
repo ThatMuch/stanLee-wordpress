@@ -233,7 +233,7 @@ main#blocks {
         &.bg-primary:not(.block-team) {
             .btn {
                 @extend .btn-light; // Passer le bouton en blanc quand le fond est en couleur
-
+           
             }
 
             a {
@@ -531,6 +531,19 @@ main#blocks {
                         font-size: 1.5rem;
                         margin-right: 1rem;
                     }
+                }
+            }
+
+            .full-width {
+                .wpcf7-form {
+                    max-width: 500px;
+                    margin: 0 auto;
+                }
+            }
+
+            .contact-form {
+                label {
+                    width: 100%;
                 }
             }
         }
