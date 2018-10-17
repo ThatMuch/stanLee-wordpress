@@ -2,7 +2,12 @@
 
 # :question: Stanlee c'est quoi ?
 
-...
+Vous voulez créer un thème Wordpress "from scratch" ? Mais pourquoi refaire les mêmes configurations à chaque nouveau thème quand vous pouvez automatiser cette première étape ? Gagnez du temps avec Stanlee, votre thème de démarrage généré avec Yeoman.
+
+Avec son CSS minimal il est prêt à être personnalisé pour en faire votre tout nouveau thème.
+Inspiré de Underscores et WP Seed, il est construit sur le framework Bootstrap 4. Il contient des sections à ajouter aux pages de votre site grâce au plugin ACF.
+
+Stanlee est livré avec 90% de tout ce qu'il vous faut pour votrethème, ni plus, ni moins.
 
 ## :warning: Prérequis :
 
@@ -61,9 +66,9 @@ Stanlee utilise npm pour gérer les modules de développement, les modules front
 
 ##### Commandes gulp
 
-- `gulp` : compile, optimise vos fichiers et lance browsersync.
-- `gulp watch` : surveille les changements et compile si il y a une modification
-- `gulp build` : copie tous les fichiers nécessaires pour votre thème dans le dossier `dist`. Compile le SCSS en CSS et mets à jour les fichiers de langue.
+- `gulp` : compile et optimise vos fichiers.
+- `gulp watch` : lance browsersync, surveille les changements et compile si il y a une modification
+- `gulp build` : copie et zip tous les fichiers nécessaires pour votre thème dans le dossier `dist`. Compile le SCSS en CSS et mets à jour les fichiers de langue.
 
 Plus d'informations sur gulp [gulpjs.com](https://gulpjs.com/)
 
