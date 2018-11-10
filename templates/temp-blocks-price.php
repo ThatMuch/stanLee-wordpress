@@ -11,7 +11,7 @@
  */
  ?>
 
-  <section id="block-price" class="block-price
+  <section class="block-price
   <? if(get_sub_field('fond') == "Couleur"):?> bg-primary
   <? elseif(get_sub_field('fond') == "Gris"):?> bg-light<? endif;?>">
     <!-- Section background: image -->

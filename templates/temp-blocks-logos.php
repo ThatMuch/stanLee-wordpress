@@ -11,7 +11,7 @@
  */
  ?>
 
-  <section id="block-logos" class="block-logos">
+  <section class="block-logos">
       <div class="container">
         <!-- Title -->
         <?php if(get_sub_field('title') ) : ?>

@@ -11,7 +11,7 @@
  */
  ?>
 
-  <section id="block-carousel" class="block-carousel">
+  <section class="block-carousel">
       <div class="container">
           <? $images = get_sub_field('images'); ?>
           <? if($images): $i =0; $y =0; ?>

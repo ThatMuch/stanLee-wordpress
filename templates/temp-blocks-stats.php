@@ -11,7 +11,7 @@
  */
  ?>
 
- <section id="block-stats" class="block-stats
+ <section class="block-stats
   <? if(get_sub_field('fond') == "Couleur"):?> bg-primary
   <? elseif(get_sub_field('fond') == "Gris"):?> bg-light<? endif;?>">
     <!-- Section background: image -->

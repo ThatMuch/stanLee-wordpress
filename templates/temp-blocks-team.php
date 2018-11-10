@@ -11,7 +11,7 @@
  */
  ?>
 
-  <section id="block-team" class="block-team
+  <section class="block-team
   <? if(get_sub_field('fond') == "Couleur"):?> bg-primary
   <? elseif(get_sub_field('fond') == "Gris"):?> bg-light<? endif;?>">
     <!-- Section background: image -->

@@ -11,7 +11,7 @@
  */
  ?>
 
-  <section id="block-text-image" class="block-text-image">
+  <section class="block-text-image">
     <div class="row">
     <div class="col-sm-6 block-text">
         <div>

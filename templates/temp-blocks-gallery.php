@@ -10,7 +10,7 @@
  *
  */
  ?>
-  <section id="block-gallery" class="block-gallery">
+  <section class="block-gallery">
       <div class="container">
           <!-- Title -->
           <?php if(get_sub_field('title') ) : ?>
