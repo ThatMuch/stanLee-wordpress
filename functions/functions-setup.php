@@ -130,7 +130,3 @@ add_action( 'widgets_init', 'stanlee_widgets_init' );
 
 add_filter( 'get_search_form', 'my_search_form', 100 );
 ?>
-
-
-
-

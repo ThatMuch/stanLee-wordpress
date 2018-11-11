@@ -216,5 +216,4 @@ function is_login_page() {
 if (false && !is_user_logged_in() && is_main_query() && !is_admin() && !is_login_page()){
   wp_redirect('/admin'); die();
 }
-
 ?>
