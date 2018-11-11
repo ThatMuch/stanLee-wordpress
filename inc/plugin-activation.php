@@ -71,6 +71,16 @@ function stanlee_register_required_plugins() {
 			'external_url'       => '', // If set, overrides default API URL and points to an external URL.
 			'is_callable'        => '', // If set, this callable will be be checked for availability to determine if a plugin is active.
 		),
+ 		array(
+			'name'               => 'WP Pusher', // The plugin name.
+			'slug'               => 'wppusher', // The plugin slug (typically the folder name).
+			'source'             => get_template_directory() . '/inc/plugins/wppusher.zip', // The plugin source.
+			'required'           => true, // If false, the plugin is only 'recommended' instead of required.
+			'force_activation'   => true, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
+			'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
+			'external_url'       => '', // If set, overrides default API URL and points to an external URL.
+			'is_callable'        => '', // If set, this callable will be be checked for availability to determine if a plugin is active.
+		),
 
 		// This is an example of how to include a plugin from an arbitrary external source in your theme.
 /* 		array(
@@ -119,6 +129,12 @@ function stanlee_register_required_plugins() {
 			'slug'      => 'custom-post-type-widgets',
 			'required'  => false,
 
+		),
+		array(
+			'name'      => 'All-in-one WP Migration',
+			'slug'      => 'all-in-one-wp-migration',
+			'required'  => true,
+			'force_activation'   => true,
 		),
 
 		// This is an example of the use of 'is_callable' functionality. A user could - for instance -
