@@ -47,6 +47,7 @@ function _s_blocks() {
       if (get_row_layout() == 'gallery') : _s_block_gallery(); endif;
       if (get_row_layout() == 'contact') : _s_block_contact(); endif;
       if (get_row_layout() == 'stats') : _s_block_stats(); endif;
+      if (get_row_layout() == 'faq') : legaware_block_faq(); endif;
     endwhile;
   endif;
   return ob_get_flush();
@@ -158,6 +159,14 @@ function _s_block_contact() {
 function _s_block_stats() {
   ob_start('sanitize_output');
     include (get_template_directory().'/templates/temp-blocks-stats.php');
+  return ob_get_flush();
+}
+
+/* FAQ
+/––––––––––––––––––––––––*/
+function legaware_block_faq() {
+  ob_start('sanitize_output');
+    include (get_template_directory().'/templates/temp-blocks-faq.php');
   return ob_get_flush();
 }
 

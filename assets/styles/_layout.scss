@@ -272,6 +272,33 @@ main#blocks {
             }
         }
 
+        &.block-faq {
+            .section-title {
+                text-align: center;
+            }
+
+            .faq-accordion {
+                .card {
+                    border: none;
+                    background-color: transparent;
+                }
+
+                .card-header {
+                    background-color: transparent;
+                    border: none;
+
+                    &-expand {
+                        //  margin-right: 2rem;
+                        color: rgba($color: $color-primary, $alpha: 0.5);
+                    }
+
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+
         &.block-testimonials {
             @include mobile {
                 padding: 3rem 0 !important;
