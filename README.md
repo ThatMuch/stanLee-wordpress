@@ -9,6 +9,8 @@ Inspiré de Underscores et WP Seed, il est construit sur le framework Bootstrap 
 
 Stanlee est livré avec 90% de tout ce qu'il vous faut pour votrethème, ni plus, ni moins.
 
+Voir la [demo](http://stanlee.thatmuch.fr/).
+
 ## :warning: Prérequis :
 
 - Node >= 8.0 - [nodejs.org](https://nodejs.org/)
