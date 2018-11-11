@@ -901,7 +901,7 @@ acf_add_local_field_group(array(
 									'save_format' => 'element',
 									'allow_null' => 0,
 									'show_preview' => 1,
-									'enqueue_fa' => 0,
+									'enqueue_fa' => 1,
 									'fa_live_preview' => '',
 									'choices' => array(
 										'' => '',
