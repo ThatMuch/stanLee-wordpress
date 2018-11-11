@@ -1,8 +1,8 @@
 <?
 /**
- * @author      _a
+ * @author      ThatMuch
  * @version     0.1.0
- * @since       _s 0.1.0
+ * @since       undefined 0.1.0
  */
 ?>
 <!DOCTYPE html>
@@ -11,17 +11,17 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1, initial-scale=1">
     <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-    <? _s_gtm('head') ?>
+    <? stanlee_gtm('head') ?>
     <!--=== OPEN-GRAPH TAGS ===-->
-    <? _s_ogtags() ?>
+    <? stanlee_ogtags() ?>
     <!--=== PRELOAD FONTS ===-->
-    <? _s_preload_fonts() ?>
+    <? stanlee_preload_fonts() ?>
     <!--=== WP HEAD ===-->
     <? wp_head(); ?>
   </head>
 
   <body>
-    <? _s_gtm('body') ?>
+    <? stanlee_gtm('body') ?>
 
      <? $custom_logo_id = get_theme_mod( 'custom_logo' );
         $image = wp_get_attachment_image_src( $custom_logo_id , 'full' ); ?>

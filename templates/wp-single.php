@@ -2,9 +2,9 @@
 /**
  * The template for displaying all single posts and attachments
  *
- * @author      _a
+ * @author      ThatMuch
  * @version     0.1.0
- * @since       _s 0.1.0
+ * @since       undefined 0.1.0
  */
 ?>
 

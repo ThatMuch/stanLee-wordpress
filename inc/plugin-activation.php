@@ -10,7 +10,7 @@
  *
  * @package    TGM-Plugin-Activation
  * @subpackage Example
- * @version    2.6.1 for parent theme _s
+ * @version    2.6.1 for parent theme undefined
  * @author     Thomas Griffin, Gary Jones, Juliette Reinders Folmer
  * @copyright  Copyright (c) 2011, Thomas Griffin
  * @license    http://opensource.org/licenses/gpl-2.0.php GPL v2 or later
@@ -33,7 +33,7 @@
  */
 require_once get_template_directory() . '/inc/class-tgm-plugin-activation.php';
 
-add_action( 'tgmpa_register', '_s_register_required_plugins' );
+add_action( 'tgmpa_register', 'stanlee_register_required_plugins' );
 
 /**
  * Register the required plugins for this theme.
@@ -52,7 +52,7 @@ add_action( 'tgmpa_register', '_s_register_required_plugins' );
  *
  * This function is hooked into `tgmpa_register`, which is fired on the WP `init` action on priority 10.
  */
-function _s_register_required_plugins() {
+function stanlee_register_required_plugins() {
 	/*
 	 * Array of plugin arrays. Required keys are name and slug.
 	 * If the source is NOT from the .org repo, then source is also required.

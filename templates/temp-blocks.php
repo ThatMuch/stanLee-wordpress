@@ -2,9 +2,9 @@
 /**
  * Template for ACF flexible elements
  *
- * @author      _a
+ * @author      ThatMuch
  * @version     0.1.0
- * @since       _s 0.1.0
+ * @since       undefined 0.1.0
  *
  *
  */
@@ -17,7 +17,7 @@
 
   <? if (have_posts()): while (have_posts()): the_post() ?>
 
-    <? _s_blocks() ?>
+    <? stanlee_blocks() ?>
   <? endwhile; endif ?>
 
 </main>

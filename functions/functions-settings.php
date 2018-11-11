@@ -2,9 +2,9 @@
 /**
  * Theme-settings and general functions that normally don't need much editing
  *
- * @author      _a
+ * @author      ThatMuch
  * @version     0.1.0
- * @since       _s 0.1.0
+ * @since       undefined 0.1.0
  *
  *
  */
@@ -42,7 +42,7 @@
 /––––––––––––––––---––––––––*/
 // enqueues  sctipts and styles (optional typekit embed)
 // » https://developer.wordpress.org/reference/functions/wp_enqueue_script/
-function _s_enqueue() {
+function stanlee_enqueue() {
   // load bootstrap css
 	// wp_enqueue_style( 'wp-bootstrap-starter-bootstrap-css', get_template_directory_uri() . '/inc/assets/css/bootstrap.min.css' );
   // fontawesome cdn
@@ -71,7 +71,7 @@ function _s_enqueue() {
     wp_enqueue_script('wp-bootstrap-starter-themejs', get_template_directory_uri() . '/inc/assets/js/theme-script.min.js', array(), '', true );
 	  wp_enqueue_script( 'wp-bootstrap-starter-skip-link-focus-fix', get_template_directory_uri() . '/inc/assets/js/skip-link-focus-fix.min.js', array(), '20151215', true );
 }
-add_action('wp_enqueue_scripts', '_s_enqueue');
+add_action('wp_enqueue_scripts', 'stanlee_enqueue');
 
 
 /* 1.2 THEME SUPPORT
@@ -141,8 +141,8 @@ add_action('after_setup_theme', 'stanlee_wphead_cleanup');
 /* 2.2 LOAG OG-TAGS
 /––––––––––––––––––––––––*/
 // loads open graph tags » http://ogp.me/
-// use '_s_load_ogtags(true)' to also display the og:image tag
-function _s_ogtags() {
+// use 'stanlee_load_ogtags(true)' to also display the og:image tag
+function stanlee_ogtags() {
   echo '
   <meta property="og:title" content="'.get_bloginfo('name').' - '.get_the_title().'">
   <meta property="og:type" content="website">
@@ -165,7 +165,7 @@ function _s_ogtags() {
 /––––––––––––––––––––––––*/
 // preloads fonts that are hosted locally into the page header
 // add your desired fonts and font-types into $font_names and $font_formats
-function _s_preload_fonts() {
+function stanlee_preload_fonts() {
   // font_names and font_formats are defined in 'functions-setup.php'
   global $font_names;
   global $font_formats;

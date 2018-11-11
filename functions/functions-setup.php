@@ -3,9 +3,9 @@
  * The starting point for setting up a new theme.
  * Go through this file to setup your preferences
  *
- * @author      _a
+ * @author      ThatMuch
  * @version     0.1.0
- * @since       _s 0.1.0
+ * @since       undefined 0.1.0
  *
  *
  */
@@ -40,14 +40,14 @@ setlocale(LC_ALL, 'de_CH.UTF-8');
 
 /* TYPEKIT
 /––––––––––––––––––––––––*/
-// enqueue Typekit font-kits => _s_enqueue()
+// enqueue Typekit font-kits => stanlee_enqueue()
 // add your Typekit Kit-ID or leave empty to not enqueue any kit
 $typekit_id = '';
 
 
 /* SELF-HOSTED
 /––––––––––––––––––––––––*/
-// preload self-hosted fonts => _s_preload_fonts()
+// preload self-hosted fonts => stanlee_preload_fonts()
 // define font-names and font-formats for all fonts that need preloading (usally the same as in assets/styles/fonts.scss)
 $font_names = ['asap-v7-latin-regular','asap-v7-latin-500','asap-v7-latin-700'];
 $font_formats = ['woff','woff2'];
@@ -57,7 +57,7 @@ $font_formats = ['woff','woff2'];
 /*==================================================================================
   3.0 GOOGLE TAG MANAGER
 ==================================================================================*/
-// embed the GTM-scripts into head and body => _s_gtm()
+// embed the GTM-scripts into head and body => stanlee_gtm()
 // add your GTM_id (for example 'GTM-ABC1234') or leave empty to not enqueue any GTM-script
 $GTM_id = '';
 
@@ -66,7 +66,7 @@ $GTM_id = '';
 /*==================================================================================
   4.0 OPEN TAG IMAGE
 ==================================================================================*/
-// open graph tags are returned by default => _s_ogtags()
+// open graph tags are returned by default => stanlee_ogtags()
 // add your og-image credentials here or leave ['active', false] to not emped an og-image
 $ogimg = [
   ['active', false],

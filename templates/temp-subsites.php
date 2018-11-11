@@ -2,9 +2,9 @@
 /**
  * Template for Sites with Sub-Sites.
  *
- * @author      _a
+ * @author      ThatMuch
  * @version     0.1.0
- * @since       _s 0.2
+ * @since       undefined 0.2
  *
  */
 ?>
