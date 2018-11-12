@@ -24,7 +24,7 @@ $images = get_sub_field('logo_list');
 $size = 'medium';
 
 if( $images ): ?>
-  <div class="row">
+  <div class="row justify-content-center">
       <?php foreach( $images as $image ): ?>
           <div class="logo col-sm-3">
                    <img src="<?php echo $image['sizes'][$size]; ?>" alt="<?php echo $image['alt']; ?>" />

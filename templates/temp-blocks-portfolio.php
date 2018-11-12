@@ -25,7 +25,7 @@
             );
              $the_query = new WP_Query($args);
             if ($the_query->have_posts() ): ?>
-            <div class="row">
+            <div class="row justify-content-center">
               <?php while ( $the_query->have_posts() ): $the_query->the_post(); ?>
                   <div class="col-sm-3">
                       <!-- Image -->
