@@ -13,7 +13,7 @@
  *              - `modernizr -c assets/scripts/modernizr-config.json -d assets/scripts` to generate the modernizr.js file from the config-file
  *              - add vendor-requirements to gulp-vendors.json, they will be compiled/bundled by `gulp` (restart `gulp watch`)
  *
- * Author:      ThatMuch (https://flurinduerst.ch)
+ * Author:      _a (https://flurinduerst.ch)
  *
  * Version:     2.3.1
  *
@@ -182,7 +182,7 @@ gulp.task('makepot', function () {
       destFile: 'stanlee.pot',
       package: 'stanlee',
       bugReport: 'https://example.com/bugreport/',
-      team: 'ThatMuch <>'
+      team: '_a <>'
     }))
     .pipe(gulp.dest('languages/stanlee.pot'))
     .pipe(browserSync.reload({stream:true}));

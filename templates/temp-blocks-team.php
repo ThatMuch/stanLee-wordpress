@@ -4,9 +4,9 @@
  * This is a (very basic) default ACF-Block using the "Flexible Element" field-type
  * it is included through 'functions-blocks.php' which is triggered by 'temp-blocks.php'.
  *
- * @author      ThatMuch
+ * @author      _a
  * @version     0.1.0
- * @since       undefined 0.1.0
+ * @since       _s 0.1.0
  *
  */
  ?>

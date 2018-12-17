@@ -2,7 +2,7 @@
   "name": "stanlee",
   "version": "1.0.0",
   "description": "Description",
-  "author": "ThatMuch",
+  "author": "_a",
   "devDependencies": {
     "browser-sync": "^2.26.3",
     "del": "^3.0.0",

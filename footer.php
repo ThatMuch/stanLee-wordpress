@@ -1,8 +1,8 @@
 <?
 /**
- * @author      ThatMuch
+ * @author      _a
  * @version     0.1.0
- * @since       undefined 0.1.0
+ * @since       _s 0.1.0
  */
 ?>
 	</div><!-- #content -->
@@ -67,7 +67,7 @@
     <div class="credits">
       <div class="container">
       <div class="inner">
-      Un site crée par <a href="https://thatmuch.fr" target="_blank" rel="noopener noreferrer"><strong>_a</strong></a>
+      Un site crée par <a href="https://_a.fr" target="_blank" rel="noopener noreferrer"><strong>_a</strong></a>
       </div>
       </div>
     </div>

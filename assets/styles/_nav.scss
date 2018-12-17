@@ -2,9 +2,9 @@
  * Nav CSS File
  * Contains all navigation related styles.
  *
- * @author      ThatMuch
+ * @author      _a
  * @version     0.1.0
- * @since       undefined 0.1.0.0
+ * @since       _s 0.1.0.0
  *
  */
 
@@ -25,7 +25,8 @@ nav.navbar {
         width: 12rem;
         height: 3rem;
         margin-right: 2rem;
-       // background-image: url("assets/images/logo.svg");
+
+        // background-image: url("assets/images/logo.svg");
         background-repeat: no-repeat;
         background-size: contain;
     }
@@ -38,6 +39,7 @@ nav.navbar {
         left: 0;
         top: $header_height;
         padding: 15px;
+
         a {
             color: #fff;
         }

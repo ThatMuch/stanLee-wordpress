@@ -9,7 +9,7 @@ Inspiré de Underscores et WP Seed, il est construit sur le framework Bootstrap 
 
 Stanlee est livré avec 90% de tout ce qu'il vous faut pour votrethème, ni plus, ni moins.
 
-Voir la [demo](http://stanlee.thatmuch.fr/).
+Voir la [demo](http://stanlee._a.fr/).
 
 ## :warning: Prérequis :
 
@@ -222,5 +222,5 @@ Les deux variables disponibles `mobile` et `desktop` fonctionnent ainsi (avec le
 
 ## À propos
 
-Auteur: ThatMuch
-Contact: [contact@thatmuch.fr](mailto:contact@thatmuch.fr)
+Auteur: _a
+Contact: [contact@_a.fr](mailto:contact@_a.fr)
