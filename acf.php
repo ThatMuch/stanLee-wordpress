@@ -424,8 +424,8 @@ acf_add_local_field_group(array(
 	'fields' => array(
 		array(
 			'key' => 'field_5b9bafde734b5',
-			'label' => 'Blocks',
-			'name' => 'blocks',
+			'label' => 'Sections',
+			'name' => 'sections',
 			'type' => 'flexible_content',
 			'instructions' => '',
 			'required' => 0,
@@ -2526,7 +2526,7 @@ acf_add_local_field_group(array(
 									'name' => 'operateur',
 									'type' => 'select',
 									'instructions' => '',
-									'required' => 1,
+									'required' => 0,
 									'conditional_logic' => 0,
 									'wrapper' => array(
 										'width' => '',
@@ -2534,13 +2534,14 @@ acf_add_local_field_group(array(
 										'id' => '',
 									),
 									'choices' => array(
+										'' => 'Aucun',
 										'+' => '+',
 										'-' => '-',
+										'%' => '%',
 									),
 									'default_value' => array(
-										0 => '+',
+										0 => 'Aucun',
 									),
-									'allow_null' => 1,
 									'multiple' => 0,
 									'ui' => 0,
 									'return_format' => 'value',
@@ -2691,7 +2692,7 @@ acf_add_local_field_group(array(
 			array(
 				'param' => 'page_template',
 				'operator' => '==',
-				'value' => 'templates/temp-blocks.php',
+				'value' => 'templates/sections.php',
 			),
 		),
 	),

@@ -9,15 +9,15 @@
  *
  */
 ?>
-<? /* Template Name: Blocks */ ?>
+<? /* Template Name: Sections */ ?>
 
 <? get_header(); ?>
 
-<main id="blocks">
+<main id="sections">
 
   <? if (have_posts()): while (have_posts()): the_post() ?>
 
-    <? stanlee_blocks() ?>
+    <? stanlee_sections() ?>
   <? endwhile; endif ?>
 
 </main>

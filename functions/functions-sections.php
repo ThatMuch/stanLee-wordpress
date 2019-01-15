@@ -1,6 +1,6 @@
 <?php
 /**
- * functions to output ACFs flexible blocks (called "blocks" in undefined)
+ * functions to output ACFs flexible content
  *
  * @author     _a
  * @version    0.1.0
@@ -19,35 +19,35 @@
 /––––––––––––––––––––––––––––––––––––*/
 // adds the title sub-field to the ACF-row. Edit `name` at `add_filter` to match your ACF-value.
 // » https://www.advancedcustomfields.com/resources/acf-fields-flexible_content-layout_title/
-function stanlee_blocks_backendtitle( $title, $field, $layout, $i ) {
+function stanlee_sections_backendtitle( $title, $field, $layout, $i ) {
   if (!empty(get_sub_field('title'))) {
   	$title = get_sub_field('title')." ($title)";
   }
   return $title;
 }
-add_filter('acf/fields/flexible_content/layout_title/name=blocks', 'stanlee_blocks_backendtitle', 10, 4);
+add_filter('acf/fields/flexible_content/layout_title/name=sections', 'stanlee_sections_backendtitle', 10, 4);
 
 
-/* GATHER BLOCKS
+/* GATHER SECTIONS
 /––––––––––––––––––––––––*/
-function stanlee_blocks() {
+function stanlee_sections() {
   ob_start('sanitize_output');
-  if (have_rows('blocks')):
-    while (have_rows('blocks')): the_row();
-      if (get_row_layout() == 'text') : stanlee_block_text(); endif;
-      if (get_row_layout() == 'text_image') : stanlee_block_text_img(); endif;
-      if (get_row_layout() == 'link') : stanlee_block_link(); endif;
-      if (get_row_layout() == 'services') : stanlee_block_services(); endif;
-      if (get_row_layout() == 'team') : stanlee_block_team(); endif;
-      if (get_row_layout() == 'portfolio') : stanlee_block_portfolio(); endif;
-      if (get_row_layout() == 'testimonials') : stanlee_block_testimonials(); endif;
-      if (get_row_layout() == 'price') : stanlee_block_price(); endif;
-      if (get_row_layout() == 'logos') : stanlee_block_logos(); endif;
-      if (get_row_layout() == 'carousel') : stanlee_block_carousel(); endif;
-      if (get_row_layout() == 'gallery') : stanlee_block_gallery(); endif;
-      if (get_row_layout() == 'contact') : stanlee_block_contact(); endif;
-      if (get_row_layout() == 'stats') : stanlee_block_stats(); endif;
-      if (get_row_layout() == 'faq') : legaware_block_faq(); endif;
+  if (have_rows('sections')):
+    while (have_rows('sections')): the_row();
+      if (get_row_layout() == 'text') : stanlee_section_text(); endif;
+      if (get_row_layout() == 'text_image') : stanlee_section_text_img(); endif;
+      if (get_row_layout() == 'link') : stanlee_section_link(); endif;
+      if (get_row_layout() == 'services') : stanlee_section_services(); endif;
+      if (get_row_layout() == 'team') : stanlee_section_team(); endif;
+      if (get_row_layout() == 'portfolio') : stanlee_section_portfolio(); endif;
+      if (get_row_layout() == 'testimonials') : stanlee_section_testimonials(); endif;
+      if (get_row_layout() == 'price') : stanlee_section_price(); endif;
+      if (get_row_layout() == 'logos') : stanlee_section_logos(); endif;
+      if (get_row_layout() == 'carousel') : stanlee_section_carousel(); endif;
+      if (get_row_layout() == 'gallery') : stanlee_section_gallery(); endif;
+      if (get_row_layout() == 'contact') : stanlee_section_contact(); endif;
+      if (get_row_layout() == 'stats') : stanlee_section_stats(); endif;
+      if (get_row_layout() == 'faq') : legaware_section_faq(); endif;
     endwhile;
   endif;
   return ob_get_flush();
@@ -57,116 +57,116 @@ function stanlee_blocks() {
 /*==================================================================================
   BLOCKS
 ==================================================================================*/
-// add your custom blocks here...
+// add your custom sections here...
 
 /* TEXT
 /––––––––––––––––––––––––*/
-function stanlee_block_text() {
+function stanlee_section_text() {
   ob_start('sanitize_output');
-    include (get_template_directory().'/templates/temp-blocks-text.php');
+    include (get_template_directory().'/templates/section-text.php');
   return ob_get_flush();
 }
 /* TEXT + IMAGE
 /––––––––––––––––––––––––*/
-function stanlee_block_text_img() {
+function stanlee_section_text_img() {
   ob_start('sanitize_output');
-    include (get_template_directory().'/templates/temp-blocks-text-image.php');
+    include (get_template_directory().'/templates/section-text-image.php');
   return ob_get_flush();
 }
 
 /* LINK
 /––––––––––––––––––––––––*/
-function stanlee_block_link() {
+function stanlee_section_link() {
   ob_start('sanitize_output');
-    include (get_template_directory().'/templates/temp-blocks-link.php');
+    include (get_template_directory().'/templates/section-link.php');
   return ob_get_flush();
 }
 
 /* SERVICES
 /––––––––––––––––––––––––*/
-function stanlee_block_services() {
+function stanlee_section_services() {
   ob_start('sanitize_output');
-    include (get_template_directory().'/templates/temp-blocks-services.php');
+    include (get_template_directory().'/templates/section-services.php');
   return ob_get_flush();
 }
 
 /* TEAM
 /––––––––––––––––––––––––*/
-function stanlee_block_team() {
+function stanlee_section_team() {
   ob_start('sanitize_output');
-    include (get_template_directory().'/templates/temp-blocks-team.php');
+    include (get_template_directory().'/templates/section-team.php');
   return ob_get_flush();
 }
 
 /* PORTFOLIO
 /––––––––––––––––––––––––*/
-function stanlee_block_portfolio() {
+function stanlee_section_portfolio() {
   ob_start('sanitize_output');
-    include (get_template_directory().'/templates/temp-blocks-portfolio.php');
+    include (get_template_directory().'/templates/section-portfolio.php');
   return ob_get_flush();
 }
 
 /* TESTIMONIALS
 /––––––––––––––––––––––––*/
-function stanlee_block_testimonials() {
+function stanlee_section_testimonials() {
   ob_start('sanitize_output');
-    include (get_template_directory().'/templates/temp-blocks-testimonials.php');
+    include (get_template_directory().'/templates/section-testimonials.php');
   return ob_get_flush();
 }
 
 /* PRICE
 /––––––––––––––––––––––––*/
-function stanlee_block_price() {
+function stanlee_section_price() {
   ob_start('sanitize_output');
-    include (get_template_directory().'/templates/temp-blocks-price.php');
+    include (get_template_directory().'/templates/section-price.php');
   return ob_get_flush();
 }
 
 /* LOGOS
 /––––––––––––––––––––––––*/
-function stanlee_block_logos() {
+function stanlee_section_logos() {
   ob_start('sanitize_output');
-    include (get_template_directory().'/templates/temp-blocks-logos.php');
+    include (get_template_directory().'/templates/section-logos.php');
   return ob_get_flush();
 }
 
 /* CAROUSEL
 /––––––––––––––––––––––––*/
-function stanlee_block_carousel() {
+function stanlee_section_carousel() {
   ob_start('sanitize_output');
-    include (get_template_directory().'/templates/temp-blocks-carousel.php');
+    include (get_template_directory().'/templates/section-carousel.php');
   return ob_get_flush();
 }
 
 /* GALLERY
 /––––––––––––––––––––––––*/
-function stanlee_block_gallery() {
+function stanlee_section_gallery() {
   ob_start('sanitize_output');
-    include (get_template_directory().'/templates/temp-blocks-gallery.php');
+    include (get_template_directory().'/templates/section-gallery.php');
   return ob_get_flush();
 }
 
 /* CONTACT
 /––––––––––––––––––––––––*/
-function stanlee_block_contact() {
+function stanlee_section_contact() {
   ob_start('sanitize_output');
-    include (get_template_directory().'/templates/temp-blocks-contact.php');
+    include (get_template_directory().'/templates/section-contact.php');
   return ob_get_flush();
 }
 
 /* STATS
 /––––––––––––––––––––––––*/
-function stanlee_block_stats() {
+function stanlee_section_stats() {
   ob_start('sanitize_output');
-    include (get_template_directory().'/templates/temp-blocks-stats.php');
+    include (get_template_directory().'/templates/section-stats.php');
   return ob_get_flush();
 }
 
 /* FAQ
 /––––––––––––––––––––––––*/
-function legaware_block_faq() {
+function legaware_section_faq() {
   ob_start('sanitize_output');
-    include (get_template_directory().'/templates/temp-blocks-faq.php');
+    include (get_template_directory().'/templates/section-faq.php');
   return ob_get_flush();
 }
 

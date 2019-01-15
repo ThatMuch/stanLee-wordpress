@@ -1,0 +1,133 @@
+.section-text-image {
+    padding: 0 !important;
+
+    &:nth-child(odd) {
+        .row {
+            flex-direction: row-reverse;
+        }
+    }
+
+    .row {
+        min-height: 50vh;
+        position: relative;
+    }
+
+    .section-text {
+        display: flex;
+        align-items: center;
+        padding: 0 !important;
+
+        div:not(.text) {
+            padding: 30px 45px;
+        }
+    }
+
+    .section-image {
+        padding: 0;
+
+        .bg {
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            width: 100%;
+            height: 100%;
+
+            @include mobile {
+                height: 300px;
+            }
+        }
+    }
+
+    /*     padding: 4rem 3rem 4rem 3rem;
+
+        @media screen and (max-width: 767px) {
+            padding-top: 0 !important;
+        }
+
+        .section-title {
+            margin-bottom: 40px !important;
+
+            @media screen and (max-width: 430px) {
+                margin-bottom: 2rem !important;
+            }
+
+            @media screen and (max-width: 410px) {
+                margin-bottom: 3.2rem !important;
+            }
+        }
+
+        &:nth-child(odd) {
+            .section {
+                flex-direction: row-reverse;
+            }
+        }
+
+        .section {
+            @media screen and (max-width: 767px) {
+                margin-bottom: 2rem;
+                display: inherit;
+            }
+
+            &-text {
+                @media screen and (max-width: 767px) {
+                    font-size: 16px;
+                    max-width: 100%;
+                    display: block;
+                }
+
+                h1,
+                h2,
+                h3 {
+                    display: inline;
+
+                    // color: $color-green;
+                    font-weight: bold;
+                }
+
+                p {
+                    margin-top: 1rem;
+                }
+
+                ul {
+                    margin-left: 40px !important;
+                }
+            }
+
+            &-image {
+                height: 415px;
+                overflow: hidden;
+                position: relative;
+
+                @media screen and (max-width: 1000px) {
+                    height: 310px;
+                }
+
+                @media screen and (max-width: 950px) {
+                    height: 275px;
+                }
+
+                @media screen and (max-width: 767px) {
+                    height: 275px;
+                    display: block;
+                    max-width: 100%;
+                }
+
+                @media screen and (max-width: 430px) {
+                    height: 350px !important;
+                }
+
+                img {
+                    display: block;
+                    margin: 0 auto;
+                    max-width: 100%;
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+
+                    @media screen and (max-width: 530px) {
+                        right: 0;
+                    }
+                }
+            }
+        } */
+}

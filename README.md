@@ -109,7 +109,7 @@ Première choses à faire quand on crée un nouveau site avec Stanlee:
 - vérifier les autres fichiers dans `/functions` pour s'assurer que tout vous convient
 - ouvrir `assets/styles/vars.scss` et ajouter vos tailles, breakpoints, couleurs ...
 - ajouter vos templates comme `templates/temp-montemplate.php`
-- ajouter vos acf-blocks dans `functions-blocks.php` et créer un template comme `templates/temp-blocks-monblock`
+- ajouter vos acf-sections dans `functions-sections.php` et créer un template comme `templates/section-monblock`
 - utiliser les fichiers SASS dans `assets/styles` pour ajouter votre css
 
 Pour des informations plus détaillées se référer à "Fichiers/Dossiers important"
@@ -132,7 +132,7 @@ Tout les fichiers importants contiennent une description. Assurez vous de la lir
 ##
 
 ```
-functions-blocks.php      fonctions pour afficher les ACFs flexible blocks (appelé "blocks" dans Stanlee)
+functions-sections.php      fonctions pour afficher les ACFs flexible sections (appelé "sections" dans Stanlee)
 functions-custom.php      espace pour vos propres fonctions (ex: shortcodes ...)
 functions-dev.php         fonctions utiles au développement
 functions-settings.php    paramètres du thème et fonctions générales qui ne nécessite pas beaucoup de modifications
@@ -172,8 +172,8 @@ Tous les templates sont séparés en deux catégories reconnaissables par leur p
 - **`wp`**: templates par défaut de wordpress.
 
 ```
-temp-blocks.php         charge les acf-blocks (utilisant "Flexible Element" field-type) depuis `functions-blocks.php`
-temp-blocks-***.php     charge vos acf-block personnalisés et affiche son contenu (voir l'exemple `temp-blocks-article`)
+sections.php         charge les acf-sections (utilisant "Flexible Element" field-type) depuis `functions-sections.php`
+section-***.php     charge vos acf-block personnalisés et affiche son contenu (voir l'exemple `section-article`)
 temp-home.php           affiche le contenu par défaut et l'image mise en avant
 temp-subsites.php       affiche le contenu par défaut et le contenu de chage page enfant
 wp-home.php             WP blog par défaut
@@ -222,5 +222,5 @@ Les deux variables disponibles `mobile` et `desktop` fonctionnent ainsi (avec le
 
 ## À propos
 
-Auteur: _a
-Contact: [contact@_a.fr](mailto:contact@_a.fr)
+Auteur: \_a
+Contact: [contact@\_a.fr](mailto:contact@_a.fr)

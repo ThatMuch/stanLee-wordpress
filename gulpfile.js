@@ -28,7 +28,7 @@ var browsersync_proxy = "localhost";
 // default asset paths
 var assets = {
   css: ['assets/styles/style.scss'],
-  css_watch: ['assets/styles/*.scss'],
+  css_watch: ['assets/styles/**/*.scss'],
   javascript: ['assets/scripts/*.js'],
   images: ['assets/images/*.*'],
   fonts: ['assets/fonts/*.*']

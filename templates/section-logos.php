@@ -2,7 +2,7 @@
 /**
  * Logos Block
  * This is a (very basic) default ACF-Block using the "Flexible Element" field-type
- * it is included through 'functions-blocks.php' which is triggered by 'temp-blocks.php'.
+ * it is included through 'functions-sections.php' which is triggered by 'sections.php'.
  *
  * @author      _a
  * @version     0.1.0
@@ -11,7 +11,7 @@
  */
  ?>
 
-  <section class="block-logos">
+  <section class="section-logos">
       <div class="container">
         <!-- Title -->
         <?php if(get_sub_field('title') ) : ?>
@@ -24,9 +24,9 @@ $images = get_sub_field('logo_list');
 $size = 'medium';
 
 if( $images ): ?>
-  <div class="row justify-content-center">
+  <div class="grid">
       <?php foreach( $images as $image ): ?>
-          <div class="logo col-sm-3">
+          <div class="logo">
                    <img src="<?php echo $image['sizes'][$size]; ?>" alt="<?php echo $image['alt']; ?>" />
               </div>
       <?php endforeach; ?>

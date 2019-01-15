@@ -26,11 +26,11 @@ require('functions/functions-setup.php');
 require('functions/functions-settings.php');
 
 /*==================================================================================
-  BLOCKS
+  SECTIONS
 ==================================================================================*/
-// Blocks using the ACF Flexible Content
+// Sections using the ACF Flexible Content
 // » https://www.advancedcustomfields.com/resources/flexible-content/
-require('functions/functions-blocks.php');
+require('functions/functions-sections.php');
 require('acf.php');
 
 

@@ -1,0 +1,38 @@
+.section-price {
+    .price-column {
+        &-wrapper {
+            background-color: #fff;
+            padding: 60px 30px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        &-title {
+            text-align: center;
+        }
+
+        &-price {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: bold;
+            color: $color-primary;
+        }
+
+        &-service {
+            @extend .pt-3, .pb-3;
+
+            list-style: none;
+            border-bottom: 1px solid #ccc;
+        }
+
+        &-btn {
+            margin-top: 10px;
+            display: block;
+        }
+
+        ul {
+            margin-bottom: auto;
+        }
+    }
+}
