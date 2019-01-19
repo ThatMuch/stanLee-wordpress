@@ -132,7 +132,7 @@ Tout les fichiers importants contiennent une description. Assurez vous de la lir
 ##
 
 ```
-functions-sections.php      fonctions pour afficher les ACFs flexible sections (appelé "sections" dans Stanlee)
+functions-sections.php      fonctions pour afficher les ACFs flexible blocks (appelé "sections" dans Stanlee)
 functions-custom.php      espace pour vos propres fonctions (ex: shortcodes ...)
 functions-dev.php         fonctions utiles au développement
 functions-settings.php    paramètres du thème et fonctions générales qui ne nécessite pas beaucoup de modifications
@@ -173,7 +173,7 @@ Tous les templates sont séparés en deux catégories reconnaissables par leur p
 
 ```
 sections.php         charge les acf-sections (utilisant "Flexible Element" field-type) depuis `functions-sections.php`
-section-***.php     charge vos acf-block personnalisés et affiche son contenu (voir l'exemple `section-article`)
+section-***.php     charge vos acf-block personnalisés et affiche son contenu (voir l'exemple `section-text`)
 temp-home.php           affiche le contenu par défaut et l'image mise en avant
 temp-subsites.php       affiche le contenu par défaut et le contenu de chage page enfant
 wp-home.php             WP blog par défaut
