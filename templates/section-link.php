@@ -42,7 +42,7 @@
                     <a href="<?php the_sub_field('url'); ?>" class="btn btn-primary"><?php the_sub_field('label'); ?></a>
                 <?php endif; ?>
                 <?php if (get_sub_field('link') == 'Interne' && get_sub_field('label') && get_sub_field('int_url') ) : ?>
-                    <a href="<?php the_sub_field('int_url'); ?>" class="btn <?php echo (get_sub_field('fond') == "Couleur" ? "btn-primary" : "btn-light") ?>">
+                    <a href="<?php the_sub_field('int_url'); ?>" class="btn">
                         <?php the_sub_field('label'); ?>
                     </a>
                 <?php endif; ?>

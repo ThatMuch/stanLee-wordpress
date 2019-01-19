@@ -7,6 +7,14 @@
     }
 
     .btn {
+        @extend .btn-primary;
+
         margin-top: 1rem;
+    }
+}
+
+.bg-primary {
+    .btn {
+        @extend .btn-light;
     }
 }
