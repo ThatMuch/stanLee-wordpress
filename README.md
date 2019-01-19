@@ -109,7 +109,7 @@ Première choses à faire quand on crée un nouveau site avec Stanlee:
 - vérifier les autres fichiers dans `/functions` pour s'assurer que tout vous convient
 - ouvrir `assets/styles/vars.scss` et ajouter vos tailles, breakpoints, couleurs ...
 - ajouter vos templates comme `templates/temp-montemplate.php`
-- ajouter vos acf-sections dans `functions-sections.php` et créer un template comme `templates/section-monblock`
+- ajouter vos acf-sections dans `functions-sections.php` et créer un template comme `templates/section-masection`
 - utiliser les fichiers SASS dans `assets/styles` pour ajouter votre css
 
 Pour des informations plus détaillées se référer à "Fichiers/Dossiers important"
