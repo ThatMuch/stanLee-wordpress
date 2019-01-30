@@ -141,7 +141,7 @@ gulp.task('css', ['clean:css'], function() {
 // from:    dist/style.min.css
 // actions: create busted version of file
 // to:      dist/style-[hash].min.css
-gulp.task('cachebust', ['clean:cachebust', 'css'], function() {
+gulp.task('cachebust', gulp.series('clean:cachebust', 'css'), function() {
   return gulp.src('./style.min.css')
     .pipe(rev())
     .pipe(gulp.dest('./'))
@@ -156,7 +156,7 @@ gulp.task('cachebust', ['clean:cachebust', 'css'], function() {
 // actions: concatinate, minify, rename
 // to:      ./script.min.css
 // note:    modernizr.js is concatinated first in .pipe(order)
-gulp.task('javascript', ['clean:javascript'], function() {
+gulp.task('javascript', gulp.series('clean:javascript'), function() {
   return gulp.src(assets['javascript'].concat(vendors['javascript']))
     .pipe(order([
       'assets/scripts/modernizr.js',
@@ -193,7 +193,7 @@ gulp.task('makepot', function () {
 /––––––––––––––––––––––––*/
 // watch for modifications in
 // styles, scripts, images, php files, html files
-gulp.task('watch',  ['browsersync'], function() {
+gulp.task('watch',  gulp.series('browsersync'), function() {
   gulp.watch(assets['css_watch'], ['css', 'cachebust']);
   gulp.watch(assets['javascript'], ['javascript']);
   gulp.watch('*.php', browserSync.reload);
@@ -227,4 +227,4 @@ gulp.task('build', function(callback) {
 /* DEFAULT
 /––––––––––––––––––––––––*/
 // default gulp tasks executed with `gulp`
-gulp.task('default', ['css', 'cachebust', 'javascript','makepot']);
+gulp.task('default', gulp.series('css', 'cachebust', 'javascript','makepot'));
