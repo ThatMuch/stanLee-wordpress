@@ -196,7 +196,7 @@ gulp.task('makepot', function () {
 gulp.task('watch',  gulp.series('browsersync'), function() {
   gulp.watch(assets['css_watch'], ['css', 'cachebust']);
   gulp.watch(assets['javascript'], ['javascript']);
-  gulp.watch('*.php', browserSync.reload);
+  gulp.watch('**/*.php', browserSync.reload);
   gulp.watch('*.html', browserSync.reload);
 });
 
