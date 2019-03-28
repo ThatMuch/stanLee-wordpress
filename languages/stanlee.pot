@@ -1,4 +1,4 @@
-# Copyright (C) 2018 stanlee
+# Copyright (C) 2019 stanlee
 # This file is distributed under the same license as the stanlee package.
 msgid ""
 msgstr ""
