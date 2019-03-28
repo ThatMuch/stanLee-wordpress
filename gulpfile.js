@@ -13,7 +13,7 @@
  *              - `modernizr -c assets/scripts/modernizr-config.json -d assets/scripts` to generate the modernizr.js file from the config-file
  *              - add vendor-requirements to gulp-vendors.json, they will be compiled/bundled by `gulp` (restart `gulp watch`)
  *
- * Author:      _a (https://flurinduerst.ch)
+ * Author:      StanLee (https://flurinduerst.ch)
  *
  * Version:     2.3.1
  *
@@ -23,7 +23,7 @@
 /* SETTINGS
 /===================================================== */
 // local domain used by browsersync
-var browsersync_proxy = "localhost";
+var browsersync_proxy = "stanlee.local";
 
 // default asset paths
 var assets = {
@@ -141,7 +141,7 @@ gulp.task('css', ['clean:css'], function() {
 // from:    dist/style.min.css
 // actions: create busted version of file
 // to:      dist/style-[hash].min.css
-gulp.task('cachebust', gulp.series('clean:cachebust', 'css'), function() {
+gulp.task('cachebust', ['clean:cachebust', 'css'], function() {
   return gulp.src('./style.min.css')
     .pipe(rev())
     .pipe(gulp.dest('./'))
@@ -156,7 +156,7 @@ gulp.task('cachebust', gulp.series('clean:cachebust', 'css'), function() {
 // actions: concatinate, minify, rename
 // to:      ./script.min.css
 // note:    modernizr.js is concatinated first in .pipe(order)
-gulp.task('javascript', gulp.series('clean:javascript'), function() {
+gulp.task('javascript', ['clean:javascript'], function() {
   return gulp.src(assets['javascript'].concat(vendors['javascript']))
     .pipe(order([
       'assets/scripts/modernizr.js',
@@ -182,7 +182,7 @@ gulp.task('makepot', function () {
       destFile: 'stanlee.pot',
       package: 'stanlee',
       bugReport: 'https://example.com/bugreport/',
-      team: '_a <>'
+      team: 'StanLee <>'
     }))
     .pipe(gulp.dest('languages/stanlee.pot'))
     .pipe(browserSync.reload({stream:true}));
@@ -193,7 +193,7 @@ gulp.task('makepot', function () {
 /––––––––––––––––––––––––*/
 // watch for modifications in
 // styles, scripts, images, php files, html files
-gulp.task('watch',  gulp.series('browsersync'), function() {
+gulp.task('watch',  ['browsersync'], function() {
   gulp.watch(assets['css_watch'], ['css', 'cachebust']);
   gulp.watch(assets['javascript'], ['javascript']);
   gulp.watch('**/*.php', browserSync.reload);
@@ -227,4 +227,4 @@ gulp.task('build', function(callback) {
 /* DEFAULT
 /––––––––––––––––––––––––*/
 // default gulp tasks executed with `gulp`
-gulp.task('default', gulp.series('css', 'cachebust', 'javascript','makepot'));
+gulp.task('default', ['css', 'cachebust', 'javascript','makepot']);
