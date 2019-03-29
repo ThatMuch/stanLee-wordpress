@@ -5,7 +5,7 @@
  *
  * @author      _a
  * @version     0.1.0
- * @since       _s0.1.0
+ * @since       _s_1.0.0
  *
  *
  */
@@ -57,7 +57,7 @@ $font_formats = ['woff','woff2'];
 /*==================================================================================
   3.0 GOOGLE TAG MANAGER
 ==================================================================================*/
-// embed the GTM-scripts into head and body => stanlee_gtm()
+// embed the GTM-scripts into head and body => _s_gtm()
 // add your GTM_id (for example 'GTM-ABC1234') or leave empty to not enqueue any GTM-script
 $GTM_id = '';
 
@@ -66,7 +66,7 @@ $GTM_id = '';
 /*==================================================================================
   4.0 OPEN TAG IMAGE
 ==================================================================================*/
-// open graph tags are returned by default => stanlee_ogtags()
+// open graph tags are returned by default => _s_ogtags()
 // add your og-image credentials here or leave ['active', false] to not emped an og-image
 $ogimg = [
   ['active', false],

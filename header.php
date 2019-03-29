@@ -2,7 +2,7 @@
 /**
  * @author      _a
  * @version     0.1.0
- * @since       _s0.1.0
+ * @since       _s_1.0.0
  */
 ?>
 <!DOCTYPE html>
@@ -11,17 +11,17 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1, initial-scale=1">
     <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-    <? stanlee_gtm('head') ?>
+    <? _s_gtm('head') ?>
     <!--=== OPEN-GRAPH TAGS ===-->
-    <? stanlee_ogtags() ?>
+    <? _s_ogtags() ?>
     <!--=== PRELOAD FONTS ===-->
-    <? stanlee_preload_fonts() ?>
+    <? _s_preload_fonts() ?>
     <!--=== WP HEAD ===-->
     <? wp_head(); ?>
   </head>
 
   <body>
-    <? stanlee_gtm('body') ?>
+    <? _s_gtm('body') ?>
 
      <? $custom_logo_id = get_theme_mod( 'custom_logo' );
         $image = wp_get_attachment_image_src( $custom_logo_id , 'full' ); ?>
