@@ -4,7 +4,7 @@
  *
  * @author      _a
  * @version     0.1.0
- * @since       _s 0.2
+ * @since       _s0.2
  *
  */
 ?>

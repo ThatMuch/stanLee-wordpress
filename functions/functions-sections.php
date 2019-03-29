@@ -4,7 +4,7 @@
  *
  * @author     _a
  * @version    0.1.0
- * @since      _s 0.1.0
+ * @since      _s0.1.0
  *
  *
  */
@@ -47,7 +47,7 @@ function stanlee_sections() {
       if (get_row_layout() == 'gallery') : stanlee_section_gallery(); endif;
       if (get_row_layout() == 'contact') : stanlee_section_contact(); endif;
       if (get_row_layout() == 'stats') : stanlee_section_stats(); endif;
-      if (get_row_layout() == 'faq') : legaware_section_faq(); endif;
+      if (get_row_layout() == 'faq') : stanlee_section_faq(); endif;
     endwhile;
   endif;
   return ob_get_flush();
@@ -164,7 +164,7 @@ function stanlee_section_stats() {
 
 /* FAQ
 /––––––––––––––––––––––––*/
-function legaware_section_faq() {
+function stanlee_section_faq() {
   ob_start('sanitize_output');
     include (get_template_directory().'/templates/section-faq.php');
   return ob_get_flush();
