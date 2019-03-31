@@ -57,4 +57,21 @@
                 <h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
             </header>
 <?php endif; ?>
+<? if (is_archive() || is_category()): ?>
+  <header>
+    <h1 class="page-title screen-reader-text">
+    <?php
+				if ( is_day() ) :
+					echo get_the_date();
+					elseif ( is_month() ) :
+						echo get_the_date( _x( 'F Y', 'monthly archives date format', 'stanlee' ) );
+					elseif ( is_year() ) :
+						echo get_the_date( _x( 'Y', 'yearly archives date format', 'stanlee' ) );
+					else :
+						single_cat_title();
+					endif;
+					?>
+    </h1>
+  </header>
+<? endif; ?>
     <div id="content" class="site-content">
