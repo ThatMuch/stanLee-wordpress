@@ -20,7 +20,7 @@
     <? wp_head(); ?>
   </head>
 
-  <body>
+  <body <?php body_class(); ?>>
     <? _s_gtm('body') ?>
 
      <? $custom_logo_id = get_theme_mod( 'custom_logo' );
