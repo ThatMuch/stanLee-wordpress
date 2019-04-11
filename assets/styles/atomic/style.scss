@@ -1,0 +1,37 @@
+/*
+ * Main CSS File
+ * Merges all .scss files (in the desired order) before they're processed by gulp.
+ * To add vendors, use gulp-vendors.json.
+ *
+ * @author      _a
+ * @version     0.1.0
+ * @since       _s_1.0.0.0
+ *
+ */
+
+@charset "UTF-8";
+
+// Config
+@import "vars";
+@import "mixins";
+
+// General DOM selector styles
+@import "base";
+
+// Fonts & General Type Styling
+@import "typography";
+
+// Atomic Design
+@import "atoms/**/*";
+@import "molecules/**/*";
+@import "organisms/**/*";
+@import "templates/**/*";
+@import "pages/**/*";
+
+// Variations thru Events
+@import "states";
+
+// Bootstrap
+$theme-colors: ("primary": $color-primary, "secondary": $color-secondary);
+
+@import "../../node_modules/bootstrap/scss/bootstrap";

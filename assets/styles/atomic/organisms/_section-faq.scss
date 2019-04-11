@@ -1,0 +1,35 @@
+.section-faq {
+    .section-title {
+        text-align: center;
+    }
+
+    .faq-accordion {
+        .card {
+            border: none;
+            background-color: transparent;
+        }
+
+        .card-header {
+            background-color: transparent;
+            border: none;
+
+            @media screen and (max-width: 767px) {
+                font-size: 19px;
+            }
+
+            &-expand {
+                color: rgba($color: $color-primary, $alpha: 0.5);
+            }
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        .answer {
+            @media screen and (max-width: 767px) {
+                font-size: 15px;
+            }
+        }
+    }
+}
