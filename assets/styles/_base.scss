@@ -37,7 +37,6 @@ html {
     font-family: $html__fontname;
     font-size: $base_size; // only used for rem-handling, the actual font-size is $body__fontsize
     color: $html__textcolor;
-    background-color: $html__bgcolor;
 
     @include vpw_min($scaling_endpoint) {
         font-size: $scaling_endpoint / 100 * stripunit($base_size);
@@ -62,6 +61,7 @@ body {
     font-size: $body__fontsize;
     font-weight: $body__fontweight;
     line-height: $body__lineheight;
+    background-color: $html__bgcolor !important;
 
     @include mobile {
         font-size: $body__fontsize_mobile;
