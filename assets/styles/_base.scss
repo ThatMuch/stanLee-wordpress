@@ -1,9 +1,4 @@
 /**
- * Base CSS File
- * Contains defaults and presets of general elements.
- *
- * The Idea is to keep editing in this file to a
- * minimum while using vars.scss for very basic styling.
  *
  * @author      _a
  * @version     0.1.0
@@ -32,20 +27,9 @@ html {
     overflow-x: hidden;
     margin: 0;
     padding: 0;
-    font-family: $html__fontname;
+    font-family: $text-ff;
     font-size: $base_size; // only used for rem-handling, the actual font-size is $body__fontsize
     color: $html__textcolor;
-
-    @include vpw_min($scaling_endpoint) {
-        font-size: $scaling_endpoint / 100 * stripunit($base_size);
-    }
-
-
-    @include mobile {
-        font-size: $base_size_mobile;
-    }
-
-
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -56,14 +40,11 @@ body {
     flex-direction: column;
     align-items: center;
     min-height: 100vh;
-    font-size: $body__fontsize;
-    font-weight: $body__fontweight;
-    line-height: $body__lineheight;
     background-color: $html__bgcolor !important;
-
-    @include mobile {
-        font-size: $body__fontsize_mobile;
-    }
+    font-size: $text-fz;
+    font-weight: $text-fw;
+    color: $text-c;
+    line-height: $text-lh;
 }
 
 a {
@@ -90,30 +71,18 @@ header {
 
 h1 {
     @include heading-size(6);
-    @include mobile {
-        @include heading-size(4);
-    }
 }
 
 h2 {
     @include heading-size(5);
-    @include mobile {
-        @include heading-size(3);
-    }
 }
 
 h3 {
     @include heading-size(4);
-    @include mobile {
-        @include heading-size(2);
-    }
 }
 
 h4 {
     @include heading-size(3);
-    @include mobile {
-        @include heading-size(2);
-    }
 }
 
 h5 {

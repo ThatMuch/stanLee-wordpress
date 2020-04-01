@@ -14,16 +14,12 @@
   SCALING
 ==================================================================================*/
 
-$base_size: 1vw; // scales all `rem` based elements by adding this value as html font-size
-$breakpoint: 768px; // breakpoint between @desktop and @mobile mixins
-$scaling_endpoint: 1200px; // scaling of all `rem` based elements stops here
-$base_size_mobile: $base_size * 2.2; // scaling multiplicator for mobile viewport
+$base_size: 1.5vw; // scales all `rem` based elements by adding this value as html font-size
 
 $header_height: 4rem; // define the height of the header
 $element_width: 90vw; // default width of the inner elements --> nav, article, div.element, footer
 $element_maxwidth: 1200px; // max-width of the inner elements (should be <= $scaling_endpoint)
 
-$header_height_mobile: 4rem; // define the height of the header
 $element_width_mobile: 95vw; // default width of the .element content-div
 
 /*==================================================================================
@@ -43,6 +39,50 @@ $color-grey1: #868e96;
 $color-grey: #F2F2F2;
 $color-light: #F7F7F7;
 
+/*=============================================
+  FONTS
+=============================================*/
+
+/* set base values */
+$text-fz: 1em;
+$text-scale-ratio: 1.2;
+$text-ff: "Asap", sans-serif;
+$text-c: $color-dark;
+$text-fw: 400;
+$text-lh: 1.5;
+
+/* type scale */
+$text-xs: calc(1em / (#{$text-scale-ratio} * #{$text-scale-ratio}));
+$text-sm: calc(1em / #{$text-scale-ratio});
+$text-md: calc(1em * #{$text-scale-ratio});
+$text-lg: calc(1em * #{$text-scale-ratio} * #{$text-scale-ratio});
+$text-xl: calc(1em * #{$text-scale-ratio} * #{$text-scale-ratio} * #{$text-scale-ratio});
+$text-xxl: calc(1em * #{$text-scale-ratio} * #{$text-scale-ratio} * #{$text-scale-ratio} * #{$text-scale-ratio});
+$text-xxxl: calc(1em * #{$text-scale-ratio} * #{$text-scale-ratio} * #{$text-scale-ratio} * #{$text-scale-ratio} * #{$text-scale-ratio});
+
+@include breakpoint(mobile) {
+    $text-scale-ratio: 1.25;
+}
+
+
+/*=====  End of FONTS                  ======*/
+
+/*=============================================
+=            Space                            =
+=============================================*/
+
+$space-xxxs: 0.25em;
+$space-xxs: 0.375em;
+$space-xs: 0.5em;
+$space-sm: 0.75em;
+$space-md: 1.25em;
+$space-lg: 2em;
+$space-xl: 3.25em;
+$space-xxl: 5.25em;
+$space-xxxl: 8.5em;
+
+/*=====  End of Space                  ======*/
+
 /*==================================================================================
   DEFAULTS
 ==================================================================================*/
@@ -50,16 +90,7 @@ $color-light: #F7F7F7;
 
 /* HTML
 /––––––––––––––––––––––––*/
-$html__fontname: "Asap", sans-serif; // Normal 400, Medium 500, Bold 700
 $html__bgcolor: $color-light;
-$html__textcolor: $color-dark;
-
-/* BODY
-/––––––––––––––––––––––––*/
-$body__fontsize: 1rem;
-$body__fontsize_mobile: 1.3rem;
-$body__fontweight: 400;
-$body__lineheight: 1.3;
 
 /* NAV
 /––––––––––––––––––––––––*/

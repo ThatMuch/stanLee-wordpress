@@ -1,37 +1,37 @@
 /*
  * GULP CONFIG
  *
- * Desciption:  Clean gulpfile for web development workflow containing
+ * Desciption: Clean gulpfile for web development workflow containing
  *              - compiling/optimization of sass, javascript and images from assets to dist and vendors
  *              - browsersync
  *              - cache-busting
  *              - modernizr
  *              - vendor handling through glulp-vendors.json
  *
- * Usage:       - `gulp` (to run the whole process)
+ * Usage: - `gulp` (to run the whole process)
  *              - `gulp watch` (to watch for changes and compile if anything is being modified)
  *              - `modernizr -c assets/scripts/modernizr-config.json -d assets/scripts` to generate the modernizr.js file from the config-file
  *              - add vendor-requirements to gulp-vendors.json, they will be compiled/bundled by `gulp` (restart `gulp watch`)
  *
- * Author:      StanLee (https://flurinduerst.ch)
+ * Author: StanLee (https://flurinduerst.ch)
  *
- * Version:     2.3.1
+ * Version: 2.3.1
  *
 */
 
 
 /* SETTINGS
-/===================================================== */
+ /= =================================================== = */
 // local domain used by browsersync
 var browsersync_proxy = "stanlee.local";
 
 // default asset paths
 var assets = {
-  css: ['assets/styles/style.scss'],
-  css_watch: ['assets/styles/**/*.scss'],
+  css       : ['assets/styles/style.scss'],
+  css_watch : ['assets/styles/**/*.scss'],
   javascript: ['assets/scripts/*.js'],
-  images: ['assets/images/*.*'],
-  fonts: ['assets/fonts/*.*']
+  images    : ['assets/images/*.*'],
+  fonts     : ['assets/fonts/*.*']
 }
 
 var build_files = [
@@ -58,20 +58,20 @@ var vendors = require('./gulp-vendors.json');
 
 
 /* DEPENDENCIES
-/===================================================== */
+ /= =================================================== = */
 // general
-var gulp = require('gulp');
-var concat = require('gulp-concat');
-var rename = require("gulp-rename");
-var order = require("gulp-order");
+var gulp        = require('gulp');
+var concat      = require('gulp-concat');
+var rename      = require("gulp-rename");
+var order       = require("gulp-order");
 var browserSync = require('browser-sync').create();
 // css
-var sass = require('gulp-sass');
-var cleanCSS = require('gulp-clean-css');
+var sass         = require('gulp-sass');
+var cleanCSS     = require('gulp-clean-css');
 var autoprefixer = require('gulp-autoprefixer');
-var csscomb       = require('gulp-csscomb');
+var csscomb      = require('gulp-csscomb');
 // traduction
-var wpPot         = require('gulp-wp-pot');
+var wpPot = require('gulp-wp-pot');
 // cache busting
 var rev = require('gulp-rev');
 // js
@@ -79,19 +79,19 @@ var uglify = require('gulp-uglify');
 // images
 // var imagemin = require('gulp-imagemin');
 // error handling with notify & plumber
-var notify = require("gulp-notify");
+var notify  = require("gulp-notify");
 var plumber = require('gulp-plumber');
 // watch
 var watch = require('gulp-watch');
 // delete
 var del = require('del');
 // zip
-var zip = require('gulp-zip');
-var runSequence   = require('run-sequence');
+var zip         = require('gulp-zip');
+var runSequence = require('run-sequence');
 
 
 /* TASKS
-/===================================================== */
+ /= =================================================== = */
 
 /* CLEAN
 /––––––––––––––––––––––––*/
@@ -106,9 +106,9 @@ gulp.task('clean:javascript', function() { return del(['dist/*.js'])});
 // initialize Browser Sync
 gulp.task('browsersync', function() {
   browserSync.init({
-    proxy: browsersync_proxy,
-    notify: true,
-    open: false,
+    proxy         : browsersync_proxy,
+    notify        : true,
+    open          : false,
     snippetOptions: {
       whitelist: ['/wp-admin/admin-ajax.php'],
       blacklist: ['/wp-admin/**']
@@ -178,11 +178,11 @@ gulp.task('javascript', ['clean:javascript'], function() {
 gulp.task('makepot', function () {
   return gulp.src(['**/*.php'])
     .pipe(wpPot({
-      domain: 'stanlee',
-      destFile: 'stanlee.pot',
-      package: 'stanlee',
+      domain   : 'stanlee',
+      destFile : 'stanlee.pot',
+      package  : 'stanlee',
       bugReport: 'https://example.com/bugreport/',
-      team: 'StanLee <>'
+      team     : 'StanLee <>'
     }))
     .pipe(gulp.dest('languages/stanlee.pot'))
     .pipe(browserSync.reload({stream:true}));
