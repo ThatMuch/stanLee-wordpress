@@ -5,3 +5,20 @@
  * @since       _s_1.0.0.0
  *
  */
+
+input, select {
+    //
+    &:active, &:hover, &:focus {
+        //
+   
+    }
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    //
+}
+
+textarea {
+    //
+}

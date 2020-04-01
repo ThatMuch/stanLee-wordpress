@@ -24,28 +24,23 @@
 ==================================================================================*/
 
 /*=====  Atoms  ======*/
-@import "./atoms/_toast";
-@import "./atoms/_lists";
-@import "./atoms/_links";
-@import "./atoms/_image";
-@import "./atoms/_icons";
-@import "./atoms/_badge";
-@import "./atoms/_alert";
-@import "./atoms/_labels";
-@import "./atoms/_inputs";
-@import "./atoms/_tooltip";
-@import "./atoms/_spinner";
-@import "./atoms/_content";
+@import "./atoms/_alerts";
+@import "./atoms/_badges";
 @import "./atoms/_buttons";
 @import "./atoms/_dividers";
+@import "./atoms/_headings";
+@import "./atoms/_images";
+@import "./atoms/_inputs";
+@import "./atoms/_labels";
+@import "./atoms/_links";
+@import "./atoms/_lists";
 
 /*=====  Molecules  ======*/
-@import "./molecules/_breadcrumb";
+@import "./molecules/_breadcrumbs";
 @import "./molecules/_cards";
-@import "./molecules/_carousel";
+@import "./molecules/_carousels";
 @import "./molecules/_collapse";
 @import "./molecules/_contact-form";
-@import "./molecules/_flipbox";
 @import "./molecules/_gallery";
 @import "./molecules/_modal";
 @import "./molecules/_navigation";
@@ -56,13 +51,17 @@
 @import "./molecules/_table";
 
 /*=====  Organisms  ======*/
-@import "./organisms/_header";
+
 @import "./organisms/_footer";
+@import "./organisms/_header";
 @import "./organisms/_hero";
-@import "organisms/sections";
+@import "./organisms/sections";
 
 /*=====  Templates  ======*/
-@import "templates/_blog";
+@import "./templates/_blog";
+@import "./templates/_page";
+@import "./templates/_post";
+@import "./templates/_subsite";
 
 /*==================================================================================
   BOOTSTRAP

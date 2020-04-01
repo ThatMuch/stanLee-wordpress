@@ -1,0 +1,34 @@
+/**
+ *
+ * @author      _a
+ * @version     0.1.0
+ * @since       _s_1.0.0.0
+ *
+ */
+h1 {
+    @include heading-size(6);
+}
+
+h2 {
+    @include heading-size(5);
+}
+
+h3 {
+    @include heading-size(4);
+}
+
+h4 {
+    @include heading-size(3);
+}
+
+h5 {
+    @include heading-size(2);
+
+    letter-spacing: 1px;
+}
+
+h6 {
+    @include heading-size(1);
+
+    letter-spacing: 1px;
+}

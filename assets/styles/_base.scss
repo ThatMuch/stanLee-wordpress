@@ -6,9 +6,6 @@
  *
  */
 
-/*==================================================================================
-  GENERAL
-==================================================================================*/
 *,
 *::before,
 *::after {
@@ -19,6 +16,10 @@
     background-position: 50% 50%;
     background-size: contain;
     -webkit-tap-highlight-color: transparent;
+}
+
+*:focus {
+    outline: 0;
 }
 
 html {
@@ -47,78 +48,39 @@ body {
     line-height: $text-lh;
 }
 
-a {
-    color: $a__linkcolor;
-    text-decoration: $a__textdecoration;
-    transition: $transition_fast;
+main {
+    position: relative;
+    margin-top: $header_height;
 
-    &:hover {
-        color: $a__hovercolor;
+    article,
+    .element {
+        padding: 1rem 0;
     }
 }
 
-header {
+aside {
+    position: relative;
     margin-top: $header_height;
+
+    .widget {
+        padding: 1rem 0;
+        border-bottom: 1px solid $color-grey;
+
+        .nav-link {
+            padding: 0 0 0.5rem 0;
+        }
+    }
 }
 
-:focus {
-    outline: 0;
-}
+article,
+.element,
+nav,
+footer .inner {
+    // width: $element_width;
+    //  max-width: $element_maxwidth;
+    margin: 0 auto;
 
-/*=============================================
-=            HEADINGS                         =
-=============================================*/
-
-h1 {
-    @include heading-size(6);
-}
-
-h2 {
-    @include heading-size(5);
-}
-
-h3 {
-    @include heading-size(4);
-}
-
-h4 {
-    @include heading-size(3);
-}
-
-h5 {
-    @include heading-size(2);
-
-    letter-spacing: 1px;
-}
-
-h6 {
-    @include heading-size(1);
-
-    letter-spacing: 1px;
-}
-
-/*=====  End of HEADINGS               ======*/
-
-address {
-    font-style: normal;
-}
-
-table {
-    border-collapse: collapse;
-}
-
-/*==================================================================================
-  PRESETS
-==================================================================================*/
-
-// defaut wowjs div
-.wow {
-    visibility: hidden;
-}
-
-// anchor div to fix .top overlap when navigation through 'domain.tld/#anchor'
-.anchor {
-    display: block;
-    height: $header_height;
-    margin-top: -$header_height; // negative top_height
+    @include breakpoint(mobile) {
+        width: $element_width_mobile;
+    }
 }
