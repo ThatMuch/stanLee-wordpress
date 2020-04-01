@@ -7,7 +7,7 @@
  */
 
 /* Responsive */
-@mixin breakdevice($device) {
+@mixin breakpoint($device) {
     @if $device == desktop {
         @media screen and (min-width: 1200px) {
             @content;
