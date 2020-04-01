@@ -20,7 +20,7 @@
             margin-bottom: 1rem;
             height: 46px;
 
-            @include mobile {
+            @include breakpoint(mobile) {
                 height: 20px;
             }
         }
@@ -38,7 +38,7 @@
         width: 40%;
         margin: 0 auto;
 
-        @include mobile {
+        @include breakpoint(mobile) {
             width: 90%;
         }
 

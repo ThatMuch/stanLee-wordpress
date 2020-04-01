@@ -195,7 +195,7 @@ La mise à l'échelle peut être configurée dans la section `SIZE/SCALING` dans
 La largeur des deux variables disponibles `mobile` et `desktop` sont définies dans `vars.scss`.
 
 - min 800px `@include desktop {...}`
-- max 799px`@include mobile {...}`
+- max 799px`@include breakpoint(mobile) {...}`
 
 **définie par la largeur en pixel**
 

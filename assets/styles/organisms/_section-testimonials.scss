@@ -1,5 +1,5 @@
 .section-testimonials {
-    @include mobile {
+    @include breakpoint(mobile) {
         padding: 3rem 0 !important;
     }
 
@@ -9,7 +9,7 @@
     }
 
     .testimonials-carousel {
-        @include mobile {
+        @include breakpoint(mobile) {
             min-height: 500px;
         }
 
@@ -29,7 +29,7 @@
 
         .carousel-control-prev,
         .carousel-control-next {
-            @include mobile {
+            @include breakpoint(mobile) {
                 display: none;
             }
         }

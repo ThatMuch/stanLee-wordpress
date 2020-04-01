@@ -52,7 +52,7 @@ footer .inner {
     //  max-width: $element_maxwidth;
     margin: 0 auto;
 
-    @include mobile {
+    @include breakpoint(mobile) {
         width: $element_width_mobile;
     }
 }
@@ -175,7 +175,7 @@ main#subsites {
                 flex-basis: calc((100% / 3) - 1rem);
                 margin-bottom: 1rem;
 
-                @include mobile {
+                @include breakpoint(mobile) {
                     flex-basis: 100%;
                 }
 

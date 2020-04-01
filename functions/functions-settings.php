@@ -190,11 +190,11 @@ function _s_preload_fonts() {
 function _s_get_cachebusted_css() {
   $current_tld = substr(strrchr(get_bloginfo('url'),"."),1);
   if ($current_tld == 'vm') :
-    $css_src = '/style.min.css';
+    $css_src = '/dist/style.min.css';
   else :
-    $css_manifest_url = get_template_directory_uri() . '/rev-manifest.json';
+    $css_manifest_url = get_template_directory_uri() . '/dist/rev-manifest.json';
     $css_manifest_content = json_decode(file_get_contents($css_manifest_url), true);
-    $css_src = '/'.$css_manifest_content['style.min.css'];
+    $css_src = '/dist/'.$css_manifest_content['style.min.css'];
   endif;
   return $css_src;
 }

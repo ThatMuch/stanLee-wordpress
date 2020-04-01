@@ -5,3 +5,54 @@
  * @since       _s_1.0.0.0
  *
  */
+
+.footer {
+    width: 100vw;
+    margin-top: auto;
+    color: $color-grey;
+    background: $color-dark;
+
+    &-rs {
+        text-align: center;
+
+        li {
+            display: inline-block;
+            list-style: none;
+            margin-right: .5rem;
+
+            a {
+                color: $color-grey1;
+                font-size: 1.5rem;
+            }
+        }
+    }
+
+    .widget-title {
+        color: $color-grey1;
+        margin-bottom: 1rem;
+    }
+
+    .nav {
+        padding: 0;
+
+        .nav-link {
+            color: $color-light;
+            padding: 0 0 0.5rem 0;
+        }
+    }
+
+    .inner {
+        padding: 1.5rem 0;
+        font-size: 0.8rem;
+    }
+
+    .credits {
+        background-color: $color-black;
+        color: $color-grey2;
+        text-align: center;
+
+        a {
+            color: $color-grey2;
+        }
+    }
+}
