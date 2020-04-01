@@ -1,0 +1,50 @@
+/**
+ *
+ * @author      _a
+ * @version     0.1.0
+ * @since       _s_1.0.0.0
+ *
+ */
+
+/* Responsive */
+@mixin breakpoint($point) {
+    @if $point == desktop {
+        @media (min-width: 70em) {
+            @content;
+        }
+    }
+    @else if $point == laptop {
+        @media (min-width: 64em) {
+            @content;
+        }
+    }
+    @else if $point == tablet {
+        @media (min-width: 50em) {
+            @content;
+        }
+    }
+    @else if $point == phablet {
+        @media (min-width: 37.5em) {
+            @content;
+        }
+    }
+    @else if $point == mobileonly {
+        @media (max-width: 37.5em) {
+            @content;
+        }
+    }
+}
+
+/* HEADINGS
+/––––––––––––––––––––––––*/
+// Create a step size
+/* This is the percentage each heading will be reduced by. */
+$step-size-heading: 0.33333;
+
+/* Amplifier value */
+$amplifier-heading: 1.5;
+
+/* The mixin */
+@mixin heading-size($size) {
+    font-size: $size * $step-size-heading * $amplifier-heading + rem;
+}
