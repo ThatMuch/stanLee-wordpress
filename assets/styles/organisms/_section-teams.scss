@@ -1,14 +1,14 @@
-main#sections section.section-team {
+.section-team {
     text-align: center;
 
-    .team-member {
+    &__member {
         margin-bottom: 30px;
         text-align: center;
         background-color: #fff;
         padding: 60px 30px;
         height: 100%;
 
-        &-img {
+        &__img {
             @extend .mb-3, .rounded-circle;
 
             height: 150px;
@@ -18,7 +18,7 @@ main#sections section.section-team {
             margin-right: auto;
         }
 
-        &-rs {
+        &__rs {
             li {
                 list-style: none;
                 display: inline-block;

@@ -11,12 +11,12 @@
  */
  ?>
 
-  <section class="section-price
+  <section class="section section-price
   <? if(get_sub_field('fond') == "Couleur"):?> bg-primary
   <? elseif(get_sub_field('fond') == "Gris"):?> bg-light<? endif;?>">
     <!-- Section background: image -->
       <? if(get_sub_field('fond') == "Image"):?>
-      <div class="section-background-image"  style="
+      <div class="section__background-image"  style="
             <? if(get_sub_field('image')):?>
             background-image:url(<? echo the_sub_field('image') ?>);
             <? endif;?>"></div>
@@ -25,26 +25,33 @@
         <div class="container">
             <!-- Title -->
             <?php if(get_sub_field('title') ) : ?>
-                  <h2 class="section-title"><?php echo get_sub_field('title'); ?></h2>
+                  <h2 class="section__title text-center"><?php echo get_sub_field('title'); ?></h2>
             <?php endif; ?>
             <!-- Title -->
-                  <?php if (have_rows('colonne') ) : ?>
+            <!-- Count columns -->
+            <?
+            $count = 0;
+            $colonne = get_sub_field('colonne');
+            if (is_array($colonne)){$count = count($colonne);}
+            ?>
+                  <?php if (have_rows('colonne') ) :
+                  ?>
             <div class="row justify-content-center">
-                        <? while(have_rows('colonne')) : the_row() ?>
+                        <? while(have_rows('colonne')) : the_row();  ?>
                         <?php if( get_sub_field('title') ) : ?>
-                        <div class="col-sm-4 price-column">
-                              <div class="price-column-wrapper">
+                        <div class="<? echo ($count < 3) ? "col-sm-6" : "col-sm-4" ?> section-price__column">
+                              <div class="section-price__column__wrapper">
                                     <!-- Title -->
                                     <?php if( get_sub_field('title') ) : ?>
-                                        <h3 class="price-column-title">  <?php echo get_sub_field('title'); ?> </h3>
+                                        <h3 class="section-price__column__title text-center">  <?php echo get_sub_field('title'); ?> </h3>
                                     <?php endif; ?>
                                     <!-- Title -->
                                     <!-- Price -->
                                     <?php if( get_sub_field('prix') ) : ?>
-                                          <p class="price-column-price">
+                                          <p class="section-price__column__price">
                                                 <!-- Devise -->
                                                 <?php if( get_sub_field('devise') ) : ?>
-                                                      <span class="price-column-devise"><?php echo get_sub_field('devise'); ?></span>
+                                                      <span class="section-price__column__devise"><?php echo get_sub_field('devise'); ?></span>
                                                 <?php endif; ?>
                                                 <!-- Devise -->
                                                 <?php echo get_sub_field('prix'); ?>
@@ -53,10 +60,10 @@
                                     <!-- Price -->
 
                                     <?php if ( have_rows('services') ) : ?>
-                                          <ul>
+                                          <ul class="mb-auto">
                                                 <? while (have_rows('services')) : the_row()?>
                                                       <?php if( get_sub_field('text') ) : ?>
-                                                            <li class="price-column-service"><?php echo get_sub_field('text'); ?></li>
+                                                            <li class="section-price__column__service"><?php echo get_sub_field('text'); ?></li>
                                                       <?php endif; ?>
                                                 <? endwhile; ?>
                                           </ul>
@@ -66,7 +73,7 @@
         <?php if (have_rows('button')) : ?>
             <?php while ( have_rows('button') ) : the_row(); ?>
                 <?php if (get_sub_field('label') ) : ?>
-                    <a href="<?php the_sub_field('link'); ?>" class="btn btn-primary price-column-btn"><?php the_sub_field('label'); ?></a>
+                    <a href="<?php the_sub_field('link'); ?>" class="btn btn-primary btn-block mt-2"><?php the_sub_field('label'); ?></a>
                 <?php endif; ?>
             <?php endwhile; ?>
         <?php endif; ?>

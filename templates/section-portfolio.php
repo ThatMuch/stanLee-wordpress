@@ -11,11 +11,11 @@
  */
  ?>
 
-  <section class="section-portfolio">
+  <section class="section section-portfolio">
       <div class="container">
           <!-- Title -->
           <?php if(get_sub_field('title') ) : ?>
-              <h2 class="section-title"><?php echo get_sub_field('title'); ?></h2>
+              <h2 class="section__title"><?php echo get_sub_field('title'); ?></h2>
           <?php endif; ?>
           <!-- Title -->
           <!-- Portfolio -->

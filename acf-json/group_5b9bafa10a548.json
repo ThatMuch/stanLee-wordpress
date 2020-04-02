@@ -152,7 +152,7 @@
                             "conditional_logic": 0,
                             "wrapper": {
                                 "width": "",
-                                "class": "section-title",
+                                "class": "section__title",
                                 "id": ""
                             },
                             "default_value": "",
@@ -2185,7 +2185,7 @@
                             "conditional_logic": 0,
                             "wrapper": {
                                 "width": "",
-                                "class": "section-title",
+                                "class": "section__title",
                                 "id": ""
                             },
                             "default_value": "",

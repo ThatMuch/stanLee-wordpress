@@ -1,32 +1,16 @@
-main#sections section.section-services {
+.section-services {
     text-align: center;
 
-    .service {
+    &__item {
         margin-bottom: 2rem;
 
-        &-title {
-            @media screen and (max-width: 767px) {
-                font-size: 30px;
-            }
-
-            @media screen and (max-width: 340px) {
-                font-size: 25px;
-            }
-        }
-
-        &-text {
-            @media screen and (max-width: 767px) {
-                font-size: 15px;
-            }
-        }
-
-        &-icon {
+        &__icon {
             font-size: 2em;
         }
     }
 
     &.bg-primary {
-        .service-icon {
+        .section-services__item__icon {
             color: $color-primary-darker;
         }
     }

@@ -12,10 +12,10 @@
     color: $color-grey;
     background: $color-dark;
 
-    &-rs {
+    &__rs {
         text-align: center;
 
-        li {
+        &__item {
             display: inline-block;
             list-style: none;
             margin-right: .5rem;
@@ -26,6 +26,23 @@
             }
         }
     }
+
+    &__inner {
+        padding: 1.5rem 0;
+        font-size: 0.8rem;
+    }
+
+    &__credits {
+        background-color: $color-black;
+        color: $color-grey2;
+        text-align: center;
+
+        a {
+            color: $color-grey2;
+        }
+    }
+
+    /*----------  Widgets  ----------*/
 
     .widget-title {
         color: $color-grey1;
@@ -38,21 +55,6 @@
         .nav-link {
             color: $color-light;
             padding: 0 0 0.5rem 0;
-        }
-    }
-
-    .inner {
-        padding: 1.5rem 0;
-        font-size: 0.8rem;
-    }
-
-    .credits {
-        background-color: $color-black;
-        color: $color-grey2;
-        text-align: center;
-
-        a {
-            color: $color-grey2;
         }
     }
 }

@@ -28,7 +28,7 @@
             @content;
         }
     }
-    @else if $device == mobileonly {
+    @else if $device == mobile {
         @media screen and (max-width: 450px) {
             @content;
         }

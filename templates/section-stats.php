@@ -11,12 +11,12 @@
  */
  ?>
 
- <section class="section-stats
+ <section class="section section-stats
   <? if(get_sub_field('fond') == "Couleur"):?> bg-primary
   <? elseif(get_sub_field('fond') == "Gris"):?> bg-light<? endif;?>">
     <!-- Section background: image -->
       <? if(get_sub_field('fond') == "Image"):?>
-      <div class="section-background-image"  style="
+      <div class="section__background-image"  style="
             <? if(get_sub_field('image')):?>
             background-image:url(<? echo the_sub_field('image') ?>);
             <? endif;?>"></div>
@@ -25,7 +25,7 @@
      <div class="container">
          <!-- Title -->
          <?php if(get_sub_field('title') ) : ?>
-            <h2 class="section-title"><?php echo get_sub_field('title'); ?></h2>
+            <h2 class="section__title text-center"><?php echo get_sub_field('title'); ?></h2>
         <?php endif; ?>
         <!-- Title -->
         <div class="row justify-content-center">

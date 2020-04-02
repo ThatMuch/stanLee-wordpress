@@ -4,17 +4,15 @@
     }
 
 
-    .section-title {
+    &__carousel {
         text-align: center;
-    }
 
-    .testimonials-carousel {
         @include breakpoint(mobile) {
             min-height: 500px;
         }
 
 
-        &-item {
+        &_item {
             &-image {
                 @extend .mb-3, .rounded-circle;
 
@@ -25,6 +23,11 @@
                 width: 150px;
                 background-color: #ccc;
             }
+        }
+
+        .carousel-indicators {
+            bottom: -25px;
+            margin-bottom: 0;
         }
 
         .carousel-control-prev,

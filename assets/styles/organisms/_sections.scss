@@ -1,5 +1,5 @@
 main#sections {
-    section {
+    .section {
         padding: 5rem 3rem 4rem 3rem;
         position: relative;
         width: 100vw;
@@ -12,19 +12,20 @@ main#sections {
             padding: 5rem 0 4rem 0;
         }
 
-        @media screen and (max-width: 430px) {
+        @include breakpoint(mobile) {
             padding: 3rem 0 4rem 0;
         }
+
 
         .container {
             position: relative;
         }
 
-        .section-title {
+        .section__title {
             margin-bottom: 2rem;
         }
 
-        .section-background-image {
+        .section__background-image {
             position: absolute;
             left: 0;
             top: 0;
@@ -38,10 +39,13 @@ main#sections {
             background-position: center;
             background-repeat: no-repeat;
             background-attachment: fixed;
-
-            // filter: brightness(0.5);
-       
         }
+    }
+}
+
+.bg-primary:not(.section-price) {
+    .btn {
+        @extend .btn-light;
     }
 }
 

@@ -1,9 +1,5 @@
 .section-faq {
-    .section-title {
-        text-align: center;
-    }
-
-    .faq-accordion {
+    &__accordion {
         .card {
             border: none;
             background-color: transparent;
@@ -23,12 +19,6 @@
 
             &:hover {
                 cursor: pointer;
-            }
-        }
-
-        .answer {
-            @media screen and (max-width: 767px) {
-                font-size: 15px;
             }
         }
     }

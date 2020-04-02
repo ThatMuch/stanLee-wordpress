@@ -11,12 +11,12 @@
  */
  ?>
 
-  <section class="section-contact
+  <section class="section section-contact
   <? if(get_sub_field('fond') == "Couleur"):?> bg-primary
   <? elseif(get_sub_field('fond') == "Gris"):?> bg-light<? endif;?>">
     <!-- Section background: image -->
       <? if(get_sub_field('fond') == "Image"):?>
-      <div class="section-background-image"  style="
+      <div class="section__background-image"  style="
             <? if(get_sub_field('image')):?>
             background-image:url(<? echo the_sub_field('image') ?>);
             <? endif;?>"></div>
@@ -25,26 +25,26 @@
     <div class="container">
       <!-- Title -->
       <?php if(get_sub_field('title') ) : ?>
-  <h2 class="section-title"><?php echo get_sub_field('title'); ?></h2>
+  <h2 class="section__title text-center"><?php echo get_sub_field('title'); ?></h2>
 <?php endif; ?>
 <!-- Title -->
 <div class="row">
 <? if (get_sub_field('contact_infos') == "Oui"): ?>
   <div class="col-sm-6">
-    <ul class="contact-infos">
-      <li class="contact-infos-phone">
+    <ul class="section-contact__infos">
+      <li class="section-contact__infos__phone">
         <i class="fas fa-mobile fa-2x mr-2"></i>
         <?php if (get_field('phone', 'option') ) : ?>
           <span><?php echo get_field('phone','option'); ?></span>
         <?php endif; ?>
       </li>
-      <li class=" contact-infos-address">
+      <li class="section-contact__infos__address">
         <i class="fas fa-map-marker-alt fa-2x mr-2"></i>
           <?php if (get_field('adress', 'option') ) : ?>
             <span><?php echo get_field('adress','option'); ?></span>
           <?php endif; ?>
       </li>
-      <li class="contact-infos-hours">
+      <li class="section-contact__infos__hours">
         <i class="far fa-clock fa-2x mr-2"></i>
         <?php if (get_field('hours', 'option') ) : ?>
           <span><?php echo get_field('hours','option'); ?></span>
@@ -52,7 +52,7 @@
       </li>
     </ul>
     <?php if (have_rows('rs', 'options')) : ?>
-      <ul class="contact-infos-rs">
+      <ul class="section-contact__infos__rs">
         <?php while ( have_rows('rs', 'options') ) : the_row(); ?>
           <?php if (get_sub_field('facebook') ) : ?>
               <li>
@@ -101,7 +101,7 @@
     <? endif;?>
   </div>
 <? endif;?>
-  <div class="contact-form <? if (get_sub_field('contact_infos') == "Oui"): ?> col-sm-6 <? else : ?> col-sm-12 full-width<?endif; ?>">
+  <div class="section-contact__form <? if (get_sub_field('contact_infos') == "Oui"): ?> col-sm-6 <? else : ?> col-sm-12 full-width<?endif; ?>">
     <!-- Contact form -->
     <?php $form = get_sub_field('contact_form');?>
     <?php if($form) : ?>

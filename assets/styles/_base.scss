@@ -29,8 +29,9 @@ html {
     margin: 0;
     padding: 0;
     font-family: $text-ff;
-    font-size: $base_size; // only used for rem-handling, the actual font-size is $body__fontsize
-    color: $html__textcolor;
+    font-size: $text-fz; // only used for rem-handling, the actual font-size is $body__fontsize
+    line-height: $text-lh;
+    color: $text-c;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -42,10 +43,6 @@ body {
     align-items: center;
     min-height: 100vh;
     background-color: $html__bgcolor !important;
-    font-size: $text-fz;
-    font-weight: $text-fw;
-    color: $text-c;
-    line-height: $text-lh;
 }
 
 main {

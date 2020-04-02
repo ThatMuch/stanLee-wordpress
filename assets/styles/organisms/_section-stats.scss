@@ -1,8 +1,4 @@
 .section-stats {
-    .section-title {
-        text-align: center;
-    }
-
     .circle-bar {
         margin-bottom: 30px;
 
@@ -35,7 +31,7 @@
             stroke-dasharray: 219.91148575129;
         }
 
-        text {
+        .percentage {
             text-anchor: middle;
             fill: $color-primary;
         }

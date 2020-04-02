@@ -11,17 +11,17 @@
  */
  ?>
 
- <section class="section-faq
+ <section class="section section-faq
  <? if(get_sub_field('fond') == "Couleur"):?> bg-primary
 <? elseif(get_sub_field('fond') == "Gris"):?> bg-light<? endif;?>">
 
  <div class="container">
         <!-- Title -->
         <?php if(get_sub_field('title') ) : ?>
-            <h2 class="section-title"><?php echo get_sub_field('title'); ?></h2>
+            <h2 class="section__title text-center"><?php echo get_sub_field('title'); ?></h2>
         <?php endif; ?>
         <!-- Title -->
-        <div class="accordion faq-accordion" id="faq-accordion">
+        <div class="accordion section-faq__accordion" id="faq-accordion">
             <!-- FAQ -->
             <?php if ( have_rows('faq') ) :  $i =0; ?>
 
@@ -42,8 +42,6 @@
                             </div>
                         </div>
                     </div>
-
-
 
                 <?php $i++; endwhile; ?>
 
