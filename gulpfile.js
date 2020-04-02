@@ -198,28 +198,24 @@ gulp.task('watch',  gulp.parallel('browsersync', function() {
 }));
 
 gulp.task('build-clean', function() {
-  gulp.del(['dist/**/*']);
+ return del(['dist/**/*']);
 });
 
 gulp.task('build-copy', function() {
   return gulp
     .src(build_files)
-    .pipe(dest('dist/stanlee'));
+    .pipe(gulp.dest('dist/stanlee'));
 });
 
 gulp.task('build-zip', function() {
   return gulp
     .src('dist/**/*')
     .pipe(zip('stanlee.zip'))
-    .pipe(dest('dist'));
+    .pipe(gulp.dest('dist'));
 });
 
 gulp.task('build-delete', function() {
-  gulp.del(['dist/**/*', '!dist/stanlee.zip']);
-});
-
-gulp.task('build', function() {
-  gulp.series('default','build-clean', 'build-copy', 'build-zip', 'build-delete');
+ return del(['dist/**/*', '!dist/stanlee.zip']);
 });
 
 
@@ -227,3 +223,7 @@ gulp.task('build', function() {
 /––––––––––––––––––––––––*/
 // default gulp tasks executed with `gulp`
 gulp.task('default', gulp.series('css', 'cachebust', 'javascript','makepot'));
+
+gulp.task('build',
+  gulp.series('default','build-clean', 'build-copy', 'build-zip', 'build-delete')
+);
