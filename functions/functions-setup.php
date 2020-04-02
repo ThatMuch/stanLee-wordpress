@@ -129,4 +129,37 @@ add_action( 'widgets_init', 'stanlee_widgets_init' );
 }
 
 add_filter( 'get_search_form', 'my_search_form', 100 );
+
+/*==================================================================================
+  6.0 SETUP Theme Customization
+==================================================================================*/
+function theme_customize_register( $wp_customize ) {
+    // Primary color
+    $wp_customize->add_setting( 'primary_color', array(
+      'default'   => '',
+      'transport' => 'refresh',
+      'sanitize_callback' => 'sanitize_hex_color',
+    ) );
+
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'primary_color', array(
+      'section' => 'colors',
+      'label'   => esc_html__( 'Primary color', 'theme' ),
+    ) ) );
+}
+
+add_action( 'customize_register', 'theme_customize_register' );
+function theme_get_customizer_css() {
+  ob_start();
+  $primary_color = get_theme_mod( 'primary_color', '' );
+  if ( ! empty( $primary_color ) ) {
+    ?>
+    body {
+      color: <?php echo $primary_color; ?>;
+    }
+    <?php
+  }
+
+  $css = ob_get_clean();
+  return $css;
+}
 ?>

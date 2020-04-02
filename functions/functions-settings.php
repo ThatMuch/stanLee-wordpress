@@ -56,6 +56,8 @@ function _s_enqueue() {
   wp_enqueue_script('_s_/scripts');
   // styles
   wp_enqueue_style('_s_/styles', get_template_directory_uri() . _s_get_cachebusted_css(), false, null);
+  $custom_css = theme_get_customizer_css();
+  wp_add_inline_style( '_s_/styles', $custom_css );
   // Typekit
   global $typekit_id;
   if ($typekit_id) :
