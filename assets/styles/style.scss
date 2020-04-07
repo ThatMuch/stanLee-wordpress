@@ -12,25 +12,57 @@
 @charset "UTF-8";
 
 /*==================================================================================
-  PRESETS/ASSETS
+  PRESETS/
 ==================================================================================*/
-@import "vars";
-@import "essentials";
+@import "mixins";
 @import "fonts";
-@import "state";
-
-/*==================================================================================
-  SITE STYLES
-==================================================================================*/
+@import "vars";
+@import "states";
 @import "base";
-@import "layout";
-@import "module";
-@import "nav";
 
 /*==================================================================================
-  SECTIONS
+  ATOMIC DESIGN/
 ==================================================================================*/
-@import "sections/sections";
+
+/*=====  Atoms  ======*/
+@import "./atoms/_alerts";
+@import "./atoms/_badges";
+@import "./atoms/_buttons";
+@import "./atoms/_dividers";
+@import "./atoms/_headings";
+@import "./atoms/_images";
+@import "./atoms/_inputs";
+@import "./atoms/_labels";
+@import "./atoms/_links";
+@import "./atoms/_lists";
+
+/*=====  Molecules  ======*/
+@import "./molecules/_breadcrumbs";
+@import "./molecules/_cards";
+@import "./molecules/_carousels";
+@import "./molecules/_collapse";
+@import "./molecules/_contact-form";
+@import "./molecules/_gallery";
+@import "./molecules/_modal";
+@import "./molecules/_navigation";
+@import "./molecules/_pagination";
+@import "./molecules/_pop-over";
+@import "./molecules/_search-form";
+@import "./molecules/_slider";
+@import "./molecules/_table";
+
+/*=====  Organisms  ======*/
+
+@import "./organisms/_footer";
+@import "./organisms/_header";
+@import "./organisms/_hero";
+@import "./organisms/sections";
+
+/*=====  Templates  ======*/
+@import "./templates/_blog";
+@import "./templates/_page";
+@import "./templates/_post";
+@import "./templates/_subsite";
 
 /*==================================================================================
   BOOTSTRAP

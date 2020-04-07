@@ -1,0 +1,17 @@
+/**
+ *
+ * @author      _a
+ * @version     0.1.0
+ * @since       _s_1.0.0.0
+ *
+ */
+.carousel {
+    .carousel-inner {
+        width: 100%;
+
+        @include breakpoint(tablet) {
+            margin: 0 auto;
+            width: 500px;
+        }
+    }
+}

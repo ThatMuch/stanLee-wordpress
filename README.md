@@ -181,45 +181,6 @@ wp-page.php             WP page par défaut
 wp-single.php           WP post par défaut
 ```
 
-### Responsive/Fluid
-
-#### Taille
-
-Par défaut, le layout s'adapte à la largeur de la fenêtre (viewport) puisque toutes les unités sont en `rem` et `html` utilise font-size comme unité de base.
-La mise à l'échelle peut être configurée dans la section `SIZE/SCALING` dans `vars.scsss`. Vous pouvez aussi arrêter la mise à m'échelle sur certaines largeurs de fenêtre. Voir les instructions dans `vars.scsss`.
-
-#### Mixins/Classes
-
-**definie par des variables**
-
-La largeur des deux variables disponibles `mobile` et `desktop` sont définies dans `vars.scss`.
-
-- min 800px `@include desktop {...}`
-- max 799px`@include mobile {...}`
-
-**définie par la largeur en pixel**
-
-- au moins 750px: `@include vpw_min(750px)`
-- au maximum 500px: `@include vpw_max(500px)`
-- entre 1000px et 1200px: `@include vpw(1000px, 1200px)`
-
-**definie par ascepct-ratio**
-
-- au moins 16:9: `@include asr_min(16,9) { ... }`
-- au maximum 4:3: `@include asr_max(4,3) { ... }`
-
-**definie par css-class**
-Les deux variables disponibles `mobile` et `desktop` fonctionnent ainsi (avec les valeurs par défaut):
-
-```SCSS
-.desktop {
-	// caché tant que < 800px;
-}
-.mobile {
-	// caché tant que > 799;
-}
-```
-
 ## À propos
 
 Auteur: \_a

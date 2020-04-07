@@ -1,0 +1,44 @@
+/**
+ *
+ * @author      _a
+ * @version     0.1.0
+ * @since       _s_1.0.0.0
+ *
+ */
+//=> templates/wp-single.php
+main#post {
+    section {
+        article {
+            img,
+            .modernizr-of {
+                max-width: 100%;
+
+                // height: 20rem;
+                background-size: cover; // modernizr
+                object-fit: cover;
+            }
+
+            .postinfo {
+                margin-bottom: .5rem;
+            }
+
+            dl,
+            ol,
+            ul {
+                padding-left: 2rem;
+            }
+
+            h2 {
+                @include heading-size(3);
+            }
+
+            h3 {
+                @include heading-size(2);
+            }
+
+            h4 {
+                @include heading-size(1);
+            }
+        }
+    }
+}

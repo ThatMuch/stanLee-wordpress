@@ -1,0 +1,34 @@
+.section-team {
+    text-align: center;
+
+    &__member {
+        margin-bottom: 30px;
+        text-align: center;
+        background-color: #fff;
+        padding: 60px 30px;
+        height: 100%;
+
+        &__img {
+            @extend .mb-3, .rounded-circle;
+
+            height: 150px;
+            width: 150px;
+            background-color: #ccc;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        &__rs {
+            li {
+                list-style: none;
+                display: inline-block;
+                font-size: 25px;
+
+                &:not(:last-child) {
+                    // Ajouter une marge à droite sauf sur le dernier lien
+                    @extend .mr-2;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,12 @@
+.section-carousel {
+    @include breakpoint(mobile) {
+        padding: 3rem 0 !important;
+    }
+
+
+    .carousel-item {
+        img {
+            width: 100%;
+        }
+    }
+}

@@ -41,7 +41,7 @@
 /* 1.1 ENQUEUE SCRIPTS/STYLES
 /––––––––––––––––---––––––––*/
 // enqueues  sctipts and styles (optional typekit embed)
-// » https://developer.wordpress.org/reference/functions/wp_enqueue_script/
+// » https://developer.wordpress.org/reference/functions/wp_enqueue_script/
 function _s_enqueue() {
   // load bootstrap css
 	// wp_enqueue_style( 'wp-bootstrap-starter-bootstrap-css', get_template_directory_uri() . '/inc/assets/css/bootstrap.min.css' );
@@ -140,7 +140,7 @@ add_action('after_setup_theme', '_s_wphead_cleanup');
 
 /* 2.2 LOAG OG-TAGS
 /––––––––––––––––––––––––*/
-// loads open graph tags » http://ogp.me/
+// loads open graph tags » http://ogp.me/
 // use '_s_load_ogtags(true)' to also display the og:image tag
 function _s_ogtags() {
   echo '

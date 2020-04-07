@@ -1,0 +1,46 @@
+.section-contact {
+    .form-control {
+        @media screen and (max-width: 530px) {
+            font-size: 1.4rem;
+        }
+    }
+
+    &__infos {
+        text-align: center;
+
+        img {
+            margin-bottom: 1rem;
+            height: 46px;
+
+            @include breakpoint(mobile) {
+                height: 20px;
+            }
+        }
+
+        &__rs {
+            li {
+                display: inline-block;
+                font-size: 1.5rem;
+                margin-right: 1rem;
+            }
+        }
+    }
+
+    &__form {
+        width: 40%;
+        margin: 0 auto;
+
+        @include breakpoint(mobile) {
+            width: 90%;
+        }
+
+
+        label {
+            width: 100%;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+        }
+    }
+}

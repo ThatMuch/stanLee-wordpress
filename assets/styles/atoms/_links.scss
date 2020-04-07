@@ -1,0 +1,17 @@
+/**
+ *
+ * @author      _a
+ * @version     0.1.0
+ * @since       _s_1.0.0.0
+ *
+ */
+
+a {
+    color: $a__linkcolor;
+    text-decoration: $a__textdecoration;
+    transition: $transition_fast;
+
+    &:hover {
+        color: $a__hovercolor;
+    }
+}

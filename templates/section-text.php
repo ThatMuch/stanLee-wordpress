@@ -11,14 +11,14 @@
  */
  ?>
 
- <section class="section-text
+ <section class="section section-text
  <? if(get_sub_field('fond') == "Couleur"):?> bg-primary
 <? elseif(get_sub_field('fond') == "Gris"):?> bg-light<? endif;?>">
 
  <div class="container">
         <!-- Title -->
         <?php if(get_sub_field('title') ) : ?>
-            <h2 class="section-title"><?php echo get_sub_field('title'); ?></h2>
+            <h2 class="section__title"><?php echo get_sub_field('title'); ?></h2>
         <?php endif; ?>
         <!-- Title -->
         <!-- Texte -->

@@ -1,0 +1,40 @@
+/**
+ *
+ * @author      _a
+ * @version     0.1.0
+ * @since       _s_1.0.0.0
+ *
+ */
+/*==================================================================================
+  NAV
+==================================================================================*/
+nav.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 200;
+    width: 100vw;
+    height: $header_height;
+
+    .logo  {
+        width: 12rem;
+        height: 3rem;
+        margin-right: 2rem;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+
+    .navbar-collapse.show {
+        background-color: $color-primary;
+        width: 100vw;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: $header_height;
+        padding: 15px;
+
+        a {
+            color: #fff;
+        }
+    }
+}

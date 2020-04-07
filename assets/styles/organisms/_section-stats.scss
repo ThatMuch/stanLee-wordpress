@@ -1,0 +1,39 @@
+.section-stats {
+    .circle-bar {
+        margin-bottom: 30px;
+
+        &-title {
+            text-align: center;
+        }
+    }
+
+    .radial-progress {
+        max-width: 200px;
+        -webkit-transform: rotate(-90deg);
+        transform: rotate(-90deg);
+        width: 100%;
+        margin: auto;
+        display: block;
+
+        circle {
+            fill: transparent;
+            stroke: #fff;
+            stroke-dashoffset: 219.91148575129;
+            stroke-width: 2;
+            stroke: $color-primary;
+        }
+
+        .incomplete {
+            opacity: 0.25;
+        }
+
+        .complete {
+            stroke-dasharray: 219.91148575129;
+        }
+
+        .percentage {
+            text-anchor: middle;
+            fill: $color-primary;
+        }
+    }
+}

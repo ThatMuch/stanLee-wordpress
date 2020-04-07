@@ -1,0 +1,17 @@
+.section-services {
+    text-align: center;
+
+    &__item {
+        margin-bottom: 2rem;
+
+        &__icon {
+            font-size: 2em;
+        }
+    }
+
+    &.bg-primary {
+        .section-services__item__icon {
+            color: $color-primary-darker;
+        }
+    }
+}

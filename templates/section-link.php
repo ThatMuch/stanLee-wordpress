@@ -11,13 +11,13 @@
  */
  ?>
 
-  <section class="section-link
+  <section class="section section-link
   <? if(get_sub_field('fond') == "Couleur"):?> bg-primary
   <? elseif(get_sub_field('fond') == "Gris"):?> bg-light<? endif;?>">
 
     <!-- Section background: image -->
     <? if(get_sub_field('fond') == "Image"):?>
-        <div class="section-background-image"  style="
+        <div class="section__background-image"  style="
         <? if(get_sub_field('image')):?>
         background-image:url(<? echo the_sub_field('image') ?>);
         <? endif;?>"></div>
@@ -26,13 +26,13 @@
     <div class="container">
         <!-- Title -->
         <?php if(get_sub_field('title') ) : ?>
-            <h2 class="section-title"><?php echo get_sub_field('title'); ?></h2>
+            <h2 class="section__title"><?php echo get_sub_field('title'); ?></h2>
         <?php endif; ?>
         <!-- Title -->
 
         <!-- Text -->
         <?php if(get_sub_field('text') ) : ?>
-            <p> <?php echo get_sub_field('text'); ?></p>
+            <p class="mb-4"> <?php echo get_sub_field('text'); ?></p>
         <?php endif; ?>
         <!-- Text -->
         <!-- Button -->
@@ -42,7 +42,7 @@
                     <a href="<?php the_sub_field('url'); ?>" class="btn btn-primary"><?php the_sub_field('label'); ?></a>
                 <?php endif; ?>
                 <?php if (get_sub_field('link') == 'Interne' && get_sub_field('label') && get_sub_field('int_url') ) : ?>
-                    <a href="<?php the_sub_field('int_url'); ?>" class="btn">
+                    <a href="<?php the_sub_field('int_url'); ?>" class="btn btn-primary">
                         <?php the_sub_field('label'); ?>
                     </a>
                 <?php endif; ?>

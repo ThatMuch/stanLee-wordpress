@@ -1,0 +1,25 @@
+.section-price {
+    &__column {
+        &__wrapper {
+            background-color: #fff;
+            padding: 60px 30px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        &__price {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: bold;
+            color: $color-primary;
+        }
+
+        &__service {
+            @extend .pt-3, .pb-3;
+
+            list-style: none;
+            border-bottom: 1px solid #ccc;
+        }
+    }
+}

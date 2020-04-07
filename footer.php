@@ -8,16 +8,16 @@
 	</div><!-- #content -->
     <footer class="footer">
       <div class="container">
-        <div class="row inner">
+        <div class="row footer__inner">
        <? if(is_active_sidebar('footer-1')){
       dynamic_sidebar('footer-1');
         } ?>
         <?php if (have_rows('rs', 'options')) : ?>
         <div class="col-sm-3">
-      <ul class="footer-rs">
+      <ul class="footer__rs">
         <?php while ( have_rows('rs', 'options') ) : the_row(); ?>
           <?php if (get_sub_field('facebook') ) : ?>
-              <li>
+              <li class="footer__rs__item">
                 <a href="<?php the_sub_field('facebook');?>">
                   <i class="fab fa-facebook" aria-hidden="true"></i>
                 </a>
@@ -64,16 +64,14 @@
     <? endif;?>
         </div>
       </div>
-    <div class="credits">
+    <div class="footer__credits">
       <div class="container">
-      <div class="inner">
+      <div class="footer__inner">
       Un site crée par <a href="https://_a.fr" target="_blank" rel="noopener noreferrer"><strong>_a</strong></a>
       </div>
       </div>
     </div>
-
     </footer>
-
     <? wp_footer() ?>
   </body>
 </html>

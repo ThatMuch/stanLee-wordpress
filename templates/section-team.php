@@ -11,12 +11,12 @@
  */
  ?>
 
-  <section class="section-team
+  <section class="section section-team
   <? if(get_sub_field('fond') == "Couleur"):?> bg-primary
   <? elseif(get_sub_field('fond') == "Gris"):?> bg-light<? endif;?>">
     <!-- Section background: image -->
       <? if(get_sub_field('fond') == "Image"):?>
-      <div class="section-background-image"  style="
+      <div class="section__background-image"  style="
             <? if(get_sub_field('image')):?>
             background-image:url(<? echo the_sub_field('image') ?>);
             <? endif;?>"></div>
@@ -25,7 +25,7 @@
       <div class="container">
           <!-- Title -->
           <?php if(get_sub_field('title') ) : ?>
-              <h2 class="section-title"><?php echo get_sub_field('title'); ?></h2>
+              <h2 class="section__title"><?php echo get_sub_field('title'); ?></h2>
           <?php endif; ?>
           <!-- Title -->
           <?php
@@ -37,31 +37,31 @@
                   <div class="row justify-content-center">
                       <?php  while ( $the_query->have_posts() ): $the_query->the_post(); ?>
                           <div class="col-sm-4">
-                              <div class="team-member">
+                              <div class="section-team__member">
                                 <!-- Image -->
                                 <?php if (get_the_post_thumbnail()) : ?>
-                                    <img class="team-member-img" src="<?php the_post_thumbnail_url('thumbnail')?>" alt="<?php the_title()?>">
+                                    <img class="section-team__member__img" src="<?php the_post_thumbnail_url('thumbnail')?>" alt="<?php the_title()?>">
                                 <? else : ?>
-                                    <div class="team-member-img"></div>
+                                    <div class="section-team__member__img"></div>
                                 <? endif;?>
                                 <!-- Image -->
                                   <!-- Name -->
-                                      <h4 class="team-member-name"><?php the_title()?></h4>
+                                      <h4 class="section-team__member__name"><?php the_title()?></h4>
                                   <!-- Name -->
                                   <!-- Job -->
                                   <?php if (get_field('job') ) : ?>
-                                      <h5 class="team-member-job"> <?php echo get_field('job'); ?></h5>
+                                      <h5 class="section-team__member__job"> <?php echo get_field('job'); ?></h5>
                                   <?php endif; ?>
                                   <!-- Job -->
                                   <!-- Description -->
                                   <?php if (get_field('description') ) : ?>
-                                      <p class="team-member-desc"> <?php echo get_field('description'); ?></p>
+                                      <p class="section-team__member__desc"> <?php echo get_field('description'); ?></p>
                                   <?php endif; ?>
                                   <!-- Description -->
                                   <!-- Social medias -->
                                   <?php if (have_rows('links')) : ?>
                                       <?php while ( have_rows('links') ) : the_row(); ?>
-                                          <ul class="team-member-rs">
+                                          <ul class="section-team__member__rs">
                                               <!-- Facebook -->
                                               <?php if (get_sub_field('facebook') ) : ?>
                                               <li>

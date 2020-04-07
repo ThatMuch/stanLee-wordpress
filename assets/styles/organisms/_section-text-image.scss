@@ -1,0 +1,41 @@
+.section-text-image {
+    padding: 0 !important;
+
+    &:nth-child(odd) {
+        .row {
+            flex-direction: row-reverse;
+        }
+    }
+
+    .row {
+        min-height: 50vh;
+        position: relative;
+    }
+
+    &__text {
+        display: flex;
+        align-items: center;
+        padding: 0 !important;
+
+        &__inner {
+            padding: 30px 45px;
+        }
+    }
+
+    &__image {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+
+        .bg {
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            width: 100%;
+            height: 100%;
+
+            @include breakpoint(mobile) {
+                height: 350px;
+            }
+        }
+    }
+}
