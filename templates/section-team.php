@@ -10,12 +10,10 @@
  *
  */
  ?>
-
-  <section class="section section-team
-  <? if(get_sub_field('fond') == "Couleur"):?> bg-primary
-  <? elseif(get_sub_field('fond') == "Gris"):?> bg-light<? endif;?>">
+<?php $background = get_sub_field('background'); ?>
+  <section class="section section-team <?= $background == "Couleur" ? "bg-primary" : ($background == "Gris" ? "bg-light" : "bg-white") ?>">
     <!-- Section background: image -->
-      <? if(get_sub_field('fond') == "Image"):?>
+      <? if(get_sub_field('background') == "Image"):?>
       <div class="section__background-image"  style="
             <? if(get_sub_field('image')):?>
             background-image:url(<? echo the_sub_field('image') ?>);

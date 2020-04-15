@@ -10,9 +10,8 @@
  *
  */
  ?>
-<section class="section section-services
-<? if(get_sub_field('fond') == "Couleur"):?> bg-primary
-  <? elseif(get_sub_field('fond') == "Gris"):?> bg-light<? endif;?>">
+ <?php $background = get_sub_field('background'); ?>
+<section class="section section-services <?= $background == "Couleur" ? "bg-primary" : ($background == "Gris" ? "bg-light" : "bg-white") ?>">
 
         <div class="container">
               <!-- Title -->
