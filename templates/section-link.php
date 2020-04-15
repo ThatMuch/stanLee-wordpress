@@ -36,18 +36,11 @@
         <?php endif; ?>
         <!-- Text -->
         <!-- Button -->
-        <?php if (have_rows('button')) : ?>
-            <?php while ( have_rows('button') ) : the_row(); ?>
-                <?php if (get_sub_field('link') == 'Externe' && get_sub_field('label') && get_sub_field('url') ) : ?>
-                    <a href="<?php the_sub_field('url'); ?>" class="btn btn-primary"><?php the_sub_field('label'); ?></a>
-                <?php endif; ?>
-                <?php if (get_sub_field('link') == 'Interne' && get_sub_field('label') && get_sub_field('int_url') ) : ?>
-                    <a href="<?php the_sub_field('int_url'); ?>" class="btn btn-primary">
-                        <?php the_sub_field('label'); ?>
-                    </a>
-                <?php endif; ?>
-            <?php endwhile; ?>
-        <?php endif; ?>
+		<?php if ( get_sub_field('button') ) : $link = get_sub_field('button'); ?>
+			<a class="btn btn-primary" href="<?php echo $link['url']; ?>">
+				<?php echo $link['title']; ?>
+			</a>
+		<?php endif; ?>
         <!-- Button -->
       </div>
  </section>
