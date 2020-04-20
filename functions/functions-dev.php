@@ -116,7 +116,7 @@ function slugify($text) {
 /––––––––––––––––––––––––*/
 // outputs one of the two parts of the Google Tag Manager scripts
 // Usage: gtm('head', 'GTM-1234567) and gtm('body', 'GTM-1234567)
-function _s_gtm($type) {
+function gur_gtm($type) {
   global $GTM_id;
   if ($GTM_id) :
     if ($type == 'head') : ?>
@@ -126,12 +126,11 @@ function _s_gtm($type) {
       j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','<?= $GTM_id ?>');</script>
-      <?
-    elseif ($type == 'body') : ?>
+       <?php elseif ($type == 'body') : ?>
       <!-- Google Tag Manager (noscript) -->
       <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=<?= $GTM_id ?>"
       height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-      <?
+      <?php
     endif;
   endif;
 }
