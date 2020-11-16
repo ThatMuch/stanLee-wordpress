@@ -28,6 +28,8 @@ var browsersync_proxy = "stanlee.local";
 var assets = {
   css       : ['assets/styles/style.scss'],
   css_watch : ['assets/styles/**/*.scss'],
+  admin_css: ['assets/AdminStyles/style.scss'],
+  admin_css_watch: ['assets/AdminStyles/**/*.scss'],
   javascript: ['assets/scripts/*.js'],
   images    : ['assets/images/*.*'],
   fonts     : ['assets/fonts/*.*']
@@ -94,19 +96,22 @@ var zip = require('gulp-zip');
 gulp.task('clean:css', function() { return del(['dist/*.css', 'dist/rev-manifest.json'])});
 gulp.task('clean:cachebust', function() { return del(['./style-*.min.css'])});
 gulp.task('clean:javascript', function() { return del(['dist/*.js'])});
+gulp.task('clean:admin_css',function () { return del(['dist/*.css']) });
+
 
 /* BROWSERSYNC
 /––––––––––––––––––––––––*/
 // initialize Browser Sync
-gulp.task('browsersync', function() {
+gulp.task('browsersync',function () {
   browserSync.init({
-    proxy         : browsersync_proxy,
-    notify        : false,
-    open          : false,
+    proxy: browsersync_proxy,
+    notify: false,
+    open: false,
     snippetOptions: {
       whitelist: ['/wp-admin/admin-ajax.php'],
       blacklist: ['/wp-admin/**']
-    }
+    },
+    reloadDelay: 800
   });
 });
 
@@ -125,6 +130,24 @@ gulp.task('css', gulp.series('clean:css', function() {
     .pipe(autoprefixer('last 2 version', { cascade: false }))
     .pipe(cleanCSS())
     .pipe(rename('./style.min.css'))
+    .pipe(gulp.dest('./'))
+    .pipe(browserSync.stream());
+}));
+
+/* ADMIN CSS
+/––––––––––––––––––––––––*/
+// from:    assets/styles/main.css
+// actions: compile, minify, prefix, rename
+// to:      ./style.min.css
+gulp.task('admin_css',gulp.series('clean:admin_css',function () {
+  return gulp
+    .src(assets['admin_css'])
+    .pipe(plumber({ errorHandler: notify.onError("<%= error.message %>") }))
+    .pipe(concat('admin_style.min.css'))
+    .pipe(sass())
+    .pipe(autoprefixer('last 2 version',{ cascade: false }))
+    .pipe(cleanCSS())
+    .pipe(rename('./admin_style.min.css'))
     .pipe(gulp.dest('./'))
     .pipe(browserSync.stream());
 }));
@@ -190,11 +213,13 @@ gulp.task('makepot', function () {
 /––––––––––––––––––––––––*/
 // watch for modifications in
 // styles, scripts, images, php files, html files
-gulp.task('watch',  gulp.parallel('browsersync', function() {
-  watch(assets['css_watch'], gulp.series('css', 'cachebust'));
-  watch(assets['javascript'], gulp.series('javascript'));
-  watch('**/*.php', browserSync.reload);
-  watch('*.html', browserSync.reload);
+gulp.task('watch',gulp.parallel('browsersync',function () {
+  watch(assets['css_watch'],gulp.series('css','cachebust'));
+  watch(assets['admin_css_watch'],gulp.series('admin_css'));
+  watch(assets['javascript'],gulp.series('javascript'));
+  watch('**/*.php',browserSync.reload);
+  watch('*.html',browserSync.reload);
+  watch('**/*.scss',browserSync.reload);
 }));
 
 gulp.task('build-clean', function() {
@@ -225,4 +250,4 @@ gulp.task('build',
 /* DEFAULT
 /––––––––––––––––––––––––*/
 // default gulp tasks executed with `gulp`
-gulp.task('default', gulp.series('css', 'cachebust', 'javascript','makepot'));
+gulp.task('default',gulp.series('css', 'admin_css','cachebust', 'javascript','makepot'));
