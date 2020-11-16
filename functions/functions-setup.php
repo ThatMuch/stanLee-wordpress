@@ -45,14 +45,6 @@ setlocale(LC_ALL, 'de_CH.UTF-8');
 $typekit_id = '';
 
 
-/* SELF-HOSTED
-/––––––––––––––––––––––––*/
-// preload self-hosted fonts => stanlee_preload_fonts()
-// define font-names and font-formats for all fonts that need preloading (usally the same as in assets/styles/fonts.scss)
-$font_names = ['asap-v7-latin-regular','asap-v7-latin-500','asap-v7-latin-700'];
-$font_formats = ['woff','woff2'];
-
-
 
 /*==================================================================================
   3.0 GOOGLE TAG MANAGER
