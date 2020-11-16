@@ -14,8 +14,6 @@
     <? _s_gtm('head') ?>
     <!--=== OPEN-GRAPH TAGS ===-->
     <? _s_ogtags() ?>
-    <!--=== PRELOAD FONTS ===-->
-    <? _s_preload_fonts() ?>
     <!--=== WP HEAD ===-->
     <? wp_head(); ?>
   </head>
