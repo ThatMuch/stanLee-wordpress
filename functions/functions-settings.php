@@ -56,6 +56,7 @@ function _s_enqueue() {
   wp_enqueue_script('_s_/scripts');
   // styles
   wp_enqueue_style('_s_/styles', get_template_directory_uri() . _s_get_cachebusted_css(), false, null);
+  /*     wp_enqueue_style( 'custom-admin', get_stylesheet_directory_uri() . '/admin_style.min.css' ); */
   // Typekit
   global $typekit_id;
   if ($typekit_id) :
@@ -71,8 +72,24 @@ function _s_enqueue() {
     wp_enqueue_script('wp-bootstrap-starter-themejs', get_template_directory_uri() . '/inc/assets/js/theme-script.min.js', array(), '', true );
 	  wp_enqueue_script( 'wp-bootstrap-starter-skip-link-focus-fix', get_template_directory_uri() . '/inc/assets/js/skip-link-focus-fix.min.js', array(), '20151215', true );
 }
+
 add_action('wp_enqueue_scripts', '_s_enqueue');
 
+// Admin Style
+function my_custom_admin_stylesheet() {
+    wp_enqueue_style( 'custom-admin', get_stylesheet_directory_uri() . '/admin_style.min.css' );
+}
+
+//This loads the function above on the login page
+add_action( 'admin_enqueue_scripts', 'my_custom_admin_stylesheet' );
+
+// Login Style
+function my_custom_login_stylesheet() {
+    wp_enqueue_style( 'custom-login', get_stylesheet_directory_uri() . '/login_style.min.css' );
+}
+
+//This loads the function above on the login page
+add_action( 'login_enqueue_scripts', 'my_custom_login_stylesheet' );
 
 /* 1.2 THEME SUPPORT
 /––––––––––––––––––––––––*/

@@ -28,8 +28,9 @@ var browsersync_proxy = "stanlee.local";
 var assets = {
   css       : ['assets/styles/style.scss'],
   css_watch : ['assets/styles/**/*.scss'],
-  admin_css: ['assets/AdminStyles/style.scss'],
+  admin_css: ['assets/AdminStyles/admin.scss'],
   admin_css_watch: ['assets/AdminStyles/**/*.scss'],
+  login_css: ['assets/AdminStyles/login.scss'],
   javascript: ['assets/scripts/*.js'],
   images    : ['assets/images/*.*'],
   fonts     : ['assets/fonts/*.*']
@@ -152,6 +153,24 @@ gulp.task('admin_css',gulp.series('clean:admin_css',function () {
     .pipe(browserSync.stream());
 }));
 
+/* LOGIN CSS
+/––––––––––––––––––––––––*/
+// from:    assets/styles/main.css
+// actions: compile, minify, prefix, rename
+// to:      ./style.min.css
+gulp.task('login_css',gulp.series('clean:admin_css',function () {
+  return gulp
+    .src(assets['login_css'])
+    .pipe(plumber({ errorHandler: notify.onError("<%= error.message %>") }))
+    .pipe(concat('login_style.min.css'))
+    .pipe(sass())
+    .pipe(autoprefixer('last 2 version',{ cascade: false }))
+    .pipe(cleanCSS())
+    .pipe(rename('./login_style.min.css'))
+    .pipe(gulp.dest('./'))
+    .pipe(browserSync.stream());
+}));
+
 
 /* CSS CACHE BUSTING
 /––––––––––––––––––––––––*/
@@ -215,7 +234,7 @@ gulp.task('makepot', function () {
 // styles, scripts, images, php files, html files
 gulp.task('watch',gulp.parallel('browsersync',function () {
   watch(assets['css_watch'],gulp.series('css','cachebust'));
-  watch(assets['admin_css_watch'],gulp.series('admin_css'));
+  watch(assets['admin_css_watch'],gulp.series('admin_css','login_css'));
   watch(assets['javascript'],gulp.series('javascript'));
   watch('**/*.php',browserSync.reload);
   watch('*.html',browserSync.reload);
@@ -243,11 +262,13 @@ gulp.task('build-delete', function() {
  return del(['dist/**/*', '!dist/stanlee.zip']);
 });
 
-gulp.task('build',
-  gulp.series('default','build-clean', 'build-copy', 'build-zip', 'build-delete')
-);
+
 
 /* DEFAULT
 /––––––––––––––––––––––––*/
 // default gulp tasks executed with `gulp`
-gulp.task('default',gulp.series('css', 'admin_css','cachebust', 'javascript','makepot'));
+gulp.task('default',gulp.series('css','admin_css', 'login_css','cachebust', 'javascript','makepot'));
+
+gulp.task('build',
+  gulp.series('default','build-clean','build-copy','build-zip','build-delete')
+);
