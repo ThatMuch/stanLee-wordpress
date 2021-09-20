@@ -1,6 +1,6 @@
 .section-portfolio {
     img {
-        @extend .mb-3;
+        @extend .mb-3 !optional;
 
         width: 100%;
     }

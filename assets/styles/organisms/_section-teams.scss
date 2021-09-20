@@ -9,7 +9,7 @@
         height: 100%;
 
         &__img {
-            @extend .mb-3, .rounded-circle;
+            @extend .mb-3, .rounded-circle !optional;
 
             height: 150px;
             width: 150px;

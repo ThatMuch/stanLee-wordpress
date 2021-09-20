@@ -45,7 +45,7 @@ main#sections {
 
 .bg-primary:not(.section-price) {
     .btn {
-        @extend .btn-light;
+        @extend .btn-light !optional;
     }
 }
 
