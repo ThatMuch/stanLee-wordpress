@@ -31,19 +31,19 @@
   <div class="col-sm-6">
     <ul class="section-contact__infos">
       <li class="section-contact__infos__phone">
-        <i class="fas fa-mobile fa-2x mr-2"></i>
+        <i class="fas fa-mobile fa-2x me-2"></i>
         <?php if (get_field('phone', 'option') ) : ?>
           <span><?php echo get_field('phone','option'); ?></span>
         <?php endif; ?>
       </li>
       <li class="section-contact__infos__address">
-        <i class="fas fa-map-marker-alt fa-2x mr-2"></i>
+        <i class="fas fa-map-marker-alt fa-2x me-2"></i>
           <?php if (get_field('adress', 'option') ) : ?>
             <span><?php echo get_field('adress','option'); ?></span>
           <?php endif; ?>
       </li>
       <li class="section-contact__infos__hours">
-        <i class="far fa-clock fa-2x mr-2"></i>
+        <i class="far fa-clock fa-2x me-2"></i>
         <?php if (get_field('hours', 'option') ) : ?>
           <span><?php echo get_field('hours','option'); ?></span>
         <?php endif; ?>

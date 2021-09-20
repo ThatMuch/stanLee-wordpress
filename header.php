@@ -31,7 +31,7 @@
   <a class="navbar-brand" href="<?php echo site_url(); ?>">
     <div class="logo" style="background-image: url('<? if($image[0]): echo $image[0]; else: echo get_template_directory_uri()?>/assets/images/stanlee_logo_texte.png<?endif; ?>')"></div>
   </a>
-    <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="<?php esc_html_e( 'Toggle Navigation', 'theme-textdomain' ); ?>">
+    <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="<?php esc_html_e( 'Toggle Navigation', 'theme-textdomain' ); ?>">
         <span class="navbar-toggler-icon"></span>
     </button>
 
@@ -44,7 +44,7 @@
             'menu_id'        => 'menu-main',
             'container'      => false,
             'depth'          => 2,
-            'menu_class'     => 'navbar-nav ml-auto',
+            'menu_class'     => 'navbar-nav ms-auto',
             'walker'         => new Bootstrap_NavWalker(), // This controls the display of the Bootstrap Navbar
             'fallback_cb'    => 'Bootstrap_NavWalker::fallback', // For menu fallback
         ) );
