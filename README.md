@@ -7,7 +7,7 @@ Vous voulez créer un thème Wordpress "from scratch" ? Mais pourquoi refaire le
 Avec son CSS minimal il est prêt à être personnalisé pour en faire votre tout nouveau thème.
 Inspiré de Underscores et WP Seed, il est construit sur le framework Bootstrap 4. Il contient des sections à ajouter aux pages de votre site grâce au plugin ACF.
 
-Stanlee est livré avec 90% de tout ce qu'il vous faut pour votrethème, ni plus, ni moins.
+Stanlee est livré avec 90% de tout ce qu'il vous faut pour votre thème, ni plus, ni moins.
 
 Voir la [demo](http://stanlee._a.fr/).
 
