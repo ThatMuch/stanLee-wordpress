@@ -22,7 +22,7 @@
 /* SETTINGS
   /=  ================================================== =  = */
 // local domain used by browsersync
-var browsersync_proxy = "localhost:10005";
+var browsersync_proxy = "localhost:10013";
 
 // default asset paths
 var assets = {
