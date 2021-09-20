@@ -9,7 +9,7 @@
     <footer class="footer">
       <div class="container">
         <div class="row footer__inner">
-       <? if(is_active_sidebar('footer-1')){
+       <?php if(is_active_sidebar('footer-1')){
       dynamic_sidebar('footer-1');
         } ?>
         <?php if (have_rows('rs', 'options')) : ?>
@@ -58,10 +58,10 @@
                 </a>
               </li>
             <?php endif; ?>
-        <? endwhile;?>
+        <?php endwhile;?>
       </ul>
         </div>
-    <? endif;?>
+    <?php endif;?>
         </div>
       </div>
     <div class="footer__credits">
@@ -72,6 +72,6 @@
       </div>
     </div>
     </footer>
-    <? wp_footer() ?>
+    <?php wp_footer() ?>
   </body>
 </html>

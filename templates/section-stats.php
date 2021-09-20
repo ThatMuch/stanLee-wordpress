@@ -11,14 +11,14 @@
  */
  ?>
 <?php $background = get_sub_field('background'); ?>
- <section class="section section-stats <?= $background == "Couleur" ? "bg-primary" : ($background == "Gris" ? "bg-light" : "bg-white") ?>">
+ <section class="section section-stats <?php echo  $background == "Couleur" ? "bg-primary" : ($background == "Gris" ? "bg-light" : "bg-white") ?>">
     <!-- Section background: image -->
-      <? if(get_sub_field('background') == "Image"):?>
+      <?php if(get_sub_field('background') == "Image"):?>
       <div class="section__background-image"  style="
-            <? if(get_sub_field('image')):?>
-            background-image:url(<? echo the_sub_field('image') ?>);
-            <? endif;?>"></div>
-      <? endif;?>
+            <?php if(get_sub_field('image')):?>
+            background-image:url(<?php echo the_sub_field('image') ?>);
+            <?php endif;?>"></div>
+      <?php endif;?>
     <!-- Section background: image -->
      <div class="container">
          <!-- Title -->

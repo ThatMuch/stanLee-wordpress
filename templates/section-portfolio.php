@@ -39,7 +39,7 @@
                   </div>
               <?php $i++; endwhile;?>
             </div>
-            <? endif; wp_reset_query();?>
+            <?php endif; wp_reset_query();?>
           <!-- Portfolio -->
       </div>
  </section>

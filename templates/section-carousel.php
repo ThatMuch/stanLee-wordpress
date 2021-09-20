@@ -13,8 +13,8 @@
 
   <section class="section section-carousel">
       <div class="container">
-          <? $images = get_sub_field('images'); ?>
-          <? if($images): $i =0; $y =0; ?>
+          <?php $images = get_sub_field('images'); ?>
+          <?php if($images): $i =0; $y =0; ?>
               <!-- Carrousel -->
                   <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                             <!-- Title -->
@@ -42,6 +42,6 @@
                       </a>
                   </div>
               <!-- Carrousel -->
-          <? endif; ?>
+          <?php endif; ?>
       </div>
  </section>

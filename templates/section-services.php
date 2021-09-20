@@ -11,7 +11,7 @@
  */
  ?>
  <?php $background = get_sub_field('background'); ?>
-<section class="section section-services <?= $background == "Couleur" ? "bg-primary" : ($background == "Gris" ? "bg-light" : "bg-white") ?>">
+<section class="section section-services <?php echo  $background == "Couleur" ? "bg-primary" : ($background == "Gris" ? "bg-light" : "bg-white") ?>">
 
         <div class="container">
               <!-- Title -->
@@ -26,7 +26,7 @@
                           <div class="col-sm-4 section-services__item">
                                 <!-- Icon -->
                                 <?php if (get_sub_field('icon') ) :?>
-                                    <span class="section-services__item__icon"><? the_sub_field('icon') ?></span>
+                                    <span class="section-services__item__icon"><?php the_sub_field('icon') ?></span>
                                 <?php endif; ?>
                                 <!-- Icon -->
                                 <!-- Icon title -->
@@ -40,8 +40,8 @@
                                 <?php endif; ?>
                                 <!-- Texte -->
                           </div>
-                          <? endwhile; ?>
-                    <? endif;?>
+                          <?php endwhile; ?>
+                    <?php endif;?>
                     <!-- Service -->
               </div>
         </div>

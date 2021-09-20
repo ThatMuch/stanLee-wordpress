@@ -11,7 +11,7 @@
  */
  ?>
 <?php $background = get_sub_field('background'); ?>
- <section class="section section-faq <?= $background == "Couleur" ? "bg-primary" : ($background == "Gris" ? "bg-light" : "bg-white") ?>">
+ <section class="section section-faq <?php echo  $background == "Couleur" ? "bg-primary" : ($background == "Gris" ? "bg-light" : "bg-white") ?>">
 
  <div class="container">
         <!-- Title -->

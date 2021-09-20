@@ -6,30 +6,30 @@
  */
 ?>
 
-<? get_header(); ?>
+<?php get_header(); ?>
 <div class="container">
 
 <main id="page">
 
-  <? if (has_post_thumbnail()) : ?>
+  <?php if (has_post_thumbnail()) : ?>
     <section>
       <div class="element teaser">
-        <? the_post_thumbnail('large', ['class' => 'modernizr-of']); ?>
+        <?php the_post_thumbnail('large', ['class' => 'modernizr-of']); ?>
       </div>
     </section>
-  <? endif?>
+  <?php endif?>
 
   <section>
-    <? while (have_posts()) : the_post(); ?>
+    <?php while (have_posts()) : the_post(); ?>
       <article>
-        <h1><? the_title(); ?></h1>
-        <? the_content(); ?>
+        <h1><?php the_title(); ?></h1>
+        <?php the_content(); ?>
       </article>
-    <? endwhile; ?>
+    <?php endwhile; ?>
   </section>
 
 </main>
 </div>
 
 
-<? get_footer(); ?>
+<?php get_footer(); ?>

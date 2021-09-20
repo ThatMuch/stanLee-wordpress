@@ -9,30 +9,30 @@
 
 ?>
 
-<? get_header(); ?>
+<?php get_header(); ?>
 <div class="container">
   <div class="row">
   <main id="blog" class="content-area col-sm-12 col-lg-8">
 
     <section>
-      <? if (have_posts() ) : while (have_posts()) : the_post(); ?>
+      <?php if (have_posts() ) : while (have_posts()) : the_post(); ?>
         <article>
           <div class="row">
-            <? if (has_post_thumbnail($post->ID)): ?>
+            <?php if (has_post_thumbnail($post->ID)): ?>
               <div class="col-sm-4">
-                <? the_post_thumbnail('large', ['class' => 'modernizr-of']); ?>
+                <?php the_post_thumbnail('large', ['class' => 'modernizr-of']); ?>
               </div>
-            <? endif; ?>
-            <div class="<? if (has_post_thumbnail($post->ID)): ?> col-sm-8 <? else : ?> col-sm-12<?endif; ?>">
-              <h2 class="entry-title"><a href="<? the_permalink()?>"><? the_title(); ?></a></h2>
-              <? the_excerpt(); ?>
+            <?php endif; ?>
+            <div class="<?php if (has_post_thumbnail($post->ID)): ?> col-sm-8 <?php else : ?> col-sm-12<?endif; ?>">
+              <h2 class="entry-title"><a href="<?php the_permalink()?>"><?php the_title(); ?></a></h2>
+              <?php the_excerpt(); ?>
               <hr>
-              <div class="postinfo"><?= get_the_date_stanlee(); ?></div>
+              <div class="postinfo"><?php echo  get_the_date_stanlee(); ?></div>
             </div>
           </div>
         </article>
-      <? endwhile; endif; ?>
-<? the_posts_pagination( array(
+      <?php endwhile; endif; ?>
+<?php the_posts_pagination( array(
 	'mid_size'  => 2,
 	'prev_text' => __( '<', 'stanlee' ),
   'next_text' => __( '>', 'stanlee' ),
@@ -43,7 +43,7 @@
 
   </main>
 
-<? get_sidebar(); ?>
+<?php get_sidebar(); ?>
   </div>
 </div>
-<? get_footer(); ?>
+<?php get_footer(); ?>

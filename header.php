@@ -6,30 +6,30 @@
  */
 ?>
 <!DOCTYPE html>
-<html <? language_attributes(); ?>>
+<html <?php language_attributes(); ?>>
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1, initial-scale=1">
     <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-    <? _s_gtm('head') ?>
+    <?php _s_gtm('head') ?>
     <!--=== OPEN-GRAPH TAGS ===-->
-    <? _s_ogtags() ?>
+    <?php _s_ogtags() ?>
     <!--=== PRELOAD FONTS ===-->
-    <? _s_preload_fonts() ?>
+    <?php _s_preload_fonts() ?>
     <!--=== WP HEAD ===-->
-    <? wp_head(); ?>
+    <?php wp_head(); ?>
   </head>
 
   <body <?php body_class(); ?>>
-    <? _s_gtm('body') ?>
+    <?php _s_gtm('body') ?>
 
-     <? $custom_logo_id = get_theme_mod( 'custom_logo' );
+     <?php $custom_logo_id = get_theme_mod( 'custom_logo' );
         $image = wp_get_attachment_image_src( $custom_logo_id , 'full' ); ?>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container">
   <a class="navbar-brand" href="<?php echo site_url(); ?>">
-    <div class="logo" style="background-image: url('<? if($image[0]): echo $image[0]; else: echo get_template_directory_uri()?>/assets/images/stanlee_logo_texte.png<?endif; ?>')"></div>
+    <div class="logo" style="background-image: url('<?php if($image[0]): echo $image[0]; else: echo get_template_directory_uri()?>/assets/images/stanlee_logo_texte.png<?endif; ?>')"></div>
   </a>
     <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="<?php esc_html_e( 'Toggle Navigation', 'theme-textdomain' ); ?>">
         <span class="navbar-toggler-icon"></span>
@@ -57,7 +57,7 @@
                 <h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
             </header>
 <?php endif; ?>
-<? if (is_archive() || is_category()): ?>
+<?php if (is_archive() || is_category()): ?>
   <header>
     <h1 class="page-title screen-reader-text">
     <?php
@@ -73,5 +73,5 @@
 					?>
     </h1>
   </header>
-<? endif; ?>
+<?php endif; ?>
     <div id="content" class="site-content">

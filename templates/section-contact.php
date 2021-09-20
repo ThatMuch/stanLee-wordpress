@@ -11,14 +11,14 @@
  */
  ?>
 <?php $background = get_sub_field('background'); ?>
-  <section class="section section-contact <?= $background == "Couleur" ? "bg-primary" : ($background == "Gris" ? "bg-light" : "bg-white") ?>">
+  <section class="section section-contact <?php echo  $background == "Couleur" ? "bg-primary" : ($background == "Gris" ? "bg-light" : "bg-white") ?>">
     <!-- Section background: image -->
-      <? if(get_sub_field('background') == "Image"):?>
+      <?php if(get_sub_field('background') == "Image"):?>
       <div class="section__background-image"  style="
-            <? if(get_sub_field('image')):?>
-            background-image:url(<? echo the_sub_field('image') ?>);
-            <? endif;?>"></div>
-      <? endif;?>
+            <?php if(get_sub_field('image')):?>
+            background-image:url(<?php echo the_sub_field('image') ?>);
+            <?php endif;?>"></div>
+      <?php endif;?>
     <!-- Section background: image -->
     <div class="container">
       <!-- Title -->
@@ -27,7 +27,7 @@
 <?php endif; ?>
 <!-- Title -->
 <div class="row">
-<? if (get_sub_field('contact_infos') == "Oui"): ?>
+<?php if (get_sub_field('contact_infos') == "Oui"): ?>
   <div class="col-sm-6">
     <ul class="section-contact__infos">
       <li class="section-contact__infos__phone">
@@ -94,12 +94,12 @@
                 </a>
               </li>
             <?php endif; ?>
-        <? endwhile;?>
+        <?php endwhile;?>
       </ul>
-    <? endif;?>
+    <?php endif;?>
   </div>
-<? endif;?>
-  <div class="section-contact__form <? if (get_sub_field('contact_infos') == "Oui"): ?> col-sm-6 <? else : ?> col-sm-12 full-width<?endif; ?>">
+<?php endif;?>
+  <div class="section-contact__form <?php if (get_sub_field('contact_infos') == "Oui"): ?> col-sm-6 <?php else : ?> col-sm-12 full-width<?endif; ?>">
     <!-- Contact form -->
     <?php $form = get_sub_field('contact_form');?>
     <?php if($form) : ?>

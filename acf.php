@@ -1,4 +1,4 @@
-<? if( function_exists('acf_add_local_field_group') ):
+<?php if( function_exists('acf_add_local_field_group') ):
 
 /* Temoignages */
 acf_add_local_field_group(array(

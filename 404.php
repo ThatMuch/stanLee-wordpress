@@ -9,7 +9,7 @@
 ?>
 
 
-<? get_header(); ?>
+<?php get_header(); ?>
 
 <!-- content » 404 -->
 
@@ -21,4 +21,4 @@
 
   </div>
 
-<? get_footer(); ?>
+<?php get_footer(); ?>
