@@ -26,7 +26,7 @@
 
                 &:not(:last-child) {
                     // Ajouter une marge à droite sauf sur le dernier lien
-                    @extend .mr-2;
+                    @extend .me-2 !optional;
                 }
             }
         }

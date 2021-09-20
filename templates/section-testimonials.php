@@ -56,14 +56,14 @@
                               </div>
                                       <ol class="carousel-indicators">
                                 <?php while ( $the_query->have_posts() ): $the_query->the_post(); ?>
-                                      <li data-target="#carouselTestimonials" data-slide-to="<?php echo $i?>" class="<?php if($i == 0) {echo 'active';
+                                      <li data-bs-target="#carouselTestimonials" data-bs-slide-to="<?php echo $i?>" class="<?php if($i == 0) {echo 'active';
                                       } ?>"></li>
                                 <?php $i++; endwhile;?>
                                 </ol>
-                          <a class="carousel-control-prev" data-target="#carouselTestimonials" role="button" data-slide="prev">
+                          <a class="carousel-control-prev" data-bs-target="#carouselTestimonials" role="button" data-bs-slide="prev">
                                 <i class="fas fa-chevron-left fa-2x" aria-hidden="true"></i>
                           </a>
-                          <a class="carousel-control-next" data-target="#carouselTestimonials" role="button" data-slide="next">
+                          <a class="carousel-control-next" data-bs-target="#carouselTestimonials" role="button" data-bs-slide="next">
                                 <i class="fas fa-chevron-right fa-2x" aria-hidden="true"></i>
                           </a>
                     </div>

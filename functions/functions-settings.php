@@ -49,7 +49,7 @@ function _s_enqueue() {
   wp_enqueue_style( 'fontawesome', 'https://use.fontawesome.com/releases/v5.1.0/css/all.css' );
   // jQuery (from wp core)
   wp_deregister_script( 'jquery' );
-  wp_register_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js', false, '3.3.1');
+  wp_register_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js', false, '3.6.0');
   wp_enqueue_script( 'jquery' );
   // scripts
   wp_register_script('_s_/scripts', get_template_directory_uri() . '/script.min.js', false, array( 'jquery' ), true);
