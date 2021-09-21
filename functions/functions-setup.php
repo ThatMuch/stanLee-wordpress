@@ -29,7 +29,7 @@ Table of Contents:
 ==================================================================================*/
 // Define local time, date and language-location (PHP-only, does not affect WordPress)
 // => http://php.net/manual/function.setlocale.php
-setlocale(LC_ALL, 'de_CH.UTF-8');
+setlocale(LC_ALL, 'fr_FR.UTF-8');
 
 
 

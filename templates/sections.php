@@ -9,17 +9,17 @@
  *
  */
 ?>
-<? /* Template Name: Sections */ ?>
+<?php /* Template Name: Sections */ ?>
 
-<? get_header(); ?>
+<?php get_header(); ?>
 
 <main id="sections">
 
-  <? if (have_posts()): while (have_posts()): the_post() ?>
+  <?php if (have_posts()): while (have_posts()): the_post() ?>
 
-    <? stanlee_sections() ?>
-  <? endwhile; endif ?>
+    <?php stanlee_sections() ?>
+  <?php endwhile; endif ?>
 
 </main>
 
-<? get_footer() ?>
+<?php get_footer() ?>

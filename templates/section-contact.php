@@ -10,17 +10,15 @@
  *
  */
  ?>
-
-  <section class="section section-contact
-  <? if(get_sub_field('fond') == "Couleur"):?> bg-primary
-  <? elseif(get_sub_field('fond') == "Gris"):?> bg-light<? endif;?>">
+<?php $background = get_sub_field('background'); ?>
+  <section class="section section-contact <?php echo  $background == "Couleur" ? "bg-primary" : ($background == "Gris" ? "bg-light" : "bg-white") ?>">
     <!-- Section background: image -->
-      <? if(get_sub_field('fond') == "Image"):?>
+      <?php if(get_sub_field('background') == "Image"):?>
       <div class="section__background-image"  style="
-            <? if(get_sub_field('image')):?>
-            background-image:url(<? echo the_sub_field('image') ?>);
-            <? endif;?>"></div>
-      <? endif;?>
+            <?php if(get_sub_field('image')):?>
+            background-image:url(<?php echo the_sub_field('image') ?>);
+            <?php endif;?>"></div>
+      <?php endif;?>
     <!-- Section background: image -->
     <div class="container">
       <!-- Title -->
@@ -29,23 +27,23 @@
 <?php endif; ?>
 <!-- Title -->
 <div class="row">
-<? if (get_sub_field('contact_infos') == "Oui"): ?>
+<?php if (get_sub_field('contact_infos') == "Oui"): ?>
   <div class="col-sm-6">
     <ul class="section-contact__infos">
       <li class="section-contact__infos__phone">
-        <i class="fas fa-mobile fa-2x mr-2"></i>
+        <i class="fas fa-mobile fa-2x me-2"></i>
         <?php if (get_field('phone', 'option') ) : ?>
           <span><?php echo get_field('phone','option'); ?></span>
         <?php endif; ?>
       </li>
       <li class="section-contact__infos__address">
-        <i class="fas fa-map-marker-alt fa-2x mr-2"></i>
+        <i class="fas fa-map-marker-alt fa-2x me-2"></i>
           <?php if (get_field('adress', 'option') ) : ?>
             <span><?php echo get_field('adress','option'); ?></span>
           <?php endif; ?>
       </li>
       <li class="section-contact__infos__hours">
-        <i class="far fa-clock fa-2x mr-2"></i>
+        <i class="far fa-clock fa-2x me-2"></i>
         <?php if (get_field('hours', 'option') ) : ?>
           <span><?php echo get_field('hours','option'); ?></span>
         <?php endif; ?>
@@ -96,12 +94,12 @@
                 </a>
               </li>
             <?php endif; ?>
-        <? endwhile;?>
+        <?php endwhile;?>
       </ul>
-    <? endif;?>
+    <?php endif;?>
   </div>
-<? endif;?>
-  <div class="section-contact__form <? if (get_sub_field('contact_infos') == "Oui"): ?> col-sm-6 <? else : ?> col-sm-12 full-width<?endif; ?>">
+<?php endif;?>
+  <div class="section-contact__form <?php if (get_sub_field('contact_infos') == "Oui"): ?> col-sm-6 <?php else : ?> col-sm-12 full-width<?endif; ?>">
     <!-- Contact form -->
     <?php $form = get_sub_field('contact_form');?>
     <?php if($form) : ?>

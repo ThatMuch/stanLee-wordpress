@@ -10,18 +10,15 @@
  *
  */
  ?>
-
-  <section class="section section-link
-  <? if(get_sub_field('fond') == "Couleur"):?> bg-primary
-  <? elseif(get_sub_field('fond') == "Gris"):?> bg-light<? endif;?>">
-
+<?php $background = get_sub_field('background');?>
+<section class="section section-link <?php echo  $background == "Couleur" ? "bg-primary" : ($background == "Gris" ? "bg-light" : "bg-white") ?>">
     <!-- Section background: image -->
-    <? if(get_sub_field('fond') == "Image"):?>
+    <?php if(get_sub_field('background') == "Image"):?>
         <div class="section__background-image"  style="
-        <? if(get_sub_field('image')):?>
-        background-image:url(<? echo the_sub_field('image') ?>);
-        <? endif;?>"></div>
-    <? endif;?>
+        <?php if(get_sub_field('image')):?>
+        background-image:url(<?php echo the_sub_field('image') ?>);
+        <?php endif;?>"></div>
+    <?php endif;?>
     <!-- Section background: image -->
     <div class="container">
         <!-- Title -->
@@ -36,18 +33,11 @@
         <?php endif; ?>
         <!-- Text -->
         <!-- Button -->
-        <?php if (have_rows('button')) : ?>
-            <?php while ( have_rows('button') ) : the_row(); ?>
-                <?php if (get_sub_field('link') == 'Externe' && get_sub_field('label') && get_sub_field('url') ) : ?>
-                    <a href="<?php the_sub_field('url'); ?>" class="btn btn-primary"><?php the_sub_field('label'); ?></a>
-                <?php endif; ?>
-                <?php if (get_sub_field('link') == 'Interne' && get_sub_field('label') && get_sub_field('int_url') ) : ?>
-                    <a href="<?php the_sub_field('int_url'); ?>" class="btn btn-primary">
-                        <?php the_sub_field('label'); ?>
-                    </a>
-                <?php endif; ?>
-            <?php endwhile; ?>
-        <?php endif; ?>
+		<?php if ( get_sub_field('button') ) : $link = get_sub_field('button'); ?>
+			<a class="btn btn-primary" href="<?php echo $link['url']; ?>">
+				<?php echo $link['title']; ?>
+			</a>
+		<?php endif; ?>
         <!-- Button -->
       </div>
  </section>

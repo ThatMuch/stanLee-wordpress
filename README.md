@@ -5,22 +5,22 @@
 Vous voulez créer un thème Wordpress "from scratch" ? Mais pourquoi refaire les mêmes configurations à chaque nouveau thème quand vous pouvez automatiser cette première étape ? Gagnez du temps avec Stanlee, votre thème de démarrage généré avec Yeoman.
 
 Avec son CSS minimal il est prêt à être personnalisé pour en faire votre tout nouveau thème.
-Inspiré de Underscores et WP Seed, il est construit sur le framework Bootstrap 4. Il contient des sections à ajouter aux pages de votre site grâce au plugin ACF.
+Inspiré de Underscores et WP Seed, il est construit sur le framework Bootstrap 5. Il contient des sections à ajouter aux pages de votre site grâce au plugin ACF.
 
-Stanlee est livré avec 90% de tout ce qu'il vous faut pour votrethème, ni plus, ni moins.
+Stanlee est livré avec 90% de tout ce qu'il vous faut pour votre thème, ni plus, ni moins.
 
 Voir la [demo](http://stanlee._a.fr/).
 
 ## :warning: Prérequis :
 
 - Node >= 8.0 - [nodejs.org](https://nodejs.org/)
-- npm >=5.0 - [npm](https://www.npmjs.com/)
+- npm >= 5.0 - [npm](https://www.npmjs.com/)
 
 ```bash
  npm install -g npm@latest
 ```
 
-- gulp - [gulp](https://gulpjs.com)
+- gulp >= 4.0.2 - [gulp](https://gulpjs.com)
 
 ```bash
 npm install -g gulp
@@ -64,15 +64,27 @@ yo stanlee
 
 #### Gulp
 
-Stanlee utilise npm pour gérer les modules de développement, les modules frontend et [gulp](https://gulpjs.com) pour compiler les assets depuis `assets` vers `dist`. Voir les détails dans `gulpfile.js`
+Stanlee utilise [WP Gulp](https://github.com/ahmadawais/WPGulp#-step-1--download-the-required-files).
+##### Commandes
+```shell
+# Commencer votre projet
+npm start
 
-##### Commandes gulp
+# Arrêter le projet CTRL (⌃) + C
 
-- `gulp` : compile et optimise vos fichiers.
-- `gulp watch` : lance browsersync, surveille les changements et compile si il y a une modification
-- `gulp build` : copie et zip tous les fichiers nécessaires pour votre thème dans le dossier `dist`. Compile le SCSS en CSS et mets à jour les fichiers de langue.
+# Optimizer les images.
+npm run images
 
-Plus d'informations sur gulp [gulpjs.com](https://gulpjs.com/)
+# G"énérer les fichiers de traduction WP POT.
+npm run translate
+
+# Générer les feuilles de style et Sourcemap.
+npm run styles-rtl
+
+# Générer le zip du thème.
+npm run zip
+```
+
 
 ## HTML Structure
 
@@ -104,15 +116,13 @@ Plus d'informations sur gulp [gulpjs.com](https://gulpjs.com/)
 ## C'est parti !
 
 Première choses à faire quand on crée un nouveau site avec Stanlee:
-
-- ouvrir `functions/functions-setup.php` et ajouter ses propres settings
-- vérifier les autres fichiers dans `/functions` pour s'assurer que tout vous convient
-- ouvrir `assets/styles/vars.scss` et ajouter vos tailles, breakpoints, couleurs ...
-- ajouter vos templates comme `templates/temp-montemplate.php`
-- ajouter vos acf-sections dans `functions-sections.php` et créer un template comme `templates/section-masection`
-- utiliser les fichiers SASS dans `assets/styles` pour ajouter votre css
-
-Pour des informations plus détaillées se référer à "Fichiers/Dossiers important"
+- mettre à jour les variables du fichier `./wpgulp.config.js`
+- ouvrir `./functions/functions-setup.php` et ajouter ses propres settings
+- vérifier les autres fichiers dans `./functions` pour s'assurer que tout vous convient
+- ouvrir `./assets/styles/vars.scss` et ajouter vos tailles, breakpoints, couleurs ...
+- ajouter vos templates comme `./templates`
+- ajouter vos acf-sections dans `./functions-sections.php` et créer un template comme `./templates/section-masection`
+- utiliser les fichiers SASS dans `./assets/styles` pour ajouter votre css
 
 ## Deploiement
 
@@ -183,5 +193,5 @@ wp-single.php           WP post par défaut
 
 ## À propos
 
-Auteur: \_a
-Contact: [contact@\_a.fr](mailto:contact@_a.fr)
+Auteur: [THATMUCH](http://thatmuch.fr)
+Contact: [social@thatmuch.fr](mailto:social@thatmuch.fr)

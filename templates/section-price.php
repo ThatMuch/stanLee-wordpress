@@ -10,17 +10,15 @@
  *
  */
  ?>
-
-  <section class="section section-price
-  <? if(get_sub_field('fond') == "Couleur"):?> bg-primary
-  <? elseif(get_sub_field('fond') == "Gris"):?> bg-light<? endif;?>">
+<?php $background = get_sub_field('background'); ?>
+  <section class="section section-price <?php echo  $background == "Couleur" ? "bg-primary" : ($background == "Gris" ? "bg-light" : "bg-white") ?>">
     <!-- Section background: image -->
-      <? if(get_sub_field('fond') == "Image"):?>
+      <?php if(get_sub_field('background') == "Image"):?>
       <div class="section__background-image"  style="
-            <? if(get_sub_field('image')):?>
-            background-image:url(<? echo the_sub_field('image') ?>);
-            <? endif;?>"></div>
-      <? endif;?>
+            <?php if(get_sub_field('image')):?>
+            background-image:url(<?php echo the_sub_field('image') ?>);
+            <?php endif;?>"></div>
+      <?php endif;?>
     <!-- Section background: image -->
         <div class="container">
             <!-- Title -->
@@ -37,9 +35,9 @@
                   <?php if (have_rows('colonne') ) :
                   ?>
             <div class="row justify-content-center">
-                        <? while(have_rows('colonne')) : the_row();  ?>
+                        <?php while(have_rows('colonne')) : the_row();  ?>
                         <?php if( get_sub_field('title') ) : ?>
-                        <div class="<? echo ($count < 3) ? "col-sm-6" : "col-sm-4" ?> section-price__column">
+                        <div class="<?php echo ($count < 3) ? "col-sm-6" : "col-sm-4" ?> section-price__column">
                               <div class="section-price__column__wrapper">
                                     <!-- Title -->
                                     <?php if( get_sub_field('title') ) : ?>
@@ -61,11 +59,11 @@
 
                                     <?php if ( have_rows('services') ) : ?>
                                           <ul class="mb-auto">
-                                                <? while (have_rows('services')) : the_row()?>
+                                                <?php while (have_rows('services')) : the_row()?>
                                                       <?php if( get_sub_field('text') ) : ?>
                                                             <li class="section-price__column__service"><?php echo get_sub_field('text'); ?></li>
                                                       <?php endif; ?>
-                                                <? endwhile; ?>
+                                                <?php endwhile; ?>
                                           </ul>
                                     <?php endif; ?>
 
@@ -82,7 +80,7 @@
                               </div>
                         </div>
                         <?php endif; ?>
-                        <? endwhile; ?>
+                        <?php endwhile; ?>
             </div>
                   <?php endif; ?>
         </div>

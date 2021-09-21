@@ -14,7 +14,7 @@
 
         &_item {
             &-image {
-                @extend .mb-3, .rounded-circle;
+                @extend .mb-3, .rounded-circle !optional;
 
                 display: block;
                 margin-left: auto;

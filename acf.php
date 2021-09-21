@@ -1,4 +1,4 @@
-<? if( function_exists('acf_add_local_field_group') ):
+<?php if( function_exists('acf_add_local_field_group') ):
 
 /* Temoignages */
 acf_add_local_field_group(array(
@@ -717,7 +717,7 @@ acf_add_local_field_group(array(
 						array(
 							'key'               => 'field_5b9bb37d564c3',
 							'label'             => 'Fond',
-							'name'              => 'fond',
+							'name'              => 'background',
 							'type'              => 'radio',
 							'instructions'      => '',
 							'required'          => 0,
@@ -805,7 +805,7 @@ acf_add_local_field_group(array(
 						array(
 							'key'               => 'field_5b9rr37d734c2',
 							'label'             => 'Fond',
-							'name'              => 'fond',
+							'name'              => 'background',
 							'type'              => 'radio',
 							'instructions'      => '',
 							'required'          => 0,
@@ -1617,7 +1617,7 @@ acf_add_local_field_group(array(
 						array(
 							'key'               => 'field_5ba61d4d70c63',
 							'label'             => 'Fond',
-							'name'              => 'fond',
+							'name'              => 'background',
 							'type'              => 'radio',
 							'instructions'      => '',
 							'required'          => 0,
@@ -1705,7 +1705,7 @@ acf_add_local_field_group(array(
 						array(
 							'key'               => 'field_5ba630200ea4c',
 							'label'             => 'Fond',
-							'name'              => 'fond',
+							'name'              => 'background',
 							'type'              => 'radio',
 							'instructions'      => '',
 							'required'          => 0,
@@ -1793,7 +1793,7 @@ acf_add_local_field_group(array(
 						array(
 							'key'               => 'field_5ba630a0a7bfe',
 							'label'             => 'Fond',
-							'name'              => 'fond',
+							'name'              => 'background',
 							'type'              => 'radio',
 							'instructions'      => '',
 							'required'          => 0,
@@ -1881,7 +1881,7 @@ acf_add_local_field_group(array(
 						array(
 							'key'               => 'field_5b3eb37d734c2',
 							'label'             => 'Fond',
-							'name'              => 'fond',
+							'name'              => 'background',
 							'type'              => 'radio',
 							'instructions'      => '',
 							'required'          => 0,
@@ -2390,7 +2390,7 @@ acf_add_local_field_group(array(
 						array(
 							'key'               => 'field_5b9bR57d734c5',
 							'label'             => 'Fond',
-							'name'              => 'fond',
+							'name'              => 'background',
 							'type'              => 'radio',
 							'instructions'      => '',
 							'required'          => 0,

@@ -16,7 +16,7 @@
         }
 
         &__service {
-            @extend .pt-3, .pb-3;
+            @extend .pt-3, .pb-3 !optional;
 
             list-style: none;
             border-bottom: 1px solid #ccc;

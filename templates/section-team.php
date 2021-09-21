@@ -10,17 +10,15 @@
  *
  */
  ?>
-
-  <section class="section section-team
-  <? if(get_sub_field('fond') == "Couleur"):?> bg-primary
-  <? elseif(get_sub_field('fond') == "Gris"):?> bg-light<? endif;?>">
+<?php $background = get_sub_field('background'); ?>
+  <section class="section section-team <?php echo  $background == "Couleur" ? "bg-primary" : ($background == "Gris" ? "bg-light" : "bg-white") ?>">
     <!-- Section background: image -->
-      <? if(get_sub_field('fond') == "Image"):?>
+      <?php if(get_sub_field('background') == "Image"):?>
       <div class="section__background-image"  style="
-            <? if(get_sub_field('image')):?>
-            background-image:url(<? echo the_sub_field('image') ?>);
-            <? endif;?>"></div>
-      <? endif;?>
+            <?php if(get_sub_field('image')):?>
+            background-image:url(<?php echo the_sub_field('image') ?>);
+            <?php endif;?>"></div>
+      <?php endif;?>
     <!-- Section background: image -->
       <div class="container">
           <!-- Title -->
@@ -41,9 +39,9 @@
                                 <!-- Image -->
                                 <?php if (get_the_post_thumbnail()) : ?>
                                     <img class="section-team__member__img" src="<?php the_post_thumbnail_url('thumbnail')?>" alt="<?php the_title()?>">
-                                <? else : ?>
+                                <?php else : ?>
                                     <div class="section-team__member__img"></div>
-                                <? endif;?>
+                                <?php endif;?>
                                 <!-- Image -->
                                   <!-- Name -->
                                       <h4 class="section-team__member__name"><?php the_title()?></h4>
@@ -113,8 +111,8 @@
                                   <!-- Social media -->
                               </div>
                           </div>
-                      <? endwhile; ?>
+                      <?php endwhile; ?>
                   </div>
-                  <? endif; wp_reset_query(); ?>
+                  <?php endif; wp_reset_query(); ?>
       </div>
  </section>
