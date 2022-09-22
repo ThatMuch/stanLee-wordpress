@@ -9,6 +9,9 @@ aside .widget{padding:1rem 0;border-bottom:1px solid #f2f2f2}
 aside .widget .nav-link{padding:0 0 .5rem 0}
 article,.element,nav,footer .inner{margin:0 auto}
 .container{width:100%;margin:0 auto}
+.bg-primary{background-color:#68c397}
+.bg-light{background-color:#f7f7f7}
+.bg-white{background-color:#fff}
 button,.btn{display:inline-block;line-height:1;text-align:center;text-decoration:none;cursor:pointer;font-size:1rem;padding:.375rem .75rem}
 button:disabled,.btn:disabled{background-color:grey}
 .btn.btn-primary{background-color:#68c397;color:#000}
