@@ -101,6 +101,7 @@ footer .inner {
     }
 }
 
+// Background colors
 .bg-primary {
     background-color: $color-primary;
 }
@@ -111,4 +112,27 @@ footer .inner {
 
 .bg-white {
     background-color: #fff;
+}
+
+// Grid
+
+.d-flex {
+    display: flex;
+
+    @include breakpoint(mobile) {
+        flex-wrap: wrap;
+    }
+}
+
+.flex-gap {
+    display: inline-flex;
+    gap: 12px;
+
+    @include breakpoint(mobile) {
+        flex-wrap: wrap;
+    }
+}
+
+.d-grid {
+    display: grid;
 }

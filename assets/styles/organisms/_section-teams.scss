@@ -7,6 +7,13 @@
         background-color: #fff;
         padding: 60px 30px;
         height: 100%;
+        width: 33.33%;
+
+        @include breakpoint(mobile) {
+            width: 100%;
+            flex-shrink: 0;
+        }
+
 
         &__img {
             @extend .mb-3, .rounded-circle !optional;

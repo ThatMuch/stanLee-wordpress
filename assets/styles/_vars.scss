@@ -101,9 +101,9 @@ $nav__spacercolor: $color-dark;
 
 /* ANCHORS
 /––––––––––––––––––––––––*/
-$a__linkcolor: $color-dark;
-$a__hovercolor: $color-dark;
-$a__textdecoration: "none";
+$a__linkcolor: $color-primary;
+$a__hovercolor: darken($color-primary, 20);
+$a__textdecoration: none;
 
 /*==================================================================================
   TRANSITIONS
