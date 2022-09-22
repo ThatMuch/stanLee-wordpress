@@ -40,15 +40,6 @@ $( function() {
 		});
 	});
 
-
-	/* WOW
-  /––––––––––––––––––––––––*/
-	// http://mynameismatthieu.com/WOW/
-	$( function() {
-		new WOW().init();
-	});
-
-
 	/* Modernizr Fix: 'object-fit'
   /––––––––––––––––––––––––––––––––*/
 	// displays images with the object-fit attribute as background-images for older browsers

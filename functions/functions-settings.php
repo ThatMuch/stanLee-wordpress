@@ -49,10 +49,10 @@ function _s_enqueue() {
   wp_register_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js', false, '3.6.0');
   wp_enqueue_script( 'jquery' );
   // scripts
-  wp_register_script('_s_/scripts', get_template_directory_uri() . '/script.min.js', false, array( 'jquery' ), true);
-  wp_enqueue_script('_s_/scripts');
+  wp_register_script('mCC_/scripts', get_template_directory_uri() . '/assets/scripts/custom.min.js', false, array( 'jquery' ), true);
+  wp_enqueue_script('mCC_/scripts');
   // styles
-  wp_enqueue_style('_s_/styles', get_template_directory_uri() . '/style.min.css', false, null);
+  wp_enqueue_style('mCC_/styles', get_template_directory_uri() . '/assets/styles/style.min.css', false, null);
   // Typekit
   global $typekit_id;
   if ($typekit_id) :
@@ -179,17 +179,20 @@ function _s_ogtags() {
 // preloads fonts that are hosted locally into the page header
 // add your desired fonts and font-types into $font_names and $font_formats
 function _s_preload_fonts() {
-  // font_names and font_formats are defined in 'functions-setup.php'
-  global $font_names;
-  global $font_formats;
-  // define font folder
-  $font_folder = '/assets/fonts/';
-  // loop through fonts
-  foreach($font_names as $font_name) {
-    // loop through font-formats
-    foreach($font_formats as $font_format) {
-      $path = get_bloginfo('template_url').$font_folder.$font_name.'.'.$font_format;
-      echo '<link rel="preload" href="'.$path.'" as="font" type="font/'.$font_format.'" crossorigin="anonymous">'."\r\n";
+ // font_names and font_formats are defined in 'functions-setup.php'
+  global $preload_fonts;
+  if ($preload_fonts) {
+    global $font_names;
+    global $font_formats;
+    // define font folder
+    $font_folder = '/assets/fonts/';
+    // loop through fonts
+    foreach($font_names as $font_name) {
+      // loop through font-formats
+      foreach($font_formats as $font_format) {
+        $path = get_bloginfo('template_url').$font_folder.$font_name.'.'.$font_format;
+        echo '<link rel="preload" href="'.$path.'" as="font" type="font/'.$font_format.'" crossorigin="anonymous">'."\r\n";
+      }
     }
   }
 }

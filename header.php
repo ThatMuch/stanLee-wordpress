@@ -15,7 +15,7 @@
     <!--=== OPEN-GRAPH TAGS ===-->
     <?php _s_ogtags() ?>
     <!--=== PRELOAD FONTS ===-->
-    <?php _s_preload_fonts() ?>
+    <?php  _s_preload_fonts() ?>
     <!--=== WP HEAD ===-->
     <?php wp_head(); ?>
   </head>

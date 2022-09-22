@@ -40,9 +40,20 @@ setlocale(LC_ALL, 'fr_FR.UTF-8');
 
 /* TYPEKIT
 /––––––––––––––––––––––––*/
-// enqueue Typekit font-kits => stanlee_enqueue()
+// enqueue Typekit font-kits => WPSeed_enqueue()
 // add your Typekit Kit-ID or leave empty to not enqueue any kit
 $typekit_id = '';
+
+
+/* SELF-HOSTED
+/––––––––––––––––––––––––*/
+// preload self-hosted fonts => WPSeed_preload_fonts()
+// set $preload_fonts to false to not preload fonts
+$preload_fonts = true;
+// define font-names and font-formats for all fonts that need preloading (usally the same as in assets/styles/fonts.scss)
+$font_names = ['Raleway-Regular','Raleway-Italic','Raleway-Bold'];
+$font_formats = ['ttf'];
+
 
 
 
