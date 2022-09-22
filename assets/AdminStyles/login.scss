@@ -1,0 +1,49 @@
+@import "../styles/_mixins.scss";
+@import "../styles/_vars.scss";
+
+body.login h1 a {
+    background-image: url("assets/images/stanlee_logo.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100px;
+    width: 100%;
+    background-size: contain;
+    margin: 0 auto;
+}
+
+body.login .button-primary {
+    background: $color-primary;
+    border-color: $color-primary;
+}
+
+body.login .button-primary:hover {
+    background: $color-primary-darker;
+    border-color: $color-primary-darker;
+}
+
+body.login form input.input, body.login form input[type=checkbox], body.login input[type=text],
+body.login form input.input:active, body.login form input[type=checkbox], body.login input[type=text]:active {
+    background-color: rgba($color: $color-primary, $alpha: 0.3) !important;
+    background: inherit;
+    border-color: $color-primary;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px rgba($color: $color-primary, $alpha: 0.3) inset !important;
+    box-shadow: 0 0 0 30px rgba($color: $color-primary, $alpha: 0.3) inset !important;
+}
+
+.wp-core-ui .button.wp-hide-pw {
+    color: $color-primary;
+    border-color: $color-primary;
+    background: inherit;
+    vertical-align: top;
+}
+
+body.login {
+    background-color: rgba($color: $color-primary, $alpha: 0.3);
+    font-family: "Raleway", sans-serif;
+}

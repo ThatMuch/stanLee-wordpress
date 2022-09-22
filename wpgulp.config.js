@@ -24,7 +24,7 @@ const injectChanges = true;
 const styleSRC = './assets/styles/style.scss';
 
 // Path to place the compiled CSS file. Default set to root folder.
-const styleDestination = './';
+const styleDestination = './assets/styles/';
 
 // Available options → 'compact' or 'compressed' or 'nested' or 'expanded'
 const outputStyle = 'compressed';
@@ -45,7 +45,7 @@ const jsVendorFile = 'vendor';
 // JS Custom options.
 
 // Path to JS custom scripts folder.
-const jsCustomSRC = './assets/scripts/*.js';
+const jsCustomSRC = './assets/scripts/custom/*.js';
 
 // Path to place the compiled JS custom scripts file.
 const jsCustomDestination = './assets/scripts/';
@@ -71,17 +71,17 @@ const watchStyles = './assets/styles/**/*.scss';
 const watchJsVendor = './inc/assets/js/*.js';
 
 // Path to all custom JS files.
-const watchJsCustom = './assets/scripts/*.js';
+const watchJsCustom = './assets/js/*.js';
 
 // Path to all PHP files.
 const watchPhp = './**/*.php';
 
 // >>>>> Zip file config.
 // Must have.zip at the end.
-const zipName = 'file.zip';
+const zipName = 'stanlee.zip';
 
 // Must be a folder outside of the zip folder.
-const zipDestination = './../'; // Default: Parent folder.
+const zipDestination = './dist/'; // Default: Parent folder.
 const zipIncludeGlob = [ './**/*' ]; // Default: Include all files/folders in current directory.
 
 // Default ignored files and folders for the zip file.

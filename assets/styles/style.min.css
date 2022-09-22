@@ -1,9 +1,6 @@
-@font-face{font-family:'Asap';font-style:normal;font-weight:400;src:local("Asap Regular"),local("Asap-Regular"),url("assets/fonts/asap-v7-latin-regular.woff2") format("woff2"),url("assets/fonts/asap-v7-latin-regular.woff") format("woff")}
-@font-face{font-family:'Asap';font-style:normal;font-weight:500;src:local("Asap Medium"),local("Asap-Medium"),url("assets/fonts/asap-v7-latin-500.woff2") format("woff2"),url("assets/fonts/asap-v7-latin-500.woff") format("woff")}
-@font-face{font-family:'Asap';font-style:normal;font-weight:700;src:local("Asap Bold"),local("Asap-Bold"),url("assets/fonts/asap-v7-latin-700.woff2") format("woff2"),url("assets/fonts/asap-v7-latin-700.woff") format("woff")}
 *,*::before,*::after{-webkit-box-sizing:border-box;box-sizing:border-box;margin:0;padding:0;background-repeat:no-repeat;background-position:50% 50%;background-size:contain;-webkit-tap-highlight-color:transparent}
 *:focus{outline:0}
-html{max-width:100vw;height:100%;overflow-x:hidden;margin:0;padding:0;font-family:"Asap",sans-serif;font-size:1em;line-height:1.5;color:#343a40;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+html{max-width:100vw;height:100%;overflow-x:hidden;margin:0;padding:0;font-family:"Raleway",sans-serif;font-size:1em;line-height:1.5;color:#343a40;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
 body{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-align:center;-ms-flex-align:center;align-items:center;min-height:100vh;background-color:#f7f7f7 !important}
 main{position:relative;margin-top:4rem}
 main article,main .element{padding:1rem 0}

@@ -1,3 +1,5 @@
 **/*.min.js
 **/node_modules/**
 **/vendor/**
+**/inc/**
+vendor.js
