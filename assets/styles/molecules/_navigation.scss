@@ -15,26 +15,112 @@ nav.navbar {
     z-index: 200;
     width: 100vw;
     height: $header_height;
+    padding: 10px 20px 10px 0;
 
-    .logo  {
-        width: 12rem;
-        height: 3rem;
-        margin-right: 2rem;
-        background-repeat: no-repeat;
-        background-size: contain;
+    @include breakpoint(tablet) {
+        padding: 10px 0;
     }
 
-    .navbar-collapse.show {
-        background-color: $color-primary;
-        width: 100vw;
-        width: 100%;
-        position: absolute;
-        left: 0;
-        top: $header_height;
-        padding: 15px;
 
-        a {
-            color: #fff;
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .navbar-brand {
+        width: 12rem;
+        height: 3rem;
+
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: contain;
+        }
+    }
+
+    .navbar-nav {
+        padding: 0;
+        list-style: none;
+
+        @include breakpoint(tablet) {
+            display: flex;
+            gap: 12px;
+        }
+    }
+
+    .burger {
+        padding: 12px 0;
+        border: none;
+        background-color: transparent;
+
+        @include breakpoint(tablet) {
+            display: none;
+        }
+
+
+        &.active {
+            span {
+                background: transparent;
+
+                &:before {
+                    transform: rotate(45deg) translate(5px, 6px);
+                }
+
+                &:after {
+                    transform: rotate(-45deg) translate(5px, -6px);
+                }
+            }
+        }
+
+        span {
+            position: relative;
+            display: block;
+            width: 20px;
+            height: 2px;
+            background: #222;
+            transition: all .2s ease-in-out;
+
+            &:before, &:after {
+                position: absolute;
+                background: #222;
+                content: '';
+                width: 20px;
+                height: 2px;
+                transition: all .2s ease-in-out;
+                left: 0;
+            }
+
+            &:before {
+                top: -8px;
+            }
+
+            &:after {
+                top: 8px;
+            }
+        }
+    }
+
+    .navbar-collapse {
+        display: none;
+
+        @include breakpoint(tablet) {
+            display: block;
+        }
+
+
+        &.active {
+            background-color: $color-primary;
+            width: 100vw;
+            position: absolute;
+            left: 0;
+            top: $header_height;
+            padding: 15px;
+            display: block;
+
+            a {
+                color: #fff;
+            }
         }
     }
 }

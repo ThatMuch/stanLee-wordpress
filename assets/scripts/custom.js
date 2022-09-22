@@ -64,6 +64,12 @@ function debouncer(func, wait, immediate) {
     }
   };
 }
+
+$('.burger').click(function () {
+  $(this).toggleClass('active');
+  $('.navbar-collapse').toggleClass('active');
+  return false;
+});
 "use strict";
 
 /* eslint-disable no-undef */

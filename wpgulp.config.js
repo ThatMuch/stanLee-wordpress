@@ -68,10 +68,10 @@ const imgDST = './assets/images/';
 const watchStyles = './assets/styles/**/*.scss';
 
 // Path to all vendor JS files.
-const watchJsVendor = './inc/assets/js/*.js';
+const watchJsVendor = './inc/assets/scripts/*.js';
 
 // Path to all custom JS files.
-const watchJsCustom = './assets/js/*.js';
+const watchJsCustom = './assets/scripts/custom/*.js';
 
 // Path to all PHP files.
 const watchPhp = './**/*.php';

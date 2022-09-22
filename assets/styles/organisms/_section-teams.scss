@@ -16,11 +16,8 @@
 
 
         &__img {
-            @extend .mb-3, .rounded-circle !optional;
-
             height: 150px;
             width: 150px;
-            background-color: #ccc;
             margin-left: auto;
             margin-right: auto;
         }
@@ -32,8 +29,7 @@
                 font-size: 25px;
 
                 &:not(:last-child) {
-                    // Ajouter une marge à droite sauf sur le dernier lien
-                    @extend .me-2 !optional;
+                    margin-right: 1rem;
                 }
             }
         }
