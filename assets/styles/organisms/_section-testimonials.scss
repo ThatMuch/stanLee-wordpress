@@ -1,9 +1,4 @@
 .section-testimonials {
-    @include breakpoint(mobile) {
-        padding: 3rem 0 !important;
-    }
-
-
     &__carousel {
         text-align: center;
 

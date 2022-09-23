@@ -1,21 +1,8 @@
 main#sections {
     .section {
-        padding: 5rem 3rem 4rem 3rem;
+        padding: 2rem;
         position: relative;
         width: 100vw;
-
-        @media screen and (max-width: 767px) {
-            padding: 3rem 3rem 4rem 3rem;
-        }
-
-        @media screen and (max-width: 530px) {
-            padding: 5rem 0 4rem 0;
-        }
-
-        @include breakpoint(mobile) {
-            padding: 3rem 0 4rem 0;
-        }
-
 
         .container {
             position: relative;
