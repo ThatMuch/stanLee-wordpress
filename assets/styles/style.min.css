@@ -32,7 +32,17 @@ input:not([type="submit"]):active,input:not([type="submit"]):hover,input:not([ty
 input:-webkit-autofill,textarea:-webkit-autofill,select:-webkit-autofill{-webkit-box-shadow:0 0 0 1000px #eff9f4 inset !important}
 a{color:#68c397;text-decoration:none;-webkit-transition:.3s;transition:.3s}
 a:hover{color:#388d64}
-.carousel .carousel-inner{width:100%}
+.carrousel{position:relative;width:700px;height:400px;margin-left:auto;margin-right:auto}
+.carrousel ul,.carrousel li{list-style:none}
+.carrousel li{position:absolute;z-index:0}
+.carrousel img{width:100%;height:100%;-o-object-fit:cover;object-fit:cover}
+.bubbles{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center}
+.bubbles ul,.bubbles li{list-style:none}
+.bubbles a{display:block;margin:5px;width:10px;height:10px;background-color:#1b2a2f;border-radius:5px;cursor:pointer}
+.controls .prevBtn{position:absolute;top:150px;left:-70px;-webkit-transform:translateY(-50%);transform:translateY(-50%)}
+.controls .nextBtn{position:absolute;top:150px;left:770px;-webkit-transform:translateY(-50%);transform:translateY(-50%)}
+.controls i{font-size:30px;cursor:pointer;color:rgba(0,0,0,0.188)}
+.controls i:hover{color:rgba(0,0,0,0.3)}
 nav.navbar{position:fixed;top:0;left:0;z-index:200;width:100vw;height:4rem;padding:10px 20px 10px 0}
 nav.navbar .container{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;-webkit-box-align:center;-ms-flex-align:center;align-items:center}
 nav.navbar .navbar-brand{width:12rem;height:3rem}
@@ -70,9 +80,10 @@ main#sections .section .section__background-image{position:absolute;left:0;top:0
 .section-text-image__text__inner{padding:30px 45px}
 .section-text-image__image{padding-left:0 !important;padding-right:0 !important}
 .section-text-image__image .bg{background-size:cover;background-repeat:no-repeat;background-position:center;width:100%;height:100%}
-.section-testimonials__carousel{text-align:center}
-.section-testimonials__carousel_item-image{display:block;margin-left:auto;margin-right:auto;height:150px;width:150px;background-color:#ccc}
-.section-testimonials__carousel .carousel-indicators{bottom:-25px;margin-bottom:0}
+.section-testimonials{text-align:center}
+.section-testimonials .carrousel{height:300px}
+.section-testimonials .carrousel img{height:100px;width:100px;border-radius:50%}
+.section-testimonials .carrousel__item{top:0;bottom:0;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;gap:30px;text-align:left}
 .section-stats .circle-bar{margin-bottom:30px}
 .section-stats .circle-bar-title{text-align:center}
 .section-stats .radial-progress{max-width:200px;-webkit-transform:rotate(-90deg);transform:rotate(-90deg);width:100%;margin:auto;display:block}
@@ -126,7 +137,6 @@ main#subsites section .element.sites{display:-webkit-box;display:-ms-flexbox;dis
 main#subsites section .element.sites .site{-ms-flex-preferred-size:calc((100% / 3) - 1rem);flex-basis:calc((100% / 3) - 1rem);margin-bottom:1rem}
 main#subsites section .element.sites .site img,main#subsites section .element.sites .site .modernizr-of{width:100%;height:5rem;background-size:cover;-o-object-fit:cover;object-fit:cover}
 @media screen and (min-width:768px){.container{width:720px}
-.carousel .carousel-inner{margin:0 auto;width:500px}
 nav.navbar{padding:10px 0}
 nav.navbar .navbar-nav{display:-webkit-box;display:-ms-flexbox;display:flex;gap:12px}
 nav.navbar .burger{display:none}
@@ -142,8 +152,6 @@ nav.navbar .navbar-collapse{display:block}
 .d-flex{-ms-flex-wrap:wrap;flex-wrap:wrap}
 .flex-gap{-ms-flex-wrap:wrap;flex-wrap:wrap}
 .section-text-image__image .bg{height:350px}
-.section-testimonials__carousel{min-height:500px}
-.section-testimonials__carousel .carousel-control-prev,.section-testimonials__carousel .carousel-control-next{display:none}
 .section-services__item{width:100%;-ms-flex-negative:0;flex-shrink:0}
 .section-portfolio_item{width:100%}
 .section-contact__infos img{height:20px}
