@@ -1,5 +1,7 @@
 *,*::before,*::after{-webkit-box-sizing:border-box;box-sizing:border-box;margin:0;padding:0;background-repeat:no-repeat;background-position:50% 50%;background-size:contain;-webkit-tap-highlight-color:transparent}
 *:focus{outline:0}
+::-moz-selection{background:#eff9f4}
+::selection{background:#eff9f4}
 html{max-width:100vw;height:100%;overflow-x:hidden;margin:0;padding:0;font-family:"Raleway",sans-serif;font-size:1em;line-height:1.5;color:#343a40;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
 body{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-align:center;-ms-flex-align:center;align-items:center;min-height:100vh;background-color:#f7f7f7 !important}
 main{position:relative;margin-top:4rem}
@@ -15,8 +17,8 @@ article,.element,nav,footer .inner{margin:0 auto}
 .d-flex{display:-webkit-box;display:-ms-flexbox;display:flex}
 .flex-gap{display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex;gap:12px}
 .d-grid{display:grid}
-button,.btn{display:inline-block;line-height:1;text-align:center;text-decoration:none;cursor:pointer;font-size:1rem;padding:.375rem .75rem}
-button:disabled,.btn:disabled{background-color:grey}
+button,.btn,input[type="submit"]{display:inline-block;line-height:1;text-align:center;text-decoration:none;cursor:pointer;font-size:1rem;padding:.375rem .75rem;border:0;-webkit-transition-duration:.7s;transition-duration:.7s}
+button:disabled,.btn:disabled,input[type="submit"]:disabled{background-color:grey}
 .btn.btn-primary{background-color:#68c397;color:#000}
 .btn.btn-primary:hover,.btn.btn-primary:active,.btn.btn-primary:focus{color:#000;background-color:#47b17e}
 h1{font-size:2.99997rem}
@@ -25,6 +27,9 @@ h3{font-size:1.99998rem}
 h4{font-size:1.499985rem}
 h5{font-size:.99999rem;letter-spacing:1px}
 h6{font-size:.499995rem;letter-spacing:1px}
+input:not([type="submit"]),select,textarea{border:1px solid #f2f2f2;padding:.5rem;width:100%;margin-bottom:1rem;-webkit-transition-duration:.7s;transition-duration:.7s}
+input:not([type="submit"]):active,input:not([type="submit"]):hover,input:not([type="submit"]):focus,select:active,select:hover,select:focus,textarea:active,textarea:hover,textarea:focus{border-color:#68c397}
+input:-webkit-autofill,textarea:-webkit-autofill,select:-webkit-autofill{-webkit-box-shadow:0 0 0 1000px #eff9f4 inset !important}
 a{color:#68c397;text-decoration:none;-webkit-transition:.3s;transition:.3s}
 a:hover{color:#388d64}
 .carousel .carousel-inner{width:100%}
