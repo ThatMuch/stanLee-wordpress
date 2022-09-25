@@ -136,7 +136,6 @@ $images.each(function () {
 
 const $bubbles = $('.bubbles a');
 // Changement dynamique des images lors des clics sur les bulles
-console.log($bubbles)
 $bubbles.each(function () {
 	$(this).on('click',function () {
 		// Si l'index de la bulle est déjà égal au compteur, alors n'éxécute pas la fonction

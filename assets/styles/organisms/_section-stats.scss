@@ -1,4 +1,12 @@
 .section-stats {
+    .section__title {
+        text-align: center;
+    }
+
+    .d-flex {
+        justify-content: space-around;
+    }
+
     .circle-bar {
         margin-bottom: 30px;
 

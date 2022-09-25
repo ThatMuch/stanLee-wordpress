@@ -32,7 +32,7 @@ input:not([type="submit"]):active,input:not([type="submit"]):hover,input:not([ty
 input:-webkit-autofill,textarea:-webkit-autofill,select:-webkit-autofill{-webkit-box-shadow:0 0 0 1000px #eff9f4 inset !important}
 a{color:#68c397;text-decoration:none;-webkit-transition:.3s;transition:.3s}
 a:hover{color:#388d64}
-.carrousel{position:relative;width:700px;height:400px;margin-left:auto;margin-right:auto}
+.carrousel{position:relative;width:700px;max-width:100%;height:400px;margin-left:auto;margin-right:auto}
 .carrousel ul,.carrousel li{list-style:none}
 .carrousel li{position:absolute;z-index:0}
 .carrousel img{width:100%;height:100%;-o-object-fit:cover;object-fit:cover}
@@ -84,6 +84,8 @@ main#sections .section .section__background-image{position:absolute;left:0;top:0
 .section-testimonials .carrousel{height:300px}
 .section-testimonials .carrousel img{height:100px;width:100px;border-radius:50%}
 .section-testimonials .carrousel__item{top:0;bottom:0;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;gap:30px;text-align:left}
+.section-stats .section__title{text-align:center}
+.section-stats .d-flex{-ms-flex-pack:distribute;justify-content:space-around}
 .section-stats .circle-bar{margin-bottom:30px}
 .section-stats .circle-bar-title{text-align:center}
 .section-stats .radial-progress{max-width:200px;-webkit-transform:rotate(-90deg);transform:rotate(-90deg);width:100%;margin:auto;display:block}

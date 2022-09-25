@@ -138,7 +138,6 @@ $images.each(function () {
 });
 var $bubbles = $('.bubbles a'); // Changement dynamique des images lors des clics sur les bulles
 
-console.log($bubbles);
 $bubbles.each(function () {
   $(this).on('click', function () {
     // Si l'index de la bulle est déjà égal au compteur, alors n'éxécute pas la fonction
@@ -178,19 +177,6 @@ $(function () {
   // get current language
   // eslint-disable-next-line no-unused-vars
   var activeLang = $('html').attr('data-lang');
-  /* Hamburger switch
-   /––––––––––––––––––––––––*/
-
-  $(function () {
-    $(document).on('click', '#hamburger', function () {
-      // show overlay
-      $('#menu_main').toggleClass('hidden_mobile'); // switch icon
-
-      $('#hamburger').toggleClass('is-active'); // prevent content scrolling
-
-      $('html').toggleClass('noscroll');
-    });
-  });
   /* Modernizr Fix: 'object-fit'
    /––––––––––––––––––––––––––––––––*/
   // displays images with the object-fit attribute as background-images for older browsers
@@ -256,16 +242,17 @@ $(function () {
 
   $(window).scroll(function () {
     $('svg.radial-progress').each(function (index, value) {
-      // If svg.radial-progress is approximately 25% vertically into the window when scrolling from the top or the bottom
+      console.log("percent"); // If svg.radial-progress is approximately 25% vertically into the window when scrolling from the top or the bottom
+
       if ($(window).scrollTop() > $(this).offset().top - $(window).height() * 0.75 && $(window).scrollTop() < $(this).offset().top + $(this).height() - $(window).height() * 0.25) {
         // Get percentage of progress
-        percent = $(value).data('percentage'); // Get radius of the svg's circle.complete
+        var percent = $(value).data('percentage'); // Get radius of the svg's circle.complete
 
-        radius = $(this).find($('circle.complete')).attr('r'); // Get circumference (2πr)
+        var radius = $(this).find($('circle.complete')).attr('r'); // Get circumference (2πr)
 
-        circumference = 2 * Math.PI * radius; // Get stroke-dashoffset value based on the percentage of the circumference
+        var circumference = 2 * Math.PI * radius; // Get stroke-dashoffset value based on the percentage of the circumference
 
-        strokeDashOffset = circumference - percent * circumference / 100; // Transition progress for 1.25 seconds
+        var strokeDashOffset = circumference - percent * circumference / 100; // Transition progress for 1.25 seconds
 
         $(this).find($('circle.complete')).animate({
           'stroke-dashoffset': strokeDashOffset
