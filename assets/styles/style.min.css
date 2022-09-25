@@ -97,9 +97,11 @@ main#sections .section .section__background-image{position:absolute;left:0;top:0
 .section-services__item{margin-bottom:2rem;padding:0 15px;width:33.33%}
 .section-services__item__icon{font-size:2em}
 .section-services.bg-primary .section-services__item__icon{color:#10904b}
-.section-price__column__wrapper{background-color:#fff;padding:60px 30px;height:100%;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}
+.section-price .section__title{text-align:center}
+.section-price .d-flex{-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;gap:15px}
+.section-price__column{background-color:#fff;padding:60px 30px;height:100%;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}
 .section-price__column__price{text-align:center;font-size:2rem;font-weight:bold;color:#68c397}
-.section-price__column__service{list-style:none;border-bottom:1px solid #ccc}
+.section-price__column__service{padding:1rem 0;list-style:none;border-bottom:1px solid #ccc}
 .section-portfolio_item img{margin-bottom:1rem;width:100%}
 .section-logos .section__title{color:#868e96;margin-bottom:2rem}
 .section-logos__grid{display:grid;grid-gap:30px;grid-template-columns:repeat(auto-fit,minmax(135px,1fr));grid-auto-rows:100px}
