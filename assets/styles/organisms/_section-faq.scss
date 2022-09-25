@@ -1,24 +1,49 @@
 .section-faq {
-    &__accordion {
-        .card {
+    .accordion {
+        &__item {
             border: none;
             background-color: transparent;
-        }
 
-        .card-header {
-            background-color: transparent;
-            border: none;
-
-            @media screen and (max-width: 767px) {
-                font-size: 19px;
-            }
-
-            &-expand {
-                color: rgba($color: $color-primary, $alpha: 0.5);
-            }
-
-            &:hover {
+            &__header {
+                font-size: 1.5rem;
+                font-weight: 700;
+                display: flex;
+                justify-content: space-between;
                 cursor: pointer;
+
+                &[aria-expanded='true'] {
+                    color: $color-primary;
+
+                    .icon {
+                        &::after {
+                            width: 0;
+                        }
+                    }
+
+                    & + .accordion__item__body {
+                        opacity: 1;
+                        max-height: 9em;
+                        transition: all 200ms linear;
+                        will-change: opacity, max-height;
+                    }
+                }
+
+                &__expand {
+                    color: rgba($color: $color-primary, $alpha: 0.5);
+                }
+            }
+
+            &__body {
+                opacity: 0;
+                max-height: 0;
+                overflow: hidden;
+                transition: opacity 200ms linear, max-height 200ms linear;
+                will-change: opacity, max-height;
+
+                p {
+                    font-size: 1rem;
+                    margin: 2em 0;
+                }
             }
         }
     }

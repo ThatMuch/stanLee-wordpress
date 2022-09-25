@@ -151,7 +151,25 @@ $bubbles.each(function () {
     changeBubbleColor($bubbles);
   });
 });
-changeBubbleColor($bubbles);
+changeBubbleColor($bubbles); // FAQ
+
+var faqs = document.querySelectorAll(".accordion__item__header");
+
+function toggleAccordion() {
+  var itemToggle = this.getAttribute('aria-expanded');
+
+  for (var i = 0; i < faqs.length; i++) {
+    faqs[i].setAttribute('aria-expanded', 'false');
+  }
+
+  if (itemToggle == 'false') {
+    this.setAttribute('aria-expanded', 'true');
+  }
+}
+
+faqs.forEach(function (item) {
+  return item.addEventListener('click', toggleAccordion);
+});
 "use strict";
 
 /* eslint-disable no-undef */
@@ -242,8 +260,7 @@ $(function () {
 
   $(window).scroll(function () {
     $('svg.radial-progress').each(function (index, value) {
-      console.log("percent"); // If svg.radial-progress is approximately 25% vertically into the window when scrolling from the top or the bottom
-
+      // If svg.radial-progress is approximately 25% vertically into the window when scrolling from the top or the bottom
       if ($(window).scrollTop() > $(this).offset().top - $(window).height() * 0.75 && $(window).scrollTop() < $(this).offset().top + $(this).height() - $(window).height() * 0.25) {
         // Get percentage of progress
         var percent = $(value).data('percentage'); // Get radius of the svg's circle.complete

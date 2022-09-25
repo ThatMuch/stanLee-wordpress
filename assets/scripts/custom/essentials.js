@@ -151,3 +151,21 @@ $bubbles.each(function () {
 })
 
 changeBubbleColor($bubbles);
+
+// FAQ
+
+const faqs = document.querySelectorAll(".accordion__item__header");
+
+function toggleAccordion() {
+	const itemToggle = this.getAttribute('aria-expanded');
+
+	for (var i = 0; i < faqs.length; i++) {
+		faqs[i].setAttribute('aria-expanded','false');
+	}
+
+	if (itemToggle == 'false') {
+		this.setAttribute('aria-expanded','true');
+	}
+}
+
+faqs.forEach(item => item.addEventListener('click',toggleAccordion));

@@ -108,10 +108,14 @@ main#sections .section .section__background-image{position:absolute;left:0;top:0
 .section-gallery .grid{display:grid;grid-gap:5px;grid-template-columns:repeat(auto-fit,minmax(100px,1fr));grid-auto-rows:1fr}
 .section-gallery a{display:block}
 .section-gallery a img{width:100%;height:100%;-o-object-fit:cover;object-fit:cover}
-.section-faq__accordion .card{border:0;background-color:transparent}
-.section-faq__accordion .card-header{background-color:transparent;border:0}
-.section-faq__accordion .card-header-expand{color:rgba(104,195,151,0.5)}
-.section-faq__accordion .card-header:hover{cursor:pointer}
+.section-faq .accordion__item{border:0;background-color:transparent}
+.section-faq .accordion__item__header{font-size:1.5rem;font-weight:700;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;cursor:pointer}
+.section-faq .accordion__item__header[aria-expanded='true']{color:#68c397}
+.section-faq .accordion__item__header[aria-expanded='true'] .icon::after{width:0}
+.section-faq .accordion__item__header[aria-expanded='true']+.accordion__item__body{opacity:1;max-height:9em;-webkit-transition:all 200ms linear;transition:all 200ms linear;will-change:opacity,max-height}
+.section-faq .accordion__item__header__expand{color:rgba(104,195,151,0.5)}
+.section-faq .accordion__item__body{opacity:0;max-height:0;overflow:hidden;-webkit-transition:opacity 200ms linear,max-height 200ms linear;transition:opacity 200ms linear,max-height 200ms linear;will-change:opacity,max-height}
+.section-faq .accordion__item__body p{font-size:1rem;margin:2em 0}
 .section-contact__infos{text-align:center}
 .section-contact__infos img{margin-bottom:1rem;height:46px}
 .section-contact__infos__rs li{display:inline-block;font-size:1.5rem;margin-right:1rem}
@@ -148,7 +152,6 @@ nav.navbar .navbar-collapse{display:block}
 .section-text-image__text,.section-text-image__image{width:50%}
 }@media screen and (min-width:992px){.container{width:960px}
 }@media screen and (min-width:1200px){.container{width:1140px}
-}@media screen and (max-width:767px){.section-faq__accordion .card-header{font-size:19px}
 }@media screen and (max-width:530px){.section-contact .form-control{font-size:1.4rem}
 }@media screen and (max-width:450px){article,.element,nav,footer .inner{width:95vw}
 .d-flex{-ms-flex-wrap:wrap;flex-wrap:wrap}
