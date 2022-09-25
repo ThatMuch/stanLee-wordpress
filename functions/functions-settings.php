@@ -42,8 +42,6 @@
 // enqueues  sctipts and styles (optional typekit embed)
 // » https://developer.wordpress.org/reference/functions/wp_enqueue_script/
 function _s_enqueue() {
-  // fontawesome cdn
-  wp_enqueue_style( 'fontawesome', 'https://use.fontawesome.com/releases/v5.1.0/css/all.css' );
   // jQuery (from wp core)
   wp_deregister_script( 'jquery' );
   wp_register_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js', false, '3.6.0');
@@ -51,6 +49,10 @@ function _s_enqueue() {
   // scripts
   wp_register_script('mCC_/scripts', get_template_directory_uri() . '/assets/scripts/custom.min.js', false, array( 'jquery' ), true);
   wp_enqueue_script('mCC_/scripts');
+  // Font Awesome
+  wp_register_script('mCC_/fontawesome', "https://kit.fontawesome.com/6cb6362892.js");
+  wp_enqueue_script('mCC_/fontawesome');
+
   // styles
   wp_enqueue_style('mCC_/styles', get_template_directory_uri() . '/assets/styles/style.min.css', false, null);
   // Typekit
