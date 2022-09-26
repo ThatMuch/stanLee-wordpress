@@ -22,6 +22,14 @@
     outline: 0;
 }
 
+::-moz-selection { /* Code for Firefox */
+    background: lighten($color-primary, 37);
+}
+
+::selection {
+    background: lighten($color-primary, 37);
+}
+
 html {
     max-width: 100vw;
     height: 100%;
@@ -80,4 +88,59 @@ footer .inner {
     @include breakpoint(mobile) {
         width: $element_width_mobile;
     }
+}
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+
+    @include breakpoint(tablet) {
+        width: 720px;
+    }
+
+
+    @include breakpoint(laptop) {
+        width: 960px;
+    }
+
+
+    @include breakpoint(desktop) {
+        width: 1140px;
+    }
+}
+
+// Background colors
+.bg-primary {
+    background-color: $color-primary;
+}
+
+.bg-light {
+    background-color: $color-light;
+}
+
+.bg-white {
+    background-color: #fff;
+}
+
+// Grid
+
+.d-flex {
+    display: flex;
+
+    @include breakpoint(mobile) {
+        flex-wrap: wrap;
+    }
+}
+
+.flex-gap {
+    display: inline-flex;
+    gap: 12px;
+
+    @include breakpoint(mobile) {
+        flex-wrap: wrap;
+    }
+}
+
+.d-grid {
+    display: grid;
 }

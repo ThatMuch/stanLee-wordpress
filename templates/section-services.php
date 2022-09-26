@@ -19,11 +19,11 @@
                     <h2 class="section__title"><?php echo get_sub_field('title'); ?></h2>
               <?php endif; ?>
               <!-- Title -->
-              <div class="row">
+              <div class="d-flex">
                     <!-- Service -->
                     <?php if (have_rows('service') ) : ?>
                           <?php while( have_rows('service') ) : the_row(); ?>
-                          <div class="col-sm-4 section-services__item">
+                          <div class="section-services__item">
                                 <!-- Icon -->
                                 <?php if (get_sub_field('icon') ) :?>
                                     <span class="section-services__item__icon"><?php the_sub_field('icon') ?></span>

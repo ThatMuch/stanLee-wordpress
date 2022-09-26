@@ -49,7 +49,6 @@
 		"cache-clear": "gulp clearCache"
 	},
 	"dependencies": {
-		"bootstrap": "^5.1.1",
 		"gulp-order": "^1.2.0",
 		"node-sass": "^7.0.3"
 	}

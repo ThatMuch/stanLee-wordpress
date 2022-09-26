@@ -6,8 +6,11 @@
  *
  */
 //=> templates/wp-single.php
-main#post {
-    section {
+.single, .search {
+    .container {
+        display: flex;
+        gap: 50px;
+
         article {
             img,
             .modernizr-of {

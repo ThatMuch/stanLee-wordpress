@@ -26,18 +26,17 @@
      <?php $custom_logo_id = get_theme_mod( 'custom_logo' );
         $image = wp_get_attachment_image_src( $custom_logo_id , 'full' ); ?>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar bg-light">
   <div class="container">
   <a class="navbar-brand" href="<?php echo site_url(); ?>">
-    <div class="logo" style="background-image: url('<?php if($image[0]): echo $image[0]; else: echo get_template_directory_uri()?>/assets/images/stanlee_logo_texte.png<?endif; ?>')"></div>
+	<img src="<?php if($image[0]): echo $image[0]; else: echo get_template_directory_uri()?>/assets/images/stanlee_logo_texte.png<?endif; ?>" alt="">
   </a>
-    <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="<?php esc_html_e( 'Toggle Navigation', 'theme-textdomain' ); ?>">
-        <span class="navbar-toggler-icon"></span>
+	<div>
+    <button class="burger" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="<?php esc_html_e( 'Toggle Navigation', 'theme-textdomain' ); ?>">
+        <span></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbar-content">
-
-
         <?php
         wp_nav_menu( array(
             'theme_location' => 'mainmenu', // Defined when registering the menu
@@ -50,6 +49,8 @@
         ) );
         ?>
     </div>
+	</div>
+
   </div>
 </nav>
 <?php if ( is_home()): ?>

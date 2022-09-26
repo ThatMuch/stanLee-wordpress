@@ -11,6 +11,6 @@
 }
 ?>
 
-<aside id="secondary" class="widget-area col-sm-12 col-lg-4" role="complementary">
+<aside id="secondary" class="widget-area" role="complementary">
 	<?php dynamic_sidebar( 'sidebar-1' ); ?>
 </aside><!-- #secondary -->

@@ -1,15 +1,25 @@
 .section-text-image {
     padding: 0 !important;
+    display: flex;
+    min-height: 50vh;
+    position: relative;
+    flex-direction: column;
 
-    &:nth-child(odd) {
-        .row {
+    @include breakpoint(tablet) {
+        flex-direction: row;
+
+        &:nth-child(odd) {
             flex-direction: row-reverse;
         }
     }
 
-    .row {
-        min-height: 50vh;
-        position: relative;
+
+    &__text, &__image {
+        width: 100%;
+
+        @include breakpoint(tablet) {
+            width: 50%;
+        }
     }
 
     &__text {

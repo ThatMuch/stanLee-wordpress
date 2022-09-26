@@ -5,13 +5,72 @@
  * @since       _s_1.0.0.0
  *
  */
-.carousel {
-    .carousel-inner {
-        width: 100%;
+.carrousel {
+    position: relative;
+    width: 700px;
+    max-width: 100%;
+    height: 400px;
+    margin-left: auto;
+    margin-right: auto;
 
-        @include breakpoint(tablet) {
-            margin: 0 auto;
-            width: 500px;
+    ul, li {
+        list-style: none;
+    }
+
+    li {
+        position: absolute;
+        z-index: 0;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.bubbles {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    ul, li {
+        list-style: none;
+    }
+
+    a {
+        display: block;
+        margin: 5px;
+        width: 10px;
+        height: 10px;
+        background-color: #1B2A2F;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+}
+
+.controls {
+    .prevBtn {
+        position: absolute;
+        top: 150px;
+        left: -70px;
+        transform: translateY(-50%);
+    }
+
+    .nextBtn {
+        position: absolute;
+        top: 150px;
+        left: 770px;
+        transform: translateY(-50%);
+    }
+
+    i {
+        font-size: 30px;
+        cursor: pointer;
+        color: rgba(0, 0, 0, 0.188);
+
+        &:hover {
+            color: rgba(0, 0, 0, 0.3);
         }
     }
 }
