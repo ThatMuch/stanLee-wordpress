@@ -10,8 +10,8 @@
 ?>
 
 <?php get_header(); ?>
-<div class="container">
-  <main id="blog" class="content-area">
+<div class="container content-area">
+  <main id="blog">
       <?php if (have_posts() ) : while (have_posts()) : the_post(); ?>
           <div class="article__content">
 						<div class="thumbnail">
@@ -31,7 +31,7 @@
 
       <?php endwhile; endif; ?>
   </main>
-<?php get_sidebar(); ?>
+	<?php get_sidebar(); ?>
 </div>
 <div class="pagination">
 			<?php the_posts_pagination( array(
