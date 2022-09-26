@@ -7,20 +7,54 @@
  */
 //=> templates/wp-home.php
 
-main#blog {
-    section {
-        article {
-            img,
-            .modernizr-of {
+.blog {
+    .container {
+        display: flex;
+        justify-content: center;
+        gap: 50px;
+
+        @include breakpoint(mobile) {
+            padding: 15px;
+            flex-wrap: wrap;
+        }
+    }
+
+    .article__content {
+        display: grid;
+        gap: 15px;
+        grid-template-columns: repeat(minmax(200px, 1fr), auto-fit);
+        margin-bottom: 1rem;
+        align-items: center;
+        max-width: 100%;
+
+        @include breakpoint(tablet) {
+            grid-template-columns: 200px 1fr;
+        }
+
+
+        .thumbnail {
+            height: 200px;
+            background-color: $color-grey1;
+
+            img {
                 width: 100%;
                 height: 100%;
-                background-size: cover;
                 object-fit: cover;
             }
         }
+    }
+}
 
-        .pagination {
-            justify-content: center;
-        }
+.pagination {
+    padding: 15px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.widget-area {
+    ul, li {
+        padding: 0;
+        margin: 0;
+        list-style: none;
     }
 }
