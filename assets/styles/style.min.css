@@ -60,10 +60,12 @@ nav.navbar .navbar-collapse{display:none}
 nav.navbar .navbar-collapse.active{background-color:#68c397;width:100vw;position:absolute;left:0;top:4rem;padding:15px;display:block}
 nav.navbar .navbar-collapse.active a{color:#fff}
 .footer{width:100vw;margin-top:auto;color:#f2f2f2;background:#343a40}
-.footer__rs{text-align:center}
-.footer__rs__item{display:inline-block;list-style:none;margin-right:.5rem}
+.footer ul,.footer li{list-style:none;padding:0}
+.footer__rs{text-align:center;display:-webkit-box;display:-ms-flexbox;display:flex;gap:5px}
+.footer__rs__item{margin-right:.5rem}
 .footer__rs__item a{color:#868e96;font-size:1.5rem}
-.footer__inner{padding:1.5rem 0;font-size:.8rem}
+.footer__contact{color:#868e96}
+.footer__inner{display:-webkit-box;display:-ms-flexbox;display:flex;padding:1.5rem 0;font-size:.8rem;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}
 .footer__credits{background-color:#212529;color:#495057;text-align:center}
 .footer__credits a{color:#495057}
 .footer .widget-title{color:#868e96;margin-bottom:1rem}
