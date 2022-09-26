@@ -29,7 +29,7 @@
 
         <!-- Text -->
         <?php if(get_sub_field('text') ) : ?>
-            <p class="mb-4"> <?php echo get_sub_field('text'); ?></p>
+            <p> <?php echo get_sub_field('text'); ?></p>
         <?php endif; ?>
         <!-- Text -->
         <!-- Button -->

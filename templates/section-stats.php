@@ -23,13 +23,13 @@
      <div class="container">
          <!-- Title -->
          <?php if(get_sub_field('title') ) : ?>
-            <h2 class="section__title text-center"><?php echo get_sub_field('title'); ?></h2>
+            <h2 class="section__title"><?php echo get_sub_field('title'); ?></h2>
         <?php endif; ?>
         <!-- Title -->
-        <div class="row justify-content-center">
+        <div class="d-flex">
         <?php if (have_rows('radial_chart') ) : $i = 1 ; ?>
             <?php while( have_rows('radial_chart') ) : the_row(); ?>
-            <div class="col-xs-6 col-sm-6 col-md-3 circle-bar circle-<?php echo $i ?>">
+            <div class="circle-bar circle-<?php echo $i ?>">
                 <svg class="radial-progress" data-percentage=" <?php if (get_sub_field('percentage') ) : ?> <?php echo get_sub_field('percentage'); ?><?php endif; ?>" viewBox="0 0 80 80">
                     <circle class="incomplete" cx="40" cy="40" r="35"></circle>
                     <circle class="complete" cx="40" cy="40" r="35" style="stroke-dashoffset: 39.58406743523136;"></circle>

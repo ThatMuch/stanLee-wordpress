@@ -12,12 +12,17 @@
     color: $color-grey;
     background: $color-dark;
 
+    ul, li {
+        list-style: none;
+        padding: 0;
+    }
+
     &__rs {
         text-align: center;
+        display: flex;
+        gap: 5px;
 
         &__item {
-            display: inline-block;
-            list-style: none;
             margin-right: .5rem;
 
             a {
@@ -27,9 +32,15 @@
         }
     }
 
+    &__contact {
+        color: $color-grey1;
+    }
+
     &__inner {
+        display: flex;
         padding: 1.5rem 0;
         font-size: 0.8rem;
+        justify-content: space-between;
     }
 
     &__credits {

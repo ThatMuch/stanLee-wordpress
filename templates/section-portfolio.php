@@ -25,9 +25,9 @@
             );
              $the_query = new WP_Query($args);
             if ($the_query->have_posts() ): ?>
-            <div class="row justify-content-center">
+            <div class="flex-gap">
               <?php while ( $the_query->have_posts() ): $the_query->the_post(); ?>
-                  <div class="col-sm-3">
+                  <div class="section-portfolio_item">
                       <!-- Image -->
                       <a href="<?php the_permalink()?>">
                         <img src="<?php the_post_thumbnail_url( 'medium' )?>" alt="">

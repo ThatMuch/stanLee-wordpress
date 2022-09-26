@@ -6,19 +6,25 @@
  *
  */
 
-input, select {
-    //
+input:not([type="submit"]), select, textarea {
+    border: 1px solid $color-grey;
+    padding: 0.5rem;
+    width: 100%;
+    margin-bottom: 1rem;
+    transition-duration: $transition_slow;
+
     &:active, &:hover, &:focus {
-        //
-   
+        border-color: $color-primary;
     }
+}
+
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px lighten($color-primary, 37) inset !important;
 }
 
 input[type="radio"],
 input[type="checkbox"] {
-    //
-}
-
-textarea {
     //
 }

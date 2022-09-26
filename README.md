@@ -5,7 +5,7 @@
 Vous voulez créer un thème Wordpress "from scratch" ? Mais pourquoi refaire les mêmes configurations à chaque nouveau thème quand vous pouvez automatiser cette première étape ? Gagnez du temps avec Stanlee, votre thème de démarrage généré avec Yeoman.
 
 Avec son CSS minimal il est prêt à être personnalisé pour en faire votre tout nouveau thème.
-Inspiré de Underscores et WP Seed, il est construit sur le framework Bootstrap 5. Il contient des sections à ajouter aux pages de votre site grâce au plugin ACF.
+Inspiré de Underscores et WP Seed, il contient des sections à ajouter aux pages de votre site grâce au plugin ACF.
 
 Stanlee est livré avec 90% de tout ce qu'il vous faut pour votre thème, ni plus, ni moins.
 
@@ -20,7 +20,7 @@ Voir la [demo](http://stanlee._a.fr/).
  npm install -g npm@latest
 ```
 
-- gulp >= 4.0.2 - [gulp](https://gulpjs.com)
+- gulp >= 4.0.0 - [gulp](https://gulpjs.com)
 
 ```bash
 npm install -g gulp

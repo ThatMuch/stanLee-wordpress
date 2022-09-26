@@ -32,9 +32,8 @@
                   );
               $the_query = new WP_Query($args);
               if ($the_query->have_posts() ): ?>
-                  <div class="row justify-content-center">
+                  <div class="d-flex">
                       <?php  while ( $the_query->have_posts() ): $the_query->the_post(); ?>
-                          <div class="col-sm-4">
                               <div class="section-team__member">
                                 <!-- Image -->
                                 <?php if (get_the_post_thumbnail()) : ?>
@@ -110,7 +109,6 @@
                                   <?php endif; ?>
                                   <!-- Social media -->
                               </div>
-                          </div>
                       <?php endwhile; ?>
                   </div>
                   <?php endif; wp_reset_query(); ?>

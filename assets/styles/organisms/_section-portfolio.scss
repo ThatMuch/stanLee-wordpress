@@ -1,7 +1,13 @@
 .section-portfolio {
-    img {
-        @extend .mb-3 !optional;
+    &_item {
+        @include breakpoint(mobile) {
+            width: 100%;
+        }
 
-        width: 100%;
+
+        img {
+            margin-bottom: 1rem;
+            width: 100%;
+        }
     }
 }

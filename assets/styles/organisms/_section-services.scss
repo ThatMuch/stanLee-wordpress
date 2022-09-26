@@ -2,7 +2,15 @@
     text-align: center;
 
     &__item {
+        @include breakpoint(mobile) {
+            width: 100%;
+            flex-shrink: 0;
+        }
+
+
         margin-bottom: 2rem;
+        padding: 0 15px;
+        width: 33.33%;
 
         &__icon {
             font-size: 2em;
