@@ -133,7 +133,7 @@ main#sections .section .section__background-image{position:absolute;left:0;top:0
 .section-team__member__img{height:150px;width:150px;margin-left:auto;margin-right:auto}
 .section-team__member__rs li{list-style:none;display:inline-block;font-size:25px}
 .section-team__member__rs li:not(:last-child){margin-right:1rem}
-.blog .container,.archive .container,.search .container{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;gap:50px}
+.blog .content-area,.archive .content-area,.search .content-area{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;gap:50px}
 .blog .article__content,.archive .article__content,.search .article__content{display:grid;gap:15px;grid-template-columns:repeat(minmax(200px,1fr),auto-fit);margin-bottom:1rem;-webkit-box-align:center;-ms-flex-align:center;align-items:center;max-width:100%}
 .blog .article__content .thumbnail,.archive .article__content .thumbnail,.search .article__content .thumbnail{height:200px;background-color:#868e96}
 .blog .article__content .thumbnail img,.archive .article__content .thumbnail img,.search .article__content .thumbnail img{width:100%;height:100%;-o-object-fit:cover;object-fit:cover}
@@ -174,6 +174,6 @@ nav.navbar .navbar-collapse{display:block}
 .section-contact__form{width:90%}
 .section-carousel{padding:3rem 0 !important}
 .section-team__member{width:100%;-ms-flex-negative:0;flex-shrink:0}
-.blog .container,.archive .container,.search .container{padding:15px;-ms-flex-wrap:wrap;flex-wrap:wrap}
+.blog .content-area,.archive .content-area,.search .content-area{padding:15px;-ms-flex-wrap:wrap;flex-wrap:wrap}
 main#subsites section .element.sites .site{-ms-flex-preferred-size:100%;flex-basis:100%}
 }
