@@ -109,6 +109,7 @@ main#sections .section .section__background-image{position:absolute;left:0;top:0
 .section-logos__grid{display:grid;grid-gap:30px;grid-template-columns:repeat(auto-fit,minmax(135px,1fr));grid-auto-rows:100px}
 .section-logos .logo{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center}
 .section-logos .logo img{max-height:100%;display:block;margin:0 auto}
+.section-link p{margin-bottom:2rem}
 .section-gallery .grid{display:grid;grid-gap:5px;grid-template-columns:repeat(auto-fit,minmax(100px,1fr));grid-auto-rows:1fr}
 .section-gallery a{display:block}
 .section-gallery a img{width:100%;height:100%;-o-object-fit:cover;object-fit:cover}

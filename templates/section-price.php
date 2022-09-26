@@ -40,7 +40,7 @@
                         	<div class="section-price__column">
 							<!-- Title -->
 							<?php if( get_sub_field('title') ) : ?>
-							<h3 class="section-price__column__title text-center">  <?php echo get_sub_field('title'); ?> </h3>
+							<h3 class="section-price__column__title">  <?php echo get_sub_field('title'); ?> </h3>
 							<?php endif; ?>
 							<!-- Title -->
 							<!-- Price -->
@@ -56,7 +56,7 @@
 							<?php endif; ?>
 							<!-- Price -->
 							<?php if ( have_rows('services') ) : ?>
-								<ul class="mb-auto">
+								<ul>
 									<?php while (have_rows('services')) : the_row()?>
 										<?php if( get_sub_field('text') ) : ?>
 											<li class="section-price__column__service"><?php echo get_sub_field('text'); ?></li>
@@ -68,7 +68,7 @@
 							<?php if (have_rows('button')) : ?>
 								<?php while ( have_rows('button') ) : the_row(); ?>
 								<?php if (get_sub_field('label') ) : ?>
-									<a href="<?php the_sub_field('link'); ?>" class="btn btn-primary btn-block mt-2"><?php the_sub_field('label'); ?></a>
+									<a href="<?php the_sub_field('link'); ?>" class="btn btn-primary btn-block"><?php the_sub_field('label'); ?></a>
 								<?php endif; ?>
 								<?php endwhile; ?>
 							<?php endif; ?>
