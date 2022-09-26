@@ -142,13 +142,13 @@ main#sections .section .section__background-image{position:absolute;left:0;top:0
 .page-title{text-transform:capitalize}
 main#page section .element.teaser{width:100%;max-width:100%;height:25rem;padding:0}
 main#page section .element.teaser img,main#page section .element.teaser .modernizr-of{width:100%;height:100%;background-size:cover;-o-object-fit:cover;object-fit:cover}
-.single .container,.search .container{display:-webkit-box;display:-ms-flexbox;display:flex;gap:50px}
-.single .container article img,.single .container article .modernizr-of,.search .container article img,.search .container article .modernizr-of{max-width:100%;background-size:cover;-o-object-fit:cover;object-fit:cover}
-.single .container article .postinfo,.search .container article .postinfo{margin-bottom:.5rem}
-.single .container article dl,.single .container article ol,.single .container article ul,.search .container article dl,.search .container article ol,.search .container article ul{padding-left:2rem}
-.single .container article h2,.search .container article h2{font-size:1.499985rem}
-.single .container article h3,.search .container article h3{font-size:.99999rem}
-.single .container article h4,.search .container article h4{font-size:.499995rem}
+.single .content-area{display:-webkit-box;display:-ms-flexbox;display:flex;gap:50px}
+.single .content-area article img,.single .content-area article .modernizr-of{max-width:100%;background-size:cover;-o-object-fit:cover;object-fit:cover}
+.single .content-area article .postinfo{margin-bottom:.5rem}
+.single .content-area article dl,.single .content-area article ol,.single .content-area article ul{padding-left:2rem}
+.single .content-area article h2{font-size:1.499985rem}
+.single .content-area article h3{font-size:.99999rem}
+.single .content-area article h4{font-size:.499995rem}
 main#subsites section .element.sites{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}
 main#subsites section .element.sites .site{-ms-flex-preferred-size:calc((100% / 3) - 1rem);flex-basis:calc((100% / 3) - 1rem);margin-bottom:1rem}
 main#subsites section .element.sites .site img,main#subsites section .element.sites .site .modernizr-of{width:100%;height:5rem;background-size:cover;-o-object-fit:cover;object-fit:cover}
