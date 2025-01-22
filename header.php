@@ -17,8 +17,6 @@
 	<?php _s_gtm('head') ?>
 	<!--=== OPEN-GRAPH TAGS ===-->
 	<?php _s_ogtags() ?>
-	<!--=== PRELOAD FONTS ===-->
-	<?php _s_preload_fonts() ?>
 	<!--=== WP HEAD ===-->
 	<?php wp_head(); ?>
 </head>
@@ -33,7 +31,7 @@
 		<div class="container">
 			<a class="navbar-brand" href="<?php echo site_url(); ?>">
 				<img src="<?php echo ($image) ? $image[0]
-										:  get_template_directory_uri() ?>/assets/images/stanlee_logo_texte.png" alt="Stan Lee Logo">
+								:  get_template_directory_uri() ?>/assets/images/stanlee_logo_texte.png" alt="Stan Lee Logo">
 			</a>
 			<div>
 				<button class="burger" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="<?php esc_html_e('Toggle Navigation', 'theme-textdomain'); ?>">

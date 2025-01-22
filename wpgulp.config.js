@@ -45,7 +45,7 @@ const jsVendorFile = 'vendor';
 // JS Custom options.
 
 // Path to JS custom scripts folder.
-const jsCustomSRC = './assets/scripts/custom/*.js';
+const jsCustomSRC = "assets/scripts/custom/*.js";
 
 // Path to place the compiled JS custom scripts file.
 const jsCustomDestination = './assets/scripts/';

@@ -1,5 +1,3 @@
-/* eslint-disable no-undef */
-/* eslint-disable no-unused-vars */
 /*!
  * Essential javascript functions/variables
  *
@@ -9,163 +7,199 @@
  *
  */
 
-/*==================================================================================
-  General Variables & Presets
-==================================================================================*/
+(function ($) {
+    //==================================================================================
+    // General Variables & Presets
+    //==================================================================================
+    var $vpWidth = $(window).width();
+    var $root = $("html");
+    var isTouch = "ontouchstart" in document.documentElement;
 
+    //==================================================================================
+    // Functions
+    //==================================================================================
 
-/* Viewport Width
-/––––––––––––––––––––––––*/
-var $vpWidth = jQuery( window ).width();
+    function setTouchAttribute() {
+        if (isTouch) {
+            $root.attr("data-touch", "true");
+        } else {
+            $root.attr("data-touch", "false");
+        }
+    }
 
-/* Touch Device
-/––––––––––––––––––––––––*/
-var $root = $( 'html' );
-var isTouch = 'ontouchstart' in document.documentElement;
-if ( isTouch ) {
-	$root.attr( 'data-touch', 'true' );
-} else {
-	$root.attr( 'data-touch', 'false' );
-}
+    function toggleNavbar() {
+        $(".burger").click(function () {
+            $(this).toggleClass("active");
+            $(".navbar-collapse").toggleClass("active");
+            return false;
+        });
+    }
 
+    function setBlockServiceClass() {
+        $(".block__service").each(function (index) {
+            if (index % 2 === 1) {
+                $(this).addClass("right");
+                $(this).find(".card__title").addClass("right");
+            }
+        });
+    }
 
-/* Debouncer
-/––––––––––––––––––––––––*/
-// prevents functions to execute to often/fast
-// Usage:
-// var myfunction = debounce(function() {
-//   // function stuff
-// }, 250);
-// window.addEventListener('resize', myfunction);
-function debouncer( func, wait, immediate ) {
-	var timeout;
-	return function() {
-		var context = this,
-			args = arguments;
-		var later = function() {
-			timeout = null;
-			if ( ! immediate ) {
-				func.apply( context, args );
-			}
-		};
-		var callNow = immediate && ! timeout;
-		clearTimeout( timeout );
-		timeout = setTimeout( later, wait );
-		if ( callNow ) {
-			func.apply( context, args );
-		}
-	};
-}
+    function initializeOwlCarousel() {
+        $(".sliderServices__list").owlCarousel({
+            margin: 15,
+            loop: true,
+            dots: false,
+            autoplay: true,
+            autoplayHoverPause: true,
+            autoplayTimeout: 3000,
+            items: 1,
+            responsive: {
+                0: {
+                    items: 1,
+                },
+                768: {
+                    items: 2,
+                },
+                992: {
+                    items: 1,
+                },
+            },
+        });
 
-$('.burger').click(function () {
-	$(this).toggleClass('active');
-	$('.navbar-collapse').toggleClass('active')
-	return false;
-});
+        $(".sliderBenefits__list").owlCarousel({
+            margin: 15,
+            loop: true,
+            dots: false,
+            autoplay: false,
+            autoplayHoverPause: true,
+            autoplayTimeout: 3000,
+            items: 1,
+            nav: true,
+            responsive: {
+                0: {
+                    items: 1,
+                },
+                768: {
+                    items: 2,
+                },
+                992: {
+                    items: 1,
+                },
+            },
+        });
+        $(".statsSlider__list").owlCarousel({
+            margin: 15,
+            loop: true,
+            dots: false,
+            autoplay: false,
+            autoplayHoverPause: true,
+            autoplayTimeout: 3000,
+            items: 4,
+            nav: true,
+            autoWidth: true,
+            responsive: {
+                0: {
+                    items: 1,
+                },
+                768: {
+                    items: 2,
+                },
+            },
+        });
+        $(".testimonial__list").owlCarousel({
+            margin: 15,
+            loop: true,
+            dots: false,
+            autoplay: false,
+            autoplayHoverPause: true,
+            autoplayTimeout: 3000,
+            items: 1,
+            nav: true,
+            responsive: {
+                0: {
+                    items: 1,
+                },
+                768: {
+                    items: 1,
+                },
+                992: {
+                    items: 1,
+                },
+            },
+        });
+    }
 
-// Carrousel
+    function updateArticleListItems() {
+        $(".article__list li").each(function () {
+            $(this).removeClass("nav-item").addClass("article__item");
+        });
+    }
 
-const $carrousel = $('#carrousel');
-const $images = $('#carrousel li');
-var $compt = 0;
+    function updateArticleImages() {
+        $(".article__item .wp-block-latest-posts__featured-image").each(function () {
+            $(this).removeClass("wp-block-latest-posts__featured-image").addClass("article__image");
+        });
+    }
 
+    function wrapArticleTitle() {
+        $(".article__item .wp-block-latest-posts__post-title").each(function () {
+            $(this).wrap('<div class="article__body"><h2></h2></div>');
+        });
+    }
 
-function changeBubbleColor(a) {
-	a.css({
-		backgroundColor: '#839499',
-		transform: 'scale(1)'
-	})
-	a.eq($compt).css({
-		backgroundColor: '#1B2A2F',
-		transform: 'scale(1.3)'
-	})
-}
+    function addCategoryLinks() {
+        var url = window.location.href.split("/");
+        url = url[0] + "//" + url[2] + "/";
 
-function switchImages() {
-	var $currentImg = $images.eq($compt);
-	$images.fadeOut(500);
-	$currentImg.fadeIn(500);
-}
-switchImages();
+        $(".sidebar-pro .article__item .article__body h2").each(function () {
+            $(this).before('<h6><a href="' + url + 'category/professionnel">• Professionnel</a></h6>');
+        });
 
-const $prevBtn = $('.prevBtn');
-const $nextBtn = $('.nextBtn');
+        $(".sidebar-part .article__item .article__body h2").each(function () {
+            $(this).before('<h6><a href="' + url + 'category/particulier">• Particulier</a></h6>');
+        });
 
-$prevBtn.on('click',function () {
-	if ($compt <= 0) {
-		$compt = $images.length - 1;
-	} else {
-		$compt--;
-	}
-	switchImages();
-	changeBubbleColor($bubbles);
+        $(".sidebar-pro .article__list").after(
+            '<a href="' + url + 'category/professionnel" class="btn btn__orange blue dark text-uppercase mb-3">Tous les articles</a>',
+        );
+        $(".sidebar-part .article__list").after(
+            '<a href="' + url + 'category/particulier" class="btn btn__orange blue text-uppercase mb-3">Tous les articles</a>',
+        );
+    }
 
-})
+    // Find every link with the class "wp-block-button__link wp-element-button" and replace it by a link with the class "btn btn__outlined"
+    $(".wp-block-button__link.wp-element-button").each(function () {
+        $(this).removeClass("wp-block-button__link wp-element-button").addClass("btn btn__orange blue");
+    });
+    $(".wp-block-file__button").each(function () {
+        $(this).removeClass("wp-block-file__button wp-element-button").addClass("btn btn__orange blue");
+    });
 
-$nextBtn.on('click',function () {
-	if ($compt >= $images.length - 1) {
-		$compt = 0;
-	} else {
-		$compt++;
-	}
-	switchImages();
-	changeBubbleColor($bubbles);
-})
+    if ($(".wpml-ls-item")) {
+        // const lsItem = document.querySelector(".wpml-ls-item");
+        // const navLink = document.querySelector(".wpml-ls-item .nav-link");
+        const langSwitcherText = document.querySelector(".wpml-ls-item .wpml-ls-native");
 
-// Fonction diporama qui change l'image automatiquement toute les 10 secondes
-function slideShow() {
-	setTimeout(function () {
-		if ($compt >= $images.length - 1) {
-			$compt = 0;
-		} else {
-			$compt++;
-		}
-		switchImages();
-		changeBubbleColor($bubbles);
+        // only keep the 2 first letters of the language
+        const text = langSwitcherText.innerText.slice(0, 2);
+        langSwitcherText.innerText = text;
 
-		slideShow(); // relance la fonction
-	},10000);
-}
+        // move it right after the button btn__primary on mobile
+        // $(lsItem).insertAfter("#headerCta");
+        // $(".wpml-ls-item .dropdown-menu").insertAfter("#headerCta");
+    }
 
-slideShow(); // on oublie pas de lancer la fonction une première fois
-
-// Pour chaque image, crée une bulle correspondante en dessous
-$images.each(function () {
-	$('.bubbles').append(`<li><a data-target="#"></a></li>`);
-})
-
-const $bubbles = $('.bubbles a');
-// Changement dynamique des images lors des clics sur les bulles
-$bubbles.each(function () {
-	$(this).on('click',function () {
-		// Si l'index de la bulle est déjà égal au compteur, alors n'éxécute pas la fonction
-		if ($bubbles.index($(this)) == $compt) {
-			return false
-		}
-		// Le compteur prend la valeur de l'index du lien (bulle) dans le tableau $bubbles
-		$compt = $bubbles.index($(this));
-
-		switchImages();
-		changeBubbleColor($bubbles);
-	})
-})
-
-changeBubbleColor($bubbles);
-
-// FAQ
-
-const faqs = document.querySelectorAll(".accordion__item__header");
-
-function toggleAccordion() {
-	const itemToggle = this.getAttribute('aria-expanded');
-
-	for (var i = 0; i < faqs.length; i++) {
-		faqs[i].setAttribute('aria-expanded','false');
-	}
-
-	if (itemToggle == 'false') {
-		this.setAttribute('aria-expanded','true');
-	}
-}
-
-faqs.forEach(item => item.addEventListener('click',toggleAccordion));
+    //==================================================================================
+    // Initialization
+    //==================================================================================
+    $(document).ready(function () {
+        setTouchAttribute();
+        toggleNavbar();
+        setBlockServiceClass();
+        initializeOwlCarousel();
+        updateArticleListItems();
+        updateArticleImages();
+        wrapArticleTitle();
+        addCategoryLinks();
+    });
+})(jQuery);
