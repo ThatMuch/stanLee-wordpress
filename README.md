@@ -1,4 +1,4 @@
-<img src="/assets/images/stanlee_logo.png" width="480"/>
+<img src="./dist/images/stanlee_logo.webp" width="480"/>
 
 # :question: Stanlee c'est quoi ?
 
@@ -20,7 +20,7 @@ Voir la [demo](http://stanlee._a.fr/).
  npm install -g npm@latest
 ```
 
-- gulp >= 4.0.0 - [gulp](https://gulpjs.com)
+- gulp >= 5.0.0 - [gulp](https://gulpjs.com)
 
 ```bash
 npm install -g gulp
@@ -65,7 +65,9 @@ yo stanlee
 #### Gulp
 
 Stanlee utilise [WP Gulp](https://github.com/ahmadawais/WPGulp#-step-1--download-the-required-files).
+
 ##### Commandes
+
 ```shell
 # Commencer votre projet
 npm start
@@ -85,37 +87,27 @@ npm run styles-rtl
 npm run zip
 ```
 
-
 ## HTML Structure
 
 ```html
 <nav>La navigation principale</nav>
-<header>
-  Le header de la page qui contient le titre de la page et/ou l'image
-</header>
+<header>Le header de la page qui contient le titre de la page et/ou l'image</header>
 <main>
-  Contient tout sauf le header, le footer et la sidebar
-  <section>
-    Sert de container et/ou de fullwidth-background
-    <article>
-      Contient le contenu quand l'tuilisation du tag article est semantiquement
-      correcte.
-    </article>
-    <div class="element">
-      Contient le contenu quand l'utilisation du tag article n'est pas correct
-    </div>
-  </section>
+    Contient tout sauf le header, le footer et la sidebar
+    <section>
+        Sert de container et/ou de fullwidth-background
+        <article>Contient le contenu quand l'tuilisation du tag article est semantiquement correcte.</article>
+        <div class="element">Contient le contenu quand l'utilisation du tag article n'est pas correct</div>
+    </section>
 </main>
 <sidebar> Contient les widgets de la page </sidebar>
-<footer>
-  Le footer de la page, peut contenir des liens en plus et des informations
-  comme l'adresse ou le logo
-</footer>
+<footer>Le footer de la page, peut contenir des liens en plus et des informations comme l'adresse ou le logo</footer>
 ```
 
 ## C'est parti !
 
 Première choses à faire quand on crée un nouveau site avec Stanlee:
+
 - mettre à jour les variables du fichier `./wpgulp.config.js`
 - ouvrir `./functions/functions-setup.php` et ajouter ses propres settings
 - vérifier les autres fichiers dans `./functions` pour s'assurer que tout vous convient

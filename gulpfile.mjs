@@ -1,14 +1,21 @@
+import imagemin, { gifsicle, mozjpeg, optipng, svgo } from "gulp-imagemin";
+
 import autoprefixer from "gulp-autoprefixer";
 import babel from "gulp-babel";
 import browserSync from "browser-sync";
+import clean from "gulp-clean";
 import cleanCSS from "gulp-clean-css";
+import clone from "gulp-clone";
 import concat from "gulp-concat";
 import dartSass from "sass";
 import gulp from "gulp";
 import gulpSass from "gulp-sass";
 import rename from "gulp-rename";
 import uglify from "gulp-uglify";
+import webp from "gulp-webp";
 import zip from "gulp-zip";
+
+const clonesink = clone.sink();
 
 const sass = gulpSass(dartSass);
 
@@ -81,6 +88,46 @@ gulp.task("scripts", function () {
             }),
         );
 });
+
+gulp.task("clean:images", () => {
+	return gulp.src(["dist/images/*"]).pipe(
+		clean({
+			force: true,
+		}),
+	); // Delete all files in the dist/images folder
+});
+
+gulp.task(
+    "compress-images",
+    gulp.series("clean:images", () => {
+        return gulp
+            .src("./assets/images/**/*.{jpg,jpeg,png,gif,svg}", { encoding: false })
+            .pipe(
+                imagemin([
+                    gifsicle({ interlaced: true }),
+                    mozjpeg({ quality: 75, progressive: true }),
+                    optipng({ optimizationLevel: 5 }),
+                    svgo({
+                        plugins: [
+                            {
+                                name: "removeViewBox",
+                                active: true,
+                            },
+                            {
+                                name: "cleanupIDs",
+                                active: false,
+                            },
+                        ],
+                    }),
+                ]),
+            )
+            .pipe(clonesink) // start stream
+            .pipe(webp()) // convert images to webp and save a copy of the original format
+            .pipe(clonesink.tap()) // close stream and send both formats to dist
+            .pipe(gulp.dest("dist/images"));
+    }),
+);
+
 gulp.task("watch", function () {
     browserSync.init({
         proxy: config.projectURL,
@@ -93,7 +140,8 @@ gulp.task("watch", function () {
     gulp.watch(config.watchJsCustom, gulp.series("scripts"));
     gulp.watch(config.watchCss).on("change", browserSync.reload);
     gulp.watch(config.watchPhp).on("change", browserSync.reload);
-    gulp.watch(config.watchJs).on("change", browserSync.reload);
+	gulp.watch(config.watchJs).on("change",browserSync.reload);
+	gulp.watch(config.imgSRC, gulp.series("compress-images"));
 });
 
 // New task to create a production-ready zip
@@ -110,8 +158,8 @@ gulp.task("zip", function () {
             "!./prettierignore",
             "!./prettierrc.yml",
         ])
-        .pipe(zip("heptalytics.zip"))
-        .pipe(gulp.dest("./../"));
+        .pipe(zip("stanLee.zip"))
+        .pipe(gulp.dest("./dist/"));
 });
 
 // Add the zip task to a build command (optional)

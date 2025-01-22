@@ -2,30 +2,34 @@
 @import "../styles/_vars.scss";
 
 body.login h1 a {
-    background-image: url("assets/images/stanlee_logo.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    height: 100px;
-    width: 100%;
-    background-size: contain;
     margin: 0 auto;
+    background-image: url("dist/images/stanlee_logo.webp");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100px;
 }
 
 body.login .button-primary {
-    background: $color-primary;
     border-color: $color-primary;
+    background: $color-primary;
 }
 
 body.login .button-primary:hover {
-    background: $color-primary-darker;
     border-color: $color-primary-darker;
+    background: $color-primary-darker;
 }
 
-body.login form input.input, body.login form input[type=checkbox], body.login input[type=text],
-body.login form input.input:active, body.login form input[type=checkbox], body.login input[type=text]:active {
+body.login form input.input,
+body.login form input[type="checkbox"],
+body.login input[type="text"],
+body.login form input.input:active,
+body.login form input[type="checkbox"],
+body.login input[type="text"]:active {
+    border-color: $color-primary;
     background-color: rgba($color: $color-primary, $alpha: 0.3) !important;
     background: inherit;
-    border-color: $color-primary;
 }
 
 input:-webkit-autofill,
@@ -37,10 +41,10 @@ input:-webkit-autofill:active {
 }
 
 .wp-core-ui .button.wp-hide-pw {
-    color: $color-primary;
+    vertical-align: top;
     border-color: $color-primary;
     background: inherit;
-    vertical-align: top;
+    color: $color-primary;
 }
 
 body.login {
