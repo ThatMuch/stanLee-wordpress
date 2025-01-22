@@ -1,0 +1,18 @@
+semi: true
+tabWidth: 4
+useTabs: false
+printWidth: 140
+singleQuote: false
+trailingComma: all
+arrowParens: always
+bracketSpacing: true
+bracketSameLine: true
+singleAttributePerLine: true
+preserveCase: true
+jsxBracketSameLine: false
+requirePragma: false
+proseWrap: preserve
+htmlWhitespaceSensitivity: "css"
+endOfLine: "lf"
+
+plugins: ["@prettier/plugin-php", "prettier-plugin-css-order"]
