@@ -6,8 +6,6 @@
  * @since       _s_1.0.0
  */
 
-use Symfony\Component\Validator\Constraints\Length;
-
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
