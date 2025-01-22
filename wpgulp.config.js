@@ -21,7 +21,7 @@ const injectChanges = true;
 
 // >>>>> Style options.
 // Path to main .scss file.
-const styleSRC = './assets/styles/style.scss';
+const styleSRC = './assets/styles/**/*.scss';
 
 // Path to place the compiled CSS file. Default set to root folder.
 const styleDestination = './assets/styles/';
@@ -76,6 +76,12 @@ const watchJsCustom = './assets/scripts/custom/*.js';
 // Path to all PHP files.
 const watchPhp = './**/*.php';
 
+// Path to all css files.
+const watchCss = './**/*.css';
+
+// Path to all js files.
+const watchJs = './**/*.js';
+
 // >>>>> Zip file config.
 // Must have.zip at the end.
 const zipName = 'stanlee.zip';
@@ -89,7 +95,7 @@ const zipIgnoreGlob = [
 	'!./{node_modules,node_modules/**/*}',
 	'!./.git',
 	'!./.svn',
-	'!./gulpfile.babel.js',
+	'!./gulpfile.js',
 	'!./StanLee.config.js',
 	'!./.eslintrc.js',
 	'!./.eslintignore',
@@ -157,6 +163,8 @@ module.exports = {
 	watchJsVendor,
 	watchJsCustom,
 	watchPhp,
+	watchJs,
+	watchCss,
 	zipName,
 	zipDestination,
 	zipIncludeGlob,
