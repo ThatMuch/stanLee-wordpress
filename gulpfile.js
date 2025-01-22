@@ -11,13 +11,6 @@ var imagemin = require("gulp-imagemin");
 
 const config = require("./wpgulp.config.js");
 
-gulp.task("optiimage", function () {
-    return gulp
-        .src("assets/images/")
-        .pipe(imagemin({ progressive: true }))
-        .pipe(gulp.dest("assets/optiimage/"));
-});
-
 gulp.task("styles", function () {
     return (
         gulp
